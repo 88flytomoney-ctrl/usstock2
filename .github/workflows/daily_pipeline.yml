@@ -28,11 +28,12 @@ jobs:
           python-version: '3.11'
 
       - name: Install Python deps
-        run: pip install requests openai yfinance -q
+        run: pip install requests openai -q
 
       - name: Scrape ETNet + Fetch prices + AI predictions
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
         run: python generate_predictions.py
 
       - name: Verify outputs
