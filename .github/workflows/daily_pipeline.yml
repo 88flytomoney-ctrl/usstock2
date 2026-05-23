@@ -40,15 +40,15 @@ jobs:
           python -c "
           import json
           s=json.load(open('public/data/stocks.json'))
-          p=json.load(open('public/data/predictions.json'))
+          pred=json.load(open('public/data/predictions.json'))
           m=json.load(open('public/data/history/manifest.json'))
           print(f'stocks.json: {s[\"stockCount\"]} stocks, generated {s[\"generatedAt\"]}')
           for st in s['stocks']:
-              p=st['prices']
-              print(f'  {st[\"code\"]} {st[\"name\"]}: last=${p[-1][\"close\"]:.2f} ({len(p)} days)')
+              prices=st['prices']
+              print(f'  {st[\"code\"]} {st[\"name\"]}: last=\${prices[-1][\"close\"]:.2f} ({len(prices)} days)')
           print(f'history: {len(m)} snapshots: {m[:3]}')
-          ai=[c for c,v in p.items() if v.get('has_ai')]
-          print(f'predictions.json: {len(p)} stocks, {len(ai)} with AI')
+          ai=[c for c,v in pred.items() if v.get('has_ai')]
+          print(f'predictions.json: {len(pred)} stocks, {len(ai)} with AI')
           "
 
       - name: Commit data
