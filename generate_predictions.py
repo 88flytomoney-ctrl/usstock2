@@ -13,7 +13,6 @@ import sys
 import json
 import time
 import requests
-import pandas as pd
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from openai import OpenAI
@@ -208,47 +207,6 @@ def _build_ai_prompt(symbol, combined_data):
         "date (YYYY-MM-DD), dateShort (MM/DD), open, high, low, close, volume, volumeM."
     )
     return "\n".join(lines)
-
-
-# ── 5-step vector extrapolation ────────────────────────────────────────────────
-def extrapolate_5step(prices):
-    """Simple rule-based 5-step vector extrapolation (when AI is skipped)."""
-    if len(prices) < 5:
-        return [dict(prices[-1])] * 5
-
-    recent = prices[-5:]
-    # Linear regression on closes
-    n = len(recent)
-    x_mean = sum(i for i in range(n)) / n
-    y_mean = sum(r["close"] for r in recent) / n
-    num = sum((i - x_mean) * (r["close"] - y_mean) for i, r in enumerate(recent))
-    den = sum((i - x_mean) ** 2 for i in range(n))
-    slope = (num / den) if den != 0 else 0
-
-    last = prices[-1]
-    today = datetime.now(timezone.utc).date()
-    result = []
-    for i in range(1, 6):
-        delta = slope * i
-        # Volatility from recent range
-        recent_range = max(r["high"] - r["low"] for r in recent[-3:]) / 2
-        close = round(last["close"] + delta, 2)
-        open_p = round(close * (1 + (hash(f"{symbol}{i}") % 100 - 50) / 2000), 2)
-        high   = round(close * (1 + recent_range / last["close"] / 4), 2)
-        low    = round(close * (1 - recent_range / last["close"] / 4), 2)
-        vol    = int(last["volume"] * (0.9 + (hash(f"{symbol}{i}") % 20) / 100))
-        d = (today + timedelta(days=i)).strftime("%Y-%m-%d")
-        result.append({
-            "date":      d,
-            "dateShort": datetime.strptime(d, "%Y-%m-%d").strftime("%m/%d"),
-            "open":      open_p,
-            "high":      high,
-            "low":       low,
-            "close":     close,
-            "volume":    vol,
-            "volumeM":   round(vol / 1e6, 2),
-        })
-    return result
 
 
 # ── Analysis: rule-based signals ───────────────────────────────────────────────
