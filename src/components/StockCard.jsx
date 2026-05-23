@@ -17,7 +17,8 @@ function getSignalStyle(signal) {
 function fmt(v) { return typeof v === 'number' ? v.toFixed(2) : '—'; }
 
 export default function StockCard({ stock, prediction }) {
-  const { code, name, symbol, prices = [], fiveDayPct = 0 } = stock;
+  const { code, name, symbol, prices = [], pctChange = 0 } = stock;
+  const fiveDayPct = pctChange;
 
   // combined_data: [0-9] = 10 historical, [10-14] = 5 AI predicted
   const hasAi    = prediction?.has_ai && Array.isArray(prediction.combined_data);
