@@ -125,7 +125,7 @@ def call_openrouter_ai(history_rows, stock_code):
         ']'
     )
 
-    node_token = f"node_alpha_{stock_code}"
+    node_token = f"node_us_alpha_{stock_code}"
 
     prompt = (
         f"You are a mathematical sequence extrapolation compiler specializing in "

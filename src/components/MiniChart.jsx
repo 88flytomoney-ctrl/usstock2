@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * MiniChart — HTML5 Canvas candlestick chart.
+ * MiniChart — HTML5 Canvas candlestick chart (15 periods: 10 hist + 5 AI).
  * Props:
- *   prices  — array of { date, open, high, low, close, volumeM }
- *   hasAi   — boolean, whether AI predictions are present
+ *   prices   — array of { date, dateShort, open, high, low, close, volumeM }
+ *   hasAi    — boolean, whether AI predictions are present
  *   histCount — number of historical (non-AI) candles (default 10)
  */
 export default function MiniChart({ prices = [], hasAi = false, histCount = 10 }) {
@@ -12,104 +12,130 @@ export default function MiniChart({ prices = [], hasAi = false, histCount = 10 }
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas || prices.length === 0) return;
+    if (!canvas || !prices || prices.length === 0) return;
 
     const ctx = canvas.getContext('2d');
     const dpr = window.devicePixelRatio || 1;
-    const W = canvas.offsetWidth;
-    const H = 120;
-    canvas.width  = W * dpr;
-    canvas.height = H * dpr;
+
+    // ── Retina-scale the internal buffer ──────────────────────────────────────
+    const rect = canvas.getBoundingClientRect();
+    canvas.width  = rect.width  * dpr;
+    canvas.height = rect.height * dpr;
     ctx.scale(dpr, dpr);
 
-    ctx.clearRect(0, 0, W, H);
+    const width  = rect.width;
+    const height = rect.height;
 
-    const n = prices.length;
-    const pad  = { left: 4, right: 4, top: 8, bottom: 20 };
-    const chartW  = W - pad.left - pad.right;
-    const chartH  = H - pad.top  - pad.bottom;
-    const barW    = Math.max(2, (chartW / n) - 1);
+    // ── Chart spacing variables ───────────────────────────────────────────────
+    const paddingLeft   = 40;
+    const paddingRight  = 20;
+    const paddingTop    = 20;
+    const paddingBottom = 20;
 
-    // Compute OHLC range
-    let minP = Infinity, maxP = -Infinity;
-    for (const p of prices) {
-      if (p.low  < minP) minP = p.low;
-      if (p.high > maxP) maxP = p.high;
-    }
-    const range   = maxP - minP || 1;
-    const scale   = chartH / range;
-    const midY    = (y) => pad.top + (maxP - y) * scale;
-    const barH    = (p) => Math.max(1, (p.high - p.low) * scale);
-    const bodyY   = (p) => midY(Math.max(p.open, p.close));
-    const bodyH   = (p) => Math.max(1, Math.abs(p.close - p.open) * scale);
+    const chartWidth  = width  - paddingLeft - paddingRight;
+    const chartHeight = height - paddingTop   - paddingBottom;
 
-    // Grid lines
-    ctx.strokeStyle = 'rgba(148,163,184,0.08)';
-    ctx.lineWidth   = 1;
-    for (let i = 0; i <= 3; i++) {
-      const y = pad.top + (chartH / 3) * i;
-      ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(W - pad.right, y); ctx.stroke();
-    }
+    const totalPeriods = prices.length;   // 15 (10 hist + 5 AI)
+    const stepX        = chartWidth / totalPeriods;
 
-    // Draw candles
-    prices.forEach((p, i) => {
-      const x      = pad.left + i * (barW + 1) + barW / 2;
-      const isPred = hasAi && i >= histCount;
-      const isUp   = p.close >= p.open;
+    // Candle width = 60% of slot; 40% clean margin gap
+    const candleWidth   = Math.max(2, stepX * 0.6);
+    const spacingOffset = (stepX - candleWidth) / 2;
 
-      // Colour scheme
-      if (isPred) {
-        ctx.strokeStyle = '#c084fc';   // purple-400 for AI candles
-        ctx.fillStyle   = 'rgba(192,132,252,0.25)';
-      } else {
-        ctx.strokeStyle = isUp ? '#4ade80' : '#f87171';
-        ctx.fillStyle   = isUp ? 'rgba(74,222,128,0.25)' : 'rgba(248,113,113,0.25)';
-      }
+    // ── Price scale ───────────────────────────────────────────────────────────
+    const highs = prices.map(d => d.high);
+    const lows  = prices.map(d => d.low);
+    const maxPrice = Math.max(...highs) * 1.02;
+    const minPrice = Math.min(...lows)  * 0.98;
+    const priceRange = maxPrice - minPrice || 1;
 
-      // Wick
-      ctx.lineWidth = 1;
+    const getPercentY = (price) =>
+      paddingTop + chartHeight * (1 - (price - minPrice) / priceRange);
+
+    // ── Clear canvas ──────────────────────────────────────────────────────────
+    ctx.clearRect(0, 0, width, height);
+
+    // ── Draw candles ──────────────────────────────────────────────────────────
+    prices.forEach((point, i) => {
+      // X – perfectly centered
+      const xLeft  = paddingLeft + i * stepX + spacingOffset;
+      const xCenter = Math.floor(xLeft + candleWidth / 2) + 0.5;
+
+      const openY  = getPercentY(point.open);
+      const closeY = getPercentY(point.close);
+      const highY  = getPercentY(point.high);
+      const lowY   = getPercentY(point.low);
+
+      const isUp        = point.close >= point.open;
+      const isPrediction = hasAi && i >= histCount;
+
+      // Colour palette per spec
+      const bodyColor   = isUp ? '#26a69a' : '#ef5350';
+      const strokeColor = isPrediction ? '#a855f7' : bodyColor;
+      const fillColor   = isPrediction
+        ? (isUp ? 'rgba(38, 166, 154, 0.15)' : 'rgba(239, 83, 80, 0.15)')
+        : bodyColor;
+
+      ctx.save();
+      ctx.strokeStyle = strokeColor;
+      ctx.fillStyle   = fillColor;
+      ctx.lineWidth   = 1.5;
+
+      // Wick: high → low, perfectly centered
       ctx.beginPath();
-      ctx.moveTo(x, midY(p.high));
-      ctx.lineTo(x, midY(p.low));
+      ctx.moveTo(xCenter, Math.floor(highY));
+      ctx.lineTo(xCenter, Math.floor(lowY));
       ctx.stroke();
 
-      // Body
-      const by = bodyY(p);
-      const bh = bodyH(p);
-      if (isPred) {
-        // Dashed outline for AI predicted candles
-        ctx.setLineDash([2, 2]);
-        ctx.strokeRect(x - barW / 2, by, barW, bh || 2);
-        ctx.fillRect(x - barW / 2, by, barW, bh || 2);
-        ctx.setLineDash([]);
-      } else {
-        ctx.fillRect(x - barW / 2, by, barW, bh || 2);
+      // Body: centered rect
+      const bodyY = Math.min(openY, closeY);
+      const bodyH = Math.max(1, Math.abs(openY - closeY));
+      const bodyW = Math.floor(candleWidth);
+
+      ctx.beginPath();
+      ctx.rect(
+        Math.floor(xLeft) + 0.5,
+        Math.floor(bodyY) + 0.5,
+        bodyW,
+        Math.floor(bodyH)
+      );
+      if (!isPrediction) ctx.fill();
+      ctx.setLineDash(isPrediction ? [4, 2] : []);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // X-axis label (alternate dates to prevent overlap)
+      if (i % 2 === 0) {
+        ctx.fillStyle   = '#64748b';
+        ctx.font        = '10px sans-serif';
+        ctx.textAlign   = 'center';
+        ctx.fillText(point.dateShort || point.date || '', xCenter, height - 2);
       }
+
+      ctx.restore();
     });
 
-    // X-axis date labels
-    ctx.fillStyle      = 'rgba(148,163,184,0.5)';
-    ctx.font           = '9px monospace';
-    ctx.textAlign      = 'center';
-    const step         = n > 15 ? Math.ceil(n / 6) : 1;
-    for (let i = 0; i < n; i += step) {
-      const x = pad.left + i * (barW + 1) + barW / 2;
-      ctx.fillText(prices[i].dateShort || prices[i].date || '', x, H - 4);
+    // ── Dashed divider: day 10 ↔ day 11 ────────────────────────────────────
+    if (totalPeriods > 10) {
+      const dividerX = paddingLeft + 10 * stepX + 0.5;
+      ctx.save();
+      ctx.strokeStyle = 'rgba(168, 85, 247, 0.4)';
+      ctx.setLineDash([6, 4]);
+      ctx.lineWidth   = 1;
+      ctx.beginPath();
+      ctx.moveTo(dividerX, paddingTop);
+      ctx.lineTo(dividerX, height - paddingBottom);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.restore();
     }
-
-    // HKT watermark
-    ctx.fillStyle   = 'rgba(148,163,184,0.2)';
-    ctx.font        = '8px monospace';
-    ctx.textAlign   = 'right';
-    ctx.fillText('HKT', W - 4, H - 4);
   }, [prices, hasAi, histCount]);
 
   return (
     <div className="w-full bg-slate-900/50 px-3 py-1">
       <canvas
         ref={canvasRef}
-        className="w-full"
-        style={{ height: '120px', display: 'block' }}
+        style={{ width: '100%', height: '140px', display: 'block' }}
       />
     </div>
   );

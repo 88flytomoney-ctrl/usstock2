@@ -92,7 +92,7 @@ export default function StockCard({ stock, prediction }) {
 
       {/* ── AI Prediction Table (future 5 days) ── */}
       {hasAi && predRows.length > 0 && (
-        <div className="ai-prediction-matrix border border-dashed border-purple-500/40 p-3 rounded-lg mt-3 bg-purple-950/10 mx-3 mb-3">
+        <div className="ai-prediction-matrix border border-dashed border-purple-500/30 p-3 rounded-lg mt-3 bg-purple-950/10 mx-3 mb-3">
           <div className="bg-purple-900/30 px-3 py-1.5 flex items-center gap-2 border-b border-purple-700/40">
             <span className="text-purple-300 text-xs font-semibold">🔮 AI 預測（未來5日）</span>
           </div>
