@@ -51,15 +51,19 @@ jobs:
           print(f'predictions.json: {len(pred)} stocks, {len(ai)} with AI')
           "
 
-      - name: Commit data
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add public/data/
-          git diff --staged --quiet && echo "No data changes" || {
-            git commit -m "🤖 Auto-update US stock data $(date +%Y-%m-%d\ %H:%M)" &&
-            git pull --rebase && git push
-          }
+      # Data is written to public/data/ by the Python script and bundled into
+      # the dist artifact for GitHub Pages. Committing JSON data causes merge
+      # conflicts between concurrent workflow runs, so we skip it here.
+      # To persist daily snapshots, uncomment the block below:
+      # - name: Commit data
+      #   run: |
+      #     git config --local user.email "github-actions[bot]@users.noreply.github.com"
+      #     git config --local user.name "github-actions[bot]"
+      #     git add public/data/
+      #     git diff --staged --quiet && echo "No data changes" || {
+      #       git commit -m "🤖 Auto-update US stock data $(date +%Y-%m-%d\ %H:%M)" &&
+      #       git pull --rebase && git push
+      #     }
 
       # ── Frontend Build ───────────────────────────────────────────────────────
       - name: Set up Node
