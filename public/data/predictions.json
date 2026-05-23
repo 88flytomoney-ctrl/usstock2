@@ -118,41 +118,41 @@
         "date": "🔮 PRED_2",
         "dateShort": "🔮 PRED_2",
         "open": 290.1,
-        "high": 292.45,
+        "high": 292.4,
         "low": 289.2,
         "close": 291.3,
-        "volume": 41500000,
-        "volumeM": "41.5M"
+        "volume": 40500000,
+        "volumeM": "40.5M"
       },
       {
         "date": "🔮 PRED_3",
         "dateShort": "🔮 PRED_3",
-        "open": 289.55,
-        "high": 291.9,
-        "low": 288.75,
+        "open": 289.5,
+        "high": 291.8,
+        "low": 288.7,
         "close": 290.75,
-        "volume": 41200000,
-        "volumeM": "41.2M"
+        "volume": 39800000,
+        "volumeM": "39.8M"
       },
       {
         "date": "🔮 PRED_4",
         "dateShort": "🔮 PRED_4",
-        "open": 289.1,
-        "high": 291.45,
-        "low": 288.35,
-        "close": 290.3,
-        "volume": 41000000,
-        "volumeM": "41.0M"
+        "open": 288.95,
+        "high": 291.25,
+        "low": 288.2,
+        "close": 290.2,
+        "volume": 39200000,
+        "volumeM": "39.2M"
       },
       {
         "date": "🔮 PRED_5",
         "dateShort": "🔮 PRED_5",
-        "open": 288.75,
-        "high": 291.1,
-        "low": 288.0,
-        "close": 289.9,
-        "volume": 40800000,
-        "volumeM": "40.8M"
+        "open": 288.4,
+        "high": 290.7,
+        "low": 287.7,
+        "close": 289.65,
+        "volume": 38600000,
+        "volumeM": "38.6M"
       }
     ]
   },
@@ -265,51 +265,51 @@
         "date": "🔮 PRED_1",
         "dateShort": "🔮 PRED_1",
         "open": 215.2,
-        "high": 223.1,
+        "high": 221.5,
         "low": 214.5,
-        "close": 220.1,
-        "volume": 162500000,
-        "volumeM": "162.5M"
+        "close": 218.9,
+        "volume": 155000000,
+        "volumeM": "155.0M"
       },
       {
         "date": "🔮 PRED_2",
         "dateShort": "🔮 PRED_2",
         "open": 216.8,
-        "high": 224.5,
-        "low": 215.9,
-        "close": 221.6,
-        "volume": 165000000,
-        "volumeM": "165.0M"
+        "high": 223.1,
+        "low": 216.2,
+        "close": 220.5,
+        "volume": 162300000,
+        "volumeM": "162.3M"
       },
       {
         "date": "🔮 PRED_3",
         "dateShort": "🔮 PRED_3",
-        "open": 218.3,
-        "high": 225.8,
-        "low": 217.2,
-        "close": 223.0,
-        "volume": 167400000,
-        "volumeM": "167.4M"
+        "open": 218.4,
+        "high": 224.7,
+        "low": 217.8,
+        "close": 222.1,
+        "volume": 169500000,
+        "volumeM": "169.5M"
       },
       {
         "date": "🔮 PRED_4",
         "dateShort": "🔮 PRED_4",
-        "open": 219.7,
-        "high": 227.0,
-        "low": 218.4,
-        "close": 224.3,
-        "volume": 169700000,
-        "volumeM": "169.7M"
+        "open": 220.0,
+        "high": 226.3,
+        "low": 219.4,
+        "close": 223.7,
+        "volume": 176800000,
+        "volumeM": "176.8M"
       },
       {
         "date": "🔮 PRED_5",
         "dateShort": "🔮 PRED_5",
-        "open": 221.0,
-        "high": 228.1,
-        "low": 219.5,
-        "close": 225.5,
-        "volume": 171900000,
-        "volumeM": "171.9M"
+        "open": 221.6,
+        "high": 227.9,
+        "low": 221.0,
+        "close": 225.3,
+        "volume": 184000000,
+        "volumeM": "184.0M"
       }
     ]
   },
@@ -421,52 +421,52 @@
       {
         "date": "🔮 PRED_1",
         "dateShort": "🔮 PRED_1",
-        "open": 428.5,
-        "high": 442.3,
-        "low": 418.7,
+        "open": 425.8,
+        "high": 442.5,
+        "low": 418.3,
         "close": 430.2,
-        "volume": 65800000,
-        "volumeM": "65.8M"
+        "volume": 62800000,
+        "volumeM": "62.8M"
       },
       {
         "date": "🔮 PRED_2",
         "dateShort": "🔮 PRED_2",
-        "open": 435.2,
-        "high": 448.1,
-        "low": 425.4,
-        "close": 438.6,
-        "volume": 58300000,
-        "volumeM": "58.3M"
+        "open": 430.15,
+        "high": 448.7,
+        "low": 425.6,
+        "close": 438.9,
+        "volume": 55400000,
+        "volumeM": "55.4M"
       },
       {
         "date": "🔮 PRED_3",
         "dateShort": "🔮 PRED_3",
-        "open": 440.8,
-        "high": 450.5,
-        "low": 432.1,
-        "close": 441.9,
-        "volume": 52400000,
-        "volumeM": "52.4M"
+        "open": 435.2,
+        "high": 445.3,
+        "low": 420.1,
+        "close": 432.7,
+        "volume": 58900000,
+        "volumeM": "58.9M"
       },
       {
         "date": "🔮 PRED_4",
         "dateShort": "🔮 PRED_4",
-        "open": 438.1,
-        "high": 452.7,
-        "low": 428.5,
-        "close": 444.3,
-        "volume": 62700000,
-        "volumeM": "62.7M"
+        "open": 428.9,
+        "high": 450.2,
+        "low": 423.5,
+        "close": 441.6,
+        "volume": 65300000,
+        "volumeM": "65.3M"
       },
       {
         "date": "🔮 PRED_5",
         "dateShort": "🔮 PRED_5",
-        "open": 430.4,
-        "high": 446.2,
-        "low": 420.8,
-        "close": 436.5,
-        "volume": 69100000,
-        "volumeM": "69.1M"
+        "open": 432.4,
+        "high": 446.8,
+        "low": 419.7,
+        "close": 435.1,
+        "volume": 57600000,
+        "volumeM": "57.6M"
       }
     ]
   },
@@ -578,52 +578,52 @@
       {
         "date": "🔮 PRED_1",
         "dateShort": "🔮 PRED_1",
-        "open": 410.25,
-        "high": 413.5,
-        "low": 403.8,
-        "close": 409.2,
-        "volume": 34800000,
-        "volumeM": "34.8M"
+        "open": 407.8,
+        "high": 412.5,
+        "low": 405.2,
+        "close": 412.3,
+        "volume": 36100000,
+        "volumeM": "36.1M"
       },
       {
         "date": "🔮 PRED_2",
         "dateShort": "🔮 PRED_2",
-        "open": 408.7,
-        "high": 412.1,
-        "low": 402.9,
-        "close": 407.6,
-        "volume": 33500000,
-        "volumeM": "33.5M"
+        "open": 408.6,
+        "high": 413.2,
+        "low": 405.8,
+        "close": 412.9,
+        "volume": 37500000,
+        "volumeM": "37.5M"
       },
       {
         "date": "🔮 PRED_3",
         "dateShort": "🔮 PRED_3",
-        "open": 407.3,
-        "high": 410.8,
-        "low": 401.5,
-        "close": 406.1,
-        "volume": 32000000,
-        "volumeM": "32.0M"
+        "open": 409.4,
+        "high": 413.9,
+        "low": 406.4,
+        "close": 413.5,
+        "volume": 38900000,
+        "volumeM": "38.9M"
       },
       {
         "date": "🔮 PRED_4",
         "dateShort": "🔮 PRED_4",
-        "open": 405.9,
-        "high": 409.4,
-        "low": 400.2,
-        "close": 404.7,
-        "volume": 30800000,
-        "volumeM": "30.8M"
+        "open": 410.2,
+        "high": 414.6,
+        "low": 407.0,
+        "close": 414.1,
+        "volume": 40300000,
+        "volumeM": "40.3M"
       },
       {
         "date": "🔮 PRED_5",
         "dateShort": "🔮 PRED_5",
-        "open": 404.6,
-        "high": 408.1,
-        "low": 399.0,
-        "close": 403.4,
-        "volume": 29500000,
-        "volumeM": "29.5M"
+        "open": 411.0,
+        "high": 415.3,
+        "low": 407.6,
+        "close": 414.7,
+        "volume": 41700000,
+        "volumeM": "41.7M"
       }
     ]
   },
@@ -738,49 +738,49 @@
         "open": 267.5,
         "high": 270.1,
         "low": 265.2,
-        "close": 267.5,
-        "volume": 35800000,
-        "volumeM": "35.8M"
+        "close": 268.5,
+        "volume": 37500000,
+        "volumeM": "37.5M"
       },
       {
         "date": "🔮 PRED_2",
         "dateShort": "🔮 PRED_2",
         "open": 268.2,
-        "high": 271.5,
+        "high": 271.3,
         "low": 266.8,
-        "close": 269.3,
-        "volume": 37100000,
-        "volumeM": "37.1M"
+        "close": 269.7,
+        "volume": 36900000,
+        "volumeM": "36.9M"
       },
       {
         "date": "🔮 PRED_3",
         "dateShort": "🔮 PRED_3",
-        "open": 266.9,
-        "high": 268.4,
-        "low": 264.5,
-        "close": 266.7,
-        "volume": 34500000,
-        "volumeM": "34.5M"
+        "open": 269.0,
+        "high": 272.5,
+        "low": 267.9,
+        "close": 270.4,
+        "volume": 38800000,
+        "volumeM": "38.8M"
       },
       {
         "date": "🔮 PRED_4",
         "dateShort": "🔮 PRED_4",
-        "open": 265.3,
-        "high": 267.8,
-        "low": 263.1,
-        "close": 265.9,
-        "volume": 36200000,
-        "volumeM": "36.2M"
+        "open": 268.7,
+        "high": 271.8,
+        "low": 267.1,
+        "close": 269.9,
+        "volume": 37200000,
+        "volumeM": "37.2M"
       },
       {
         "date": "🔮 PRED_5",
         "dateShort": "🔮 PRED_5",
-        "open": 264.1,
-        "high": 266.2,
-        "low": 261.8,
-        "close": 264.5,
-        "volume": 33900000,
-        "volumeM": "33.9M"
+        "open": 269.5,
+        "high": 272.9,
+        "low": 268.3,
+        "close": 270.8,
+        "volume": 38000000,
+        "volumeM": "38.0M"
       }
     ]
   },
@@ -892,52 +892,52 @@
       {
         "date": "🔮 PRED_1",
         "dateShort": "🔮 PRED_1",
-        "open": 607.2,
-        "high": 610.5,
-        "low": 601.3,
-        "close": 606.8,
+        "open": 606.1,
+        "high": 610.25,
+        "low": 600.15,
+        "close": 605.7,
         "volume": 12800000,
         "volumeM": "12.8M"
       },
       {
         "date": "🔮 PRED_2",
         "dateShort": "🔮 PRED_2",
-        "open": 609.8,
-        "high": 614.2,
-        "low": 604.1,
-        "close": 610.5,
+        "open": 608.45,
+        "high": 612.8,
+        "low": 603.2,
+        "close": 608.9,
         "volume": 13100000,
         "volumeM": "13.1M"
       },
       {
         "date": "🔮 PRED_3",
         "dateShort": "🔮 PRED_3",
-        "open": 612.4,
-        "high": 617.9,
-        "low": 607.0,
-        "close": 614.2,
+        "open": 610.3,
+        "high": 615.1,
+        "low": 606.5,
+        "close": 611.2,
         "volume": 12500000,
         "volumeM": "12.5M"
       },
       {
         "date": "🔮 PRED_4",
         "dateShort": "🔮 PRED_4",
-        "open": 615.0,
-        "high": 621.6,
+        "open": 612.75,
+        "high": 617.4,
         "low": 609.8,
-        "close": 617.9,
-        "volume": 11900000,
-        "volumeM": "11.9M"
+        "close": 613.6,
+        "volume": 13000000,
+        "volumeM": "13.0M"
       },
       {
         "date": "🔮 PRED_5",
         "dateShort": "🔮 PRED_5",
-        "open": 617.6,
-        "high": 625.3,
-        "low": 612.7,
-        "close": 621.5,
-        "volume": 13400000,
-        "volumeM": "13.4M"
+        "open": 614.9,
+        "high": 619.5,
+        "low": 612.3,
+        "close": 615.8,
+        "volume": 12900000,
+        "volumeM": "12.9M"
       }
     ]
   },
@@ -1050,51 +1050,51 @@
         "date": "🔮 PRED_1",
         "dateShort": "🔮 PRED_1",
         "open": 394.8,
-        "high": 401.2,
-        "low": 390.15,
-        "close": 392.4,
-        "volume": 27500000,
-        "volumeM": "27.5M"
+        "high": 399.1,
+        "low": 390.2,
+        "close": 391.5,
+        "volume": 28500000,
+        "volumeM": "28.5M"
       },
       {
         "date": "🔮 PRED_2",
         "dateShort": "🔮 PRED_2",
-        "open": 392.1,
-        "high": 398.75,
-        "low": 389.3,
-        "close": 393.8,
-        "volume": 24600000,
-        "volumeM": "24.6M"
+        "open": 396.2,
+        "high": 401.3,
+        "low": 392.8,
+        "close": 394.2,
+        "volume": 32100000,
+        "volumeM": "32.1M"
       },
       {
         "date": "🔮 PRED_3",
         "dateShort": "🔮 PRED_3",
-        "open": 395.45,
-        "high": 400.1,
-        "low": 391.6,
-        "close": 395.2,
-        "volume": 29300000,
-        "volumeM": "29.3M"
+        "open": 398.5,
+        "high": 403.6,
+        "low": 395.1,
+        "close": 397.0,
+        "volume": 35800000,
+        "volumeM": "35.8M"
       },
       {
         "date": "🔮 PRED_4",
         "dateShort": "🔮 PRED_4",
-        "open": 396.7,
-        "high": 403.5,
-        "low": 394.2,
-        "close": 397.5,
-        "volume": 33000000,
-        "volumeM": "33.0M"
+        "open": 400.1,
+        "high": 405.9,
+        "low": 397.4,
+        "close": 399.3,
+        "volume": 38200000,
+        "volumeM": "38.2M"
       },
       {
         "date": "🔮 PRED_5",
         "dateShort": "🔮 PRED_5",
-        "open": 398.2,
-        "high": 405.8,
-        "low": 396.9,
-        "close": 399.1,
-        "volume": 35700000,
-        "volumeM": "35.7M"
+        "open": 402.4,
+        "high": 408.2,
+        "low": 399.7,
+        "close": 401.6,
+        "volume": 40500000,
+        "volumeM": "40.5M"
       }
     ]
   },
@@ -1206,52 +1206,52 @@
       {
         "date": "🔮 PRED_1",
         "dateShort": "🔮 PRED_1",
-        "open": 468.1,
-        "high": 475.3,
-        "low": 458.2,
-        "close": 463.5,
+        "open": 465.3,
+        "high": 472.15,
+        "low": 455.2,
+        "close": 462.4,
         "volume": 42800000,
         "volumeM": "42.8M"
       },
       {
         "date": "🔮 PRED_2",
         "dateShort": "🔮 PRED_2",
-        "open": 472.5,
-        "high": 478.6,
-        "low": 462.4,
-        "close": 467.8,
+        "open": 458.7,
+        "high": 465.8,
+        "low": 448.35,
+        "close": 455.1,
         "volume": 38500000,
         "volumeM": "38.5M"
       },
       {
         "date": "🔮 PRED_3",
         "dateShort": "🔮 PRED_3",
-        "open": 465.8,
-        "high": 473.1,
-        "low": 455.9,
-        "close": 461.2,
-        "volume": 35700000,
-        "volumeM": "35.7M"
+        "open": 452.15,
+        "high": 459.4,
+        "low": 441.6,
+        "close": 448.75,
+        "volume": 35200000,
+        "volumeM": "35.2M"
       },
       {
         "date": "🔮 PRED_4",
         "dateShort": "🔮 PRED_4",
-        "open": 470.2,
-        "high": 476.4,
-        "low": 459.3,
-        "close": 464.6,
-        "volume": 40200000,
-        "volumeM": "40.2M"
+        "open": 445.8,
+        "high": 453.2,
+        "low": 435.9,
+        "close": 442.3,
+        "volume": 32600000,
+        "volumeM": "32.6M"
       },
       {
         "date": "🔮 PRED_5",
         "dateShort": "🔮 PRED_5",
-        "open": 474.6,
-        "high": 479.7,
-        "low": 462.8,
-        "close": 468.1,
-        "volume": 43900000,
-        "volumeM": "43.9M"
+        "open": 439.5,
+        "high": 447.1,
+        "low": 429.75,
+        "close": 436.8,
+        "volume": 30100000,
+        "volumeM": "30.1M"
       }
     ]
   },
@@ -1365,50 +1365,50 @@
         "dateShort": "🔮 PRED_1",
         "open": 429.1,
         "high": 435.2,
-        "low": 422.5,
-        "close": 427.8,
-        "volume": 18500000,
-        "volumeM": "18.5M"
+        "low": 426.8,
+        "close": 430.15,
+        "volume": 17500000,
+        "volumeM": "17.5M"
       },
       {
         "date": "🔮 PRED_2",
         "dateShort": "🔮 PRED_2",
         "open": 431.5,
         "high": 437.8,
-        "low": 420.1,
-        "close": 426.2,
-        "volume": 17200000,
-        "volumeM": "17.2M"
+        "low": 428.9,
+        "close": 432.6,
+        "volume": 18200000,
+        "volumeM": "18.2M"
       },
       {
         "date": "🔮 PRED_3",
         "dateShort": "🔮 PRED_3",
-        "open": 433.9,
-        "high": 439.4,
-        "low": 418.7,
-        "close": 424.6,
-        "volume": 19800000,
-        "volumeM": "19.8M"
+        "open": 433.2,
+        "high": 439.5,
+        "low": 430.7,
+        "close": 434.8,
+        "volume": 18800000,
+        "volumeM": "18.8M"
       },
       {
         "date": "🔮 PRED_4",
         "dateShort": "🔮 PRED_4",
-        "open": 436.2,
-        "high": 441.0,
-        "low": 417.3,
-        "close": 423.0,
-        "volume": 16500000,
-        "volumeM": "16.5M"
+        "open": 435.6,
+        "high": 441.3,
+        "low": 432.5,
+        "close": 436.9,
+        "volume": 19400000,
+        "volumeM": "19.4M"
       },
       {
         "date": "🔮 PRED_5",
         "dateShort": "🔮 PRED_5",
-        "open": 438.5,
-        "high": 442.6,
-        "low": 416.0,
-        "close": 421.5,
-        "volume": 18000000,
-        "volumeM": "18.0M"
+        "open": 437.8,
+        "high": 443.1,
+        "low": 434.2,
+        "close": 438.7,
+        "volume": 20100000,
+        "volumeM": "20.1M"
       }
     ]
   },
@@ -1520,9 +1520,9 @@
       {
         "date": "🔮 PRED_1",
         "dateShort": "🔮 PRED_1",
-        "open": 86.2,
+        "open": 86.8,
         "high": 88.2,
-        "low": 85.5,
+        "low": 85.9,
         "close": 86.8,
         "volume": 38500000,
         "volumeM": "38.5M"
@@ -1530,42 +1530,42 @@
       {
         "date": "🔮 PRED_2",
         "dateShort": "🔮 PRED_2",
-        "open": 85.8,
+        "open": 86.1,
         "high": 87.9,
-        "low": 85.2,
-        "close": 86.5,
-        "volume": 36200000,
-        "volumeM": "36.2M"
+        "low": 85.5,
+        "close": 86.2,
+        "volume": 36000000,
+        "volumeM": "36.0M"
       },
       {
         "date": "🔮 PRED_3",
         "dateShort": "🔮 PRED_3",
-        "open": 85.5,
+        "open": 86.4,
         "high": 87.6,
-        "low": 84.9,
-        "close": 86.2,
-        "volume": 34800000,
-        "volumeM": "34.8M"
+        "low": 85.7,
+        "close": 86.5,
+        "volume": 34000000,
+        "volumeM": "34.0M"
       },
       {
         "date": "🔮 PRED_4",
         "dateShort": "🔮 PRED_4",
-        "open": 85.3,
-        "high": 87.4,
-        "low": 84.7,
+        "open": 85.8,
+        "high": 87.8,
+        "low": 85.3,
         "close": 86.0,
-        "volume": 33500000,
-        "volumeM": "33.5M"
+        "volume": 32000000,
+        "volumeM": "32.0M"
       },
       {
         "date": "🔮 PRED_5",
         "dateShort": "🔮 PRED_5",
-        "open": 85.1,
-        "high": 87.2,
-        "low": 84.5,
-        "close": 85.8,
-        "volume": 32000000,
-        "volumeM": "32.0M"
+        "open": 86.0,
+        "high": 87.5,
+        "low": 85.5,
+        "close": 86.3,
+        "volume": 30500000,
+        "volumeM": "30.5M"
       }
     ]
   }
