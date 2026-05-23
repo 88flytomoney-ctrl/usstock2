@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 import StockCard from './components/StockCard.jsx';
+import MarketIndices from './components/MarketIndices.jsx';
 
 const STOCKS_URL       = '/usstock2/data/stocks.json';
 const PREDICTIONS_URL  = '/usstock2/data/predictions.json';
 const MANIFEST_URL     = '/usstock2/data/history/manifest.json';
 
 function App() {
-  const [stocks,     setStocks]     = useState([]);
-  const [predictions, setPredictions] = useState({});
-  const [loading,    setLoading]    = useState(true);
-  const [error,      setError]      = useState(null);
-  const [lastUpdated, setLastUpdated] = useState('');
+  const [stocks,       setStocks]       = useState([]);
+  const [marketIndices, setMarketIndices] = useState([]);
+  const [predictions,  setPredictions]  = useState({});
+  const [loading,      setLoading]      = useState(true);
+  const [error,        setError]        = useState(null);
+  const [lastUpdated,  setLastUpdated]  = useState('');
   const [historyDates, setHistoryDates] = useState([]);
   const [selectedDate, setSelectedDate] = useState('');
   const [loadingHistory, setLoadingHistory] = useState(false);
@@ -21,6 +23,7 @@ function App() {
       .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
       .then(d => {
         setStocks(d.stocks || []);
+        setMarketIndices(d.marketIndices || []);
         setLastUpdated(d.generatedAt || '');
         setLoading(false);
       })
@@ -45,6 +48,7 @@ function App() {
         .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
         .then(d => {
           setStocks(d.stocks || []);
+          setMarketIndices(d.marketIndices || []);
           setLastUpdated(d.generatedAt || '');
           setError(null);
           setLoadingHistory(false);
@@ -63,6 +67,7 @@ function App() {
       .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
       .then(d => {
         setStocks(d.stocks || []);
+        setMarketIndices(d.marketIndices || []);
         setLastUpdated(d.generatedAt || '');
         setError(null);
         setLoadingHistory(false);
@@ -110,7 +115,7 @@ function App() {
               <h1 className="text-xl font-bold text-white leading-tight">
                 US Stock 2 <span className="text-xs text-purple-400 ml-1">🤖 AI</span>
               </h1>
-              <p className="text-xs text-slate-400">Yahoo · yfinance 10日 · OpenRouter 5日預測</p>
+              <p className="text-xs text-slate-400">Alpha Vantage 10日 · OpenRouter 5日預測</p>
             </div>
           </div>
 
@@ -155,6 +160,16 @@ function App() {
       {/* ── Main ── */}
       <main className="max-w-7xl mx-auto px-4 py-6 space-y-6">
 
+        {/* Market Indices Dashboard */}
+        {marketIndices.length > 0 && (
+          <section>
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">
+              🌐 Global Indices
+            </h2>
+            <MarketIndices indices={marketIndices} />
+          </section>
+        )}
+
         {/* Section header */}
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold text-slate-200">
@@ -179,7 +194,7 @@ function App() {
         </div>
 
         <footer className="text-center text-xs text-slate-500 py-8">
-          數據來源：ETNet + Yahoo Finance (yfinance) · AI 預測：OpenRouter owl-alpha · 僅供參考，不構成投資建議
+          數據來源：ETNet + Alpha Vantage · 全球指數：Yahoo Finance · AI 預測：OpenRouter owl-alpha · 僅供參考，不構成投資建議
         </footer>
       </main>
     </div>
