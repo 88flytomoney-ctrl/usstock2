@@ -3,5 +3,4 @@ dist
 .env
 *.pyc
 __pycache__/
-public/data/stocks.json
-public/data/predictions.json
+public/data/history/

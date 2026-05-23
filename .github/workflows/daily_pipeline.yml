@@ -28,7 +28,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install Python deps
-        run: pip install requests openai -q
+        run: pip install requests openai yfinance -q
 
       - name: Scrape ETNet + Fetch prices + AI predictions
         env:
@@ -41,9 +41,12 @@ jobs:
           import json
           s=json.load(open('public/data/stocks.json'))
           p=json.load(open('public/data/predictions.json'))
+          m=json.load(open('public/data/history/manifest.json'))
           print(f'stocks.json: {s[\"stockCount\"]} stocks, generated {s[\"generatedAt\"]}')
           for st in s['stocks']:
-              print(f'  {st[\"code\"]} {st[\"name\"]}: {len(st[\"prices\"])} days')
+              p=st['prices']
+              print(f'  {st[\"code\"]} {st[\"name\"]}: last=${p[-1][\"close\"]:.2f} ({len(p)} days)')
+          print(f'history: {len(m)} snapshots: {m[:3]}')
           ai=[c for c,v in p.items() if v.get('has_ai')]
           print(f'predictions.json: {len(p)} stocks, {len(ai)} with AI')
           "
