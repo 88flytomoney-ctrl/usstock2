@@ -1,49 +1,95 @@
 import MiniChart from './MiniChart.jsx';
 
-function fmt(v)  { return typeof v === 'number' ? v.toFixed(2) : '—'; }
-function vol(v)  { return typeof v === 'number' ? `${v.toFixed(1)}M` : '—'; }
-function pct(v)  { return typeof v === 'number' ? `${v >= 0 ? '+' : ''}${v.toFixed(2)}%` : '—'; }
+const SIGNAL_COLORS = {
+  'strong buy': { bg: 'bg-blue-900/40', text: 'text-blue-400', label: '💎 強烈買入' },
+  'buy':        { bg: 'bg-blue-900/30', text: 'text-blue-300', label: '✅ 買入' },
+  'hold':       { bg: 'bg-slate-800',   text: 'text-slate-300', label: '⏸ 持有' },
+  'watch':      { bg: 'bg-yellow-900/30', text: 'text-yellow-400', label: '👁 觀望' },
+  'sell':       { bg: 'bg-orange-900/30', text: 'text-orange-400', label: '⚠️ 賣出' },
+  'strong sell':{ bg: 'bg-red-900/40',  text: 'text-red-400',    label: '🔴 強烈賣出' },
+  'neutral':    { bg: 'bg-slate-800',   text: 'text-slate-400',  label: '➖ 中性' },
+};
+
+function getSignalStyle(signal) {
+  return SIGNAL_COLORS[signal] || SIGNAL_COLORS['neutral'];
+}
+
+function fmt(v) { return typeof v === 'number' ? v.toFixed(2) : '—'; }
 
 export default function StockCard({ stock, prediction }) {
-  const { code, name, prices = [], fiveDayPct = 0 } = stock;
+  const { code, name, symbol, prices = [], fiveDayPct = 0 } = stock;
 
-  // combined_data: [0-9] = 10 historical days, [10-14] = 5 AI future days
-  const hasAi     = prediction?.has_ai && Array.isArray(prediction.combined_data);
-  const histRows  = hasAi ? prediction.combined_data.slice(0, 10) : prices;
-  const predRows  = hasAi ? prediction.combined_data.slice(10, 15) : [];
+  // combined_data: [0-9] = 10 historical, [10-14] = 5 AI predicted
+  const hasAi    = prediction?.has_ai && Array.isArray(prediction.combined_data);
+  const histRows = hasAi ? prediction.combined_data.slice(0, 10) : prices;
+  const predRows = hasAi ? prediction.combined_data.slice(10, 15) : [];
   const chartRows = hasAi ? prediction.combined_data : prices;
 
-  const lastClose  = histRows.length ? histRows[histRows.length - 1].close : null;
-  const openClose   = histRows.length ? histRows[0].close : null;
-  const priceChange = lastClose && openClose ? lastClose - openClose : null;
-  const isUp = priceChange >= 0;
+  const isUp = fiveDayPct >= 0;
+  const arrow = isUp ? '▲' : '▼';
+
+  const latestPrice = histRows.length ? histRows[histRows.length - 1].close : null;
+  const priceChange = latestPrice && histRows[0]
+    ? (histRows[histRows.length - 1].close - histRows[0].close)
+    : null;
+
+  // 5-day / 10-day high & low (from historical rows)
+  const hi5 = histRows.length ? Math.max(...histRows.map(p => p.high)) : 0;
+  const lo5 = histRows.length ? Math.min(...histRows.map(p => p.low))  : 0;
+
+  const sigStyle = getSignalStyle('neutral'); // analysis signal not present in usstock2
 
   return (
     <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden hover:border-slate-600 transition-colors">
 
-      {/* ── Card Header ── */}
-      <div className="px-4 py-3 flex items-center justify-between border-b border-slate-700">
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-white">{code}</span>
-            <span className="text-xs text-slate-400">{name}</span>
-          </div>
-          <div className="flex items-center gap-2 mt-0.5">
-            <span className="text-lg font-bold text-white">{lastClose ? fmt(lastClose) : '—'}</span>
-            {priceChange !== null && (
-              <span className={`text-sm font-medium ${isUp ? 'text-green-400' : 'text-red-400'}`}>
-                {isUp ? '▲' : '▼'} {fmt(Math.abs(priceChange))}
+      {/* ── Dashboard Header ── */}
+      <div className="px-4 pt-4 pb-3">
+
+        {/* Row 1: Ticker + Name + Badges */}
+        <div className="flex items-start justify-between mb-2">
+          <div className="flex items-center gap-2 flex-wrap">
+            {/* Ticker badge */}
+            <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-semibold ${
+              isUp ? 'bg-green-900/50 text-green-300' : 'bg-red-900/50 text-red-300'
+            }`}>
+              {arrow} {Math.abs(fiveDayPct).toFixed(2)}%
+            </span>
+            <span className="font-mono text-sm text-slate-300 font-semibold">{symbol}</span>
+            {hasAi && (
+              <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-0.5 rounded">
+                🔮 AI
               </span>
             )}
-            <span className={`text-xs px-1.5 py-0.5 rounded font-medium ${isUp ? 'bg-green-900/50 text-green-300' : 'bg-red-900/50 text-red-300'}`}>
-              {fiveDayPct >= 0 ? '+' : ''}{fiveDayPct.toFixed(2)}%
-            </span>
+          </div>
+          <div className={`badge ${sigStyle.bg} ${sigStyle.text} text-xs`}>
+            {sigStyle.label}
           </div>
         </div>
-        {hasAi && (
-          <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">
-            🔮 AI 預測
-          </span>
+
+        {/* Row 2: Name */}
+        <h3 className="font-bold text-white text-base leading-tight mb-2">{name}</h3>
+
+        {/* Row 3: Latest price + 5-day high/low */}
+        {latestPrice && (
+          <div className="flex items-baseline justify-between border-t border-slate-700 pt-2 mt-1">
+            <div className="flex items-baseline gap-1">
+              <span className="text-2xl font-bold text-white">${fmt(latestPrice)}</span>
+              <span className="text-sm text-slate-400">USD</span>
+            </div>
+            <div className="text-right text-xs text-slate-400 space-y-0.5">
+              <p>10日高 ${fmt(hi5)}</p>
+              <p>10日低 ${fmt(lo5)}</p>
+            </div>
+          </div>
+        )}
+
+        {/* Row 4: Price change + trend */}
+        {priceChange !== null && (
+          <div className="flex items-center justify-between mt-2">
+            <div className={`text-sm font-medium ${isUp ? 'text-green-400' : 'text-red-400'}`}>
+              {isUp ? '▲' : '▼'} ${fmt(Math.abs(priceChange))} ({isUp ? '+' : ''}{fiveDayPct.toFixed(2)}%)
+            </div>
+          </div>
         )}
       </div>
 
@@ -52,79 +98,84 @@ export default function StockCard({ stock, prediction }) {
         <MiniChart prices={chartRows} hasAi={hasAi} histCount={10} />
       )}
 
-      {/* ── Historical Table (first 10 days) ── */}
+      {/* ── Historical Price Table (10 days) ── */}
       {histRows.length > 0 && (
-        <div className="px-3 py-2">
+        <div className="px-3 pb-2">
           <div className="bg-slate-700/40 px-3 py-1.5 flex items-center gap-2 border-b border-slate-600/40">
             <span className="text-slate-300 text-xs font-semibold">📅 歷史報價（10日）</span>
           </div>
-          <table className="w-full text-xs mt-1">
-            <thead>
-              <tr className="text-slate-500 border-b border-slate-700">
-                <th className="text-left py-1 px-1 font-medium">日期</th>
-                <th className="text-right py-1 px-1 font-medium">開</th>
-                <th className="text-right py-1 px-1 font-medium">高</th>
-                <th className="text-right py-1 px-1 font-medium">低</th>
-                <th className="text-right py-1 px-1 font-medium">收</th>
-                <th className="text-right py-1 px-1 font-medium">成交量</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[...histRows].reverse().map((row, idx) => {
-                const rowUp = idx > 0 ? row.close >= histRows[histRows.length - 1 - idx + 1].close : true;
-                return (
-                  <tr key={row.date} className="text-slate-300 border-b border-slate-700/30 last:border-0">
-                    <td className="py-1 px-1">{row.dateShort || row.date}</td>
-                    <td className="text-right px-1">{fmt(row.open)}</td>
-                    <td className="text-right px-1 text-red-300">{fmt(row.high)}</td>
-                    <td className="text-right px-1 text-green-300">{fmt(row.low)}</td>
-                    <td className={`text-right px-1 font-medium ${rowUp ? 'text-green-300' : 'text-red-300'}`}>
-                      {fmt(row.close)}
-                    </td>
-                    <td className="text-right px-1 text-slate-400">{vol(row.volumeM)}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="text-slate-500 border-b border-slate-700">
+                  <th className="text-left py-1 px-1 font-medium">日期</th>
+                  <th className="text-right py-1 px-1 font-medium">開</th>
+                  <th className="text-right py-1 px-1 font-medium">高</th>
+                  <th className="text-right py-1 px-1 font-medium">低</th>
+                  <th className="text-right py-1 px-1 font-medium">收</th>
+                  <th className="text-right py-1 px-1 font-medium">量(M)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[...histRows].reverse().map((row, idx) => {
+                  const prevRow = idx > 0 ? histRows[histRows.length - 1 - idx + 1] : null;
+                  const rowUp = prevRow ? row.close >= prevRow.close : true;
+                  return (
+                    <tr key={row.date} className={`border-b border-slate-700/30 last:border-0 ${idx === 0 ? 'bg-slate-700/20' : ''}`}>
+                      <td className="py-1 px-1 text-slate-400">{row.dateShort || row.date}</td>
+                      <td className="text-right px-1 text-slate-300">${fmt(row.open)}</td>
+                      <td className="text-right px-1 text-red-400">${fmt(row.high)}</td>
+                      <td className="text-right px-1 text-green-400">${fmt(row.low)}</td>
+                      <td className={`text-right px-1 font-medium ${rowUp ? 'text-green-400' : 'text-red-400'}`}>
+                        ${fmt(row.close)}
+                      </td>
+                      <td className="text-right px-1 text-slate-400">{row.volumeM || '—'}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
 
       {/* ── AI Prediction Table (future 5 days) ── */}
       {hasAi && predRows.length > 0 && (
-        <div className="ai-prediction-matrix border border-dashed border-purple-500/30 p-3 rounded-lg mt-3 bg-purple-950/10 mx-3 mb-3">
-          <div className="bg-purple-900/30 px-3 py-1.5 flex items-center gap-2 border-b border-purple-700/40">
+        <div className="ai-prediction-matrix border border-dashed border-purple-500/30 p-3 rounded-lg mt-2 mx-3 mb-3">
+          <div className="bg-purple-900/30 px-3 py-1.5 flex items-center gap-2 border-b border-purple-700/40 mb-2">
             <span className="text-purple-300 text-xs font-semibold">🔮 AI 預測（未來5日）</span>
           </div>
-          <table className="w-full text-xs mt-1">
-            <thead>
-              <tr className="text-purple-400/70 border-b border-purple-700/30">
-                <th className="text-left py-1 px-1 font-medium">日期</th>
-                <th className="text-right py-1 px-1 font-medium">開</th>
-                <th className="text-right py-1 px-1 font-medium">高</th>
-                <th className="text-right py-1 px-1 font-medium">低</th>
-                <th className="text-right py-1 px-1 font-medium">收</th>
-                <th className="text-right py-1 px-1 font-medium">成交量</th>
-              </tr>
-            </thead>
-            <tbody>
-              {predRows.map((row, idx) => (
-                <tr key={idx} className="text-purple-200 border-b border-purple-700/20 last:border-0">
-                  <td className="py-1 px-1">{row.dateShort || row.date}</td>
-                  <td className="text-right px-1">{fmt(row.open)}</td>
-                  <td className="text-right px-1 text-red-300">{fmt(row.high)}</td>
-                  <td className="text-right px-1 text-green-300">{fmt(row.low)}</td>
-                  <td className="text-right px-1 font-medium text-purple-100">{fmt(row.close)}</td>
-                  <td className="text-right px-1 text-slate-400">{vol(row.volumeM)}</td>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="text-purple-400/70 border-b border-purple-700/30">
+                  <th className="text-left py-1 px-1 font-medium">日期</th>
+                  <th className="text-right py-1 px-1 font-medium">開</th>
+                  <th className="text-right py-1 px-1 font-medium">高</th>
+                  <th className="text-right py-1 px-1 font-medium">低</th>
+                  <th className="text-right py-1 px-1 font-medium">收</th>
+                  <th className="text-right py-1 px-1 font-medium">量(M)</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {predRows.map((row, idx) => (
+                  <tr key={idx} className="border-b border-purple-700/20 last:border-0">
+                    <td className="py-1 px-1 text-purple-300">{row.dateShort || row.date}</td>
+                    <td className="text-right px-1 text-slate-300">${fmt(row.open)}</td>
+                    <td className="text-right px-1 text-red-400">${fmt(row.high)}</td>
+                    <td className="text-right px-1 text-green-400">${fmt(row.low)}</td>
+                    <td className="text-right px-1 font-medium text-purple-200">${fmt(row.close)}</td>
+                    <td className="text-right px-1 text-purple-300">{row.volumeM || '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
 
       {!hasAi && (
-        <div className="text-center text-xs text-slate-600 py-2">
+        <div className="text-center text-xs text-slate-600 py-2 px-3">
           🔮 AI 預測（請設定 OPENROUTER_API_KEY）
         </div>
       )}

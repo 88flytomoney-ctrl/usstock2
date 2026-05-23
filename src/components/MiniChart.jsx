@@ -45,8 +45,8 @@ export default function MiniChart({ prices = [], hasAi = false, histCount = 10 }
     // ── Price scale ───────────────────────────────────────────────────────────
     const highs = prices.map(d => d.high);
     const lows  = prices.map(d => d.low);
-    const maxPrice = Math.max(...highs) * 1.02;
-    const minPrice = Math.min(...lows)  * 0.98;
+    const maxPrice = Math.max(...highs);
+    const minPrice = Math.min(...lows);
     const priceRange = maxPrice - minPrice || 1;
 
     const getPercentY = (price) =>
