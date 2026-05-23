@@ -14,11 +14,18 @@ function getSignalStyle(signal) {
   return SIGNAL_COLORS[signal] || SIGNAL_COLORS['neutral'];
 }
 
+function getIndicatorStyles(rec) {
+  if (rec === "買入") return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
+  if (rec === "賣出") return "bg-rose-500/10 text-rose-400 border-rose-500/20";
+  return "bg-slate-500/10 text-slate-400 border-slate-500/20";
+}
+
 function fmt(v) { return typeof v === 'number' ? v.toFixed(2) : '—'; }
 
 export default function StockCard({ stock, prediction }) {
   const { code, name, symbol, prices = [], pctChange = 0 } = stock;
   const fiveDayPct = pctChange;
+  const recommendation = prediction?.recommendation || "持有";
 
   // combined_data: [0-9] = 10 historical, [10-14] = 5 AI predicted
   const hasAi    = prediction?.has_ai && Array.isArray(prediction.combined_data);
@@ -61,6 +68,9 @@ export default function StockCard({ stock, prediction }) {
                 🔮 AI
               </span>
             )}
+            <span className={`px-2 py-0.5 font-bold rounded text-xs border transition-colors duration-200 ${getIndicatorStyles(recommendation)}`}>
+              AI建議: {recommendation}
+            </span>
           </div>
           <div className={`badge ${sigStyle.bg} ${sigStyle.text} text-xs`}>
             {sigStyle.label}

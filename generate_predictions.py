@@ -224,18 +224,31 @@ def call_openrouter_ai(symbol, history_rows):
     # Anonymised node token to reduce safety filtering
     node_token = f"node_us_alpha_{symbol.lower()}"
 
+    sample_input = (
+        "t1: [180.20, 182.10, 179.50, 181.15, 52.4] | "
+        "t2: [181.15, 184.00, 180.80, 183.60, 61.2]"
+    )
+    sample_output = (
+        '{\n'
+        '  "extrapolated_steps": [\n'
+        '    {"step": "t3_ext", "values": [183.50, 185.20, 182.10, 184.40, 55.0]},\n'
+        '    {"step": "t4_ext", "values": [184.40, 186.00, 183.90, 185.10, 49.8]}\n'
+        '  ],\n'
+        '  "trend_direction_index": 1\n'
+        '}'
+    )
+
     prompt = (
         f"You are a mathematical sequence extrapolation compiler.\n"
         f"Generate exactly 5 continuous vector steps (t11_ext to t15_ext) for node {node_token}.\n"
-        f"Do not return conversational explanations or markdown. Return ONLY a valid JSON array.\n\n"
+        f"Also determine the overall extrapolated trend vector index 'trend_direction_index' "
+        f"as an integer: 1 for upward continuation, 0 for range-bound, or -1 for downward continuation.\n"
+        f"Do not return conversational explanations. Return ONLY a valid JSON object matching the sample structure.\n\n"
         f"[SAMPLE]\n"
-        f"Input:\n"
-        f"t1: [180.20, 182.10, 179.50, 181.15, 52.4] | t2: [181.15, 184.00, 180.80, 183.60, 61.2]\n\n"
-        f"Output:\n"
-        f'[{{"step":"t3_ext","values":[183.50,185.20,182.10,184.40,55.0]}}]\n\n'
+        f"Input:\n{sample_input}\n\n"
+        f"Output:\n{sample_output}\n\n"
         f"[REAL-TIME TASK]\n"
-        f"Input Matrix:\n"
-        f"{historical_context}\n\n"
+        f"Input Matrix:\n{historical_context}\n\n"
         f"Output JSON:"
     )
 
@@ -245,21 +258,29 @@ def call_openrouter_ai(symbol, history_rows):
             model=AI_MODEL_ID,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.2,
-            max_tokens=1000,
+            max_tokens=1200,
             timeout=25,
         )
         raw = response.choices[0].message.content.strip()
         if raw.startswith("```"):
             raw = raw.split("\n", 1)[1]
             raw = raw.rstrip("```").rstrip()
-        predictions = json.loads(raw)
+
+        parsed_response = json.loads(raw)
+        predictions     = parsed_response.get("extrapolated_steps", [])
+
+        # Map trend_direction_index → Chinese recommendation
+        trend_idx     = int(parsed_response.get("trend_direction_index", 0))
+        indicator_map = {1: "買入", 0: "持有", -1: "賣出"}
+        recommendation = indicator_map.get(trend_idx, "持有")
+
     except Exception as e:
         print(f"  ❌ {symbol} AI error: {e}")
-        return None
+        return None, "持有"
 
     if not isinstance(predictions, list) or len(predictions) != 5:
-        print(f"  ⚠️  {symbol}: invalid AI response (got {len(predictions) if isinstance(predictions, list) else type(predictions)}, expected 5)")
-        return None
+        print(f"  ⚠️  {symbol}: invalid AI response (expected 5 steps, got {len(predictions) if isinstance(predictions, list) else type(predictions)})")
+        return None, "持有"
 
     # ── Programmatically compute next 5 trading days ─────────────────────────
     last_date = history_rows[-1]["date"]
@@ -286,10 +307,10 @@ def call_openrouter_ai(symbol, history_rows):
 
     if len(result) != 5:
         print(f"  ⚠️  {symbol}: only {len(result)} valid predictions")
-        return None
+        return None, "持有"
 
-    print(f"  🤖 AI: t11–t15 ({result[0]['date']} → {result[-1]['date']})")
-    return result
+    print(f"  🤖 AI: t11–t15 ({result[0]['date']} → {result[-1]['date']}) [{recommendation}]")
+    return result, recommendation
 
 
 # ── Analysis: rule-based signals ───────────────────────────────────────────────
@@ -379,9 +400,11 @@ def main():
 
         # Step 3: AI prediction (unless skipped)
         has_ai = False
+        recommendation = "持有"
         if not skip_ai and OPENROUTER_API_KEY:
-            ai_rows = call_openrouter_ai(sym, combined_data)
-            if ai_rows:
+            ai_result = call_openrouter_ai(sym, combined_data)
+            if ai_result:
+                ai_rows, recommendation = ai_result
                 combined_data = list(prices) + ai_rows
                 has_ai = True
 
@@ -414,10 +437,11 @@ def main():
 
         # Predictions entry
         predictions_out[sym] = {
-            "code":         sym,
-            "name":         name,
-            "combined_data": combined_data,   # 10 hist + 5 AI
-            "has_ai":       has_ai,
+            "code":           sym,
+            "name":           name,
+            "combined_data":  combined_data,   # 10 hist + 5 AI
+            "has_ai":        has_ai,
+            "recommendation": recommendation,
         }
 
     # Step 5: Write stocks.json (includes market indices)
