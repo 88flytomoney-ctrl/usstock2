@@ -1,0 +1,80 @@
+name: Daily Pipeline — Scrape + Prices + AI + Deploy
+
+on:
+  schedule:
+    # Run daily at 06:00 HKT (22:00 UTC) Tue–Sat
+    - cron: '0 22 * * 2-6'
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches: [main]
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── Data Layer ──────────────────────────────────────────────────────────
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps
+        run: pip install requests openai -q
+
+      - name: Scrape ETNet + Fetch prices + AI predictions
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python generate_predictions.py
+
+      - name: Verify outputs
+        run: |
+          python -c "
+          import json
+          s=json.load(open('public/data/stocks.json'))
+          p=json.load(open('public/data/predictions.json'))
+          print(f'stocks.json: {s[\"stockCount\"]} stocks, generated {s[\"generatedAt\"]}')
+          for st in s['stocks']:
+              print(f'  {st[\"code\"]} {st[\"name\"]}: {len(st[\"prices\"])} days')
+          ai=[c for c,v in p.items() if v.get('has_ai')]
+          print(f'predictions.json: {len(p)} stocks, {len(ai)} with AI')
+          "
+
+      - name: Commit data
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/data/
+          git diff --staged --quiet && echo "No data changes" || \
+            git commit -m "🤖 Auto-update US stock data \$(date +%Y-%m-%d\ %H:%M)" && \
+            git pull --ff-only || echo "FF pull failed" && \
+            git push
+
+      # ── Frontend Build ───────────────────────────────────────────────────────
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install & Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
