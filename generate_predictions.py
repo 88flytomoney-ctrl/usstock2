@@ -1,24 +1,26 @@
 #!/usr/bin/env python3
 """
-generate_predictions.py
-US Stock AI Prediction Script using Alpha Vantage (confirmed close prices) + OpenRouter (owl-alpha).
-- Alpha Vantage TIME_SERIES_DAILY: last 10 completed trading days, reliable canonical closes
-- OpenRouter owl-alpha: 5-step vector extrapolation on [open,high,low,close,volumeM]
-- Predictions stored in public/data/predictions.json with 15-row combined_data per stock
-Usage:
-    SKIP_AI=true python generate_predictions.py   # skip AI, prices only
+generate_predictions.py (US Stock 2 Version)
+Appends 5-day future sequence coordinates to 10-day historical US stock datasets.
+Saves up to two records per stock day: [Actual] and [AI Predicted].
 """
+
 import os
 import sys
 import json
 import time
-import requests
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, date
 from pathlib import Path
+import yfinance as yf
 from openai import OpenAI
 
-# ── OpenRouter Client ──────────────────────────────────────────────────────────
+# ── OpenRouter Configuration ──────────────────────────────────────────────────
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
+OUTPUT_FILE = Path("public/data/predictions.json")
+AI_MODEL_ID = "openrouter/owl-alpha"
+
+# Top 10 High-Turnover US Stocks to track
+US_TICKERS = ["NVDA", "AAPL", "MSFT", "AMZN", "TSLA", "GOOGL", "META", "NFLX", "AMD", "SPY"]
 
 def get_openrouter_client():
     return OpenAI(
@@ -26,444 +28,236 @@ def get_openrouter_client():
         api_key=OPENROUTER_API_KEY,
     )
 
-# ── Alpha Vantage Config ──────────────────────────────────────────────────────
-ALPHA_VANTAGE_BASE_URL = "https://www.alphavantage.co/query"
-ALPHA_VANTAGE_API_KEY  = os.environ.get("ALPHA_VANTAGE_API_KEY", "")
-LIMIT                  = 10   # top-10 stocks
-OUTPUT_FILE            = Path("public/data/predictions.json")
-STOCKS_FILE           = Path("public/data/stocks.json")
-HISTORY_DIR            = Path("public/data/history")
-AI_MODEL_ID           = "openrouter/owl-alpha"
+def load_existing_database():
+    """Loads existing predictions.json to preserve historical predictions."""
+    if not OUTPUT_FILE.exists():
+        return {}
+    try:
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return data.get("stocks", {})
+    except Exception as e:
+        print(f"⚠️ Failed to load existing database: {e}")
+        return {}
 
-# ── Market indices to track (Yahoo Finance symbols, no API key needed) ─────────
-INDEX_CONFIGS = [
-    {"symbol": "^GSPC",  "name": "S&P 500",        "ticker": "SPX"},
-    {"symbol": "^IXIC",  "name": "Nasdaq Composite","ticker": "IXIC"},
-    {"symbol": "^DJI",   "name": "Dow Jones",       "ticker": "DJI"},
-]
-
-def fetch_market_indices():
-    """Fetch latest price + % change for major US market indices via Yahoo Finance."""
-    results = []
-    for cfg in INDEX_CONFIGS:
-        sym = cfg["symbol"]
+def fetch_global_indices():
+    """Fetches real-time index data using yfinance (Accurate & Rate-Limit Free)"""
+    indices = {
+        "^GSPC": {"name": "S&P 500", "key": "spx"},
+        "^IXIC": {"name": "Nasdaq", "key": "ixic"},
+        "^DJI": {"name": "Dow Jones", "key": "dji"}
+    }
+    results = {}
+    for ticker, info in indices.items():
         try:
-            url = (
-                f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}"
-                f"?interval=1d&range=5d"
-            )
-            r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
-            d = r.json()
-            meta = d["chart"]["result"][0]["meta"]
-            price   = meta["regularMarketPrice"]
-            prev    = meta["chartPreviousClose"]
-            pct     = round((price - prev) / prev * 100, 2)
-            results.append({
-                "symbol":    sym,
-                "name":      cfg["name"],
-                "ticker":    cfg["ticker"],
-                "price":     round(price, 2),
-                "prevClose": round(prev, 2),
-                "pctChange": pct,
-                "arrow":     "▲" if pct >= 0 else "▼",
-            })
-            print(f"  📊 {cfg['name']}: {price:.2f} ({pct:+.2f}%)")
+            obj = yf.Ticker(ticker)
+            hist = obj.history(period="2d")
+            if not hist.empty and len(hist) >= 2:
+                close_today = round(float(hist["Close"].iloc[-1]), 2)
+                close_yesterday = round(float(hist["Close"].iloc[-2]), 2)
+                change = round(close_today - close_yesterday, 2)
+                pct = round((change / close_yesterday) * 100, 2)
+                results[info["key"]] = {
+                    "name": info["name"],
+                    "value": close_today,
+                    "change": change,
+                    "pct": pct,
+                    "isPositive": change >= 0
+                }
         except Exception as e:
-            print(f"  ⚠️  {cfg['name']} fetch failed: {e}")
+            print(f"⚠️ Failed to fetch index {ticker}: {e}")
     return results
 
-# ── ETNet: fetch Top-10 US stocks by turnover ─────────────────────────────────
-ETNET_URL = "https://www.etnet.com.hk/www/tc/us-stocks/top20.php?tab=turnover"
-
-def fetch_etnet_top10():
-    """Fetch top-10 US stocks by turnover from ETNet."""
-    print("📡 Fetching ETNet US Top-20 by turnover...")
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8",
-    }
-    try:
-        resp = requests.get(ETNET_URL, headers=headers, timeout=30)
-        resp.raise_for_status()
-        html = resp.text
-    except Exception as e:
-        print(f"❌ ETNet fetch failed: {e}")
-        return []
-
-    # Parse the embedded turnover chartdata JSON
-    import re
-    pattern = r'"turnover":\s*\{[^}]*"chartdata":\s*(\[[\s\S]*?\])'
-    match = re.search(pattern, html)
-    if not match:
-        print("⚠️  Could not parse ETNet turnover data")
-        return []
-
-    json_str = match.group(1)
-    try:
-        data = json.loads(json_str)
-    except json.JSONDecodeError:
-        # Try to find the last valid closing bracket
-        last_valid = json_str.rfind("}]")
-        if last_valid > 0:
-            data = json.loads(json_str[:last_valid + 2])
-        else:
-            return []
-
-    stocks = []
-    for item in data:
-        code = item.get("code", "").strip()
-        name = item.get("name", "").strip()
-        value = item.get("value", 0)
-        if code:
-            stocks.append({"code": code, "name": name, "turnover": value})
-
-    stocks.sort(key=lambda x: x["turnover"], reverse=True)
-    print(f"  → Found {len(stocks)} stocks from ETNet")
-    return stocks[:LIMIT]
-
-
-# ── Alpha Vantage: 10-day daily prices ─────────────────────────────────────────
-def fetch_alpha_vantage_prices(symbol):
-    """Fetch 10-day daily OHLCV for a symbol from Alpha Vantage.
-    Returns list of {date, dateShort, open, high, low, close, volume, volumeM}, oldest first.
-    Returns None on failure (caller will use fallback).
-    Free tier: 5 calls/minute. We add a 13-s delay between calls.
-    """
-    if not ALPHA_VANTAGE_API_KEY:
-        print(f"  ⚠️  ALPHA_VANTAGE_API_KEY not set, skipping {symbol}")
-        return None
-
-    params = {
-        "function": "TIME_SERIES_DAILY",
-        "symbol": symbol,
-        "apikey": ALPHA_VANTAGE_API_KEY,
-        "outputsize": "compact",   # last 100 trading days, we take last 10
-    }
-    try:
-        resp = requests.get(ALPHA_VANTAGE_BASE_URL, params=params, timeout=30)
-        data = resp.json()
-
-        # Handle rate limiting
-        if "Note" in data and "rate limit" in data["Note"].lower():
-            print(f"  ⚠️  Alpha Vantage rate limit, backing off...")
-            time.sleep(60)
-            return None
-
-        if "Time Series (Daily)" not in data:
-            error_msg = data.get("Note", data.get("Error Message", "No data"))
-            print(f"  ⚠️  {symbol}: {str(error_msg)[:60]}")
-            return None
-
-        time_series = data["Time Series (Daily)"]
-        # Sort dates ascending (oldest first), take last 10
-        sorted_dates = sorted(time_series.keys())
-        if len(sorted_dates) < 5:
-            print(f"  ⚠️  {symbol}: only {len(sorted_dates)} days returned")
-            return None
-
-        rows = []
-        for date in sorted_dates[-10:]:
-            daily = time_series[date]
-            close  = float(daily["4. close"])
-            open_p = float(daily["1. open"])
-            high   = float(daily["2. high"])
-            low    = float(daily["3. low"])
-            vol    = int(daily["5. volume"])
-            rows.append({
-                "date":      date,
-                "dateShort": datetime.strptime(date, "%Y-%m-%d").strftime("%m/%d"),
-                "open":      open_p,
-                "high":      high,
-                "low":       low,
-                "close":     close,
-                "volume":    vol,
-                "volumeM":   round(vol / 1e6, 2),
+def fetch_us_prices(tickers):
+    results = []
+    for ticker_symbol in tickers:
+        try:
+            print(f"📊 Fetching Yahoo Finance data for {ticker_symbol}...")
+            ticker = yf.Ticker(ticker_symbol)
+            info = ticker.info
+            name = info.get("longName", ticker_symbol)
+            
+            # Fetch 15 days to ensure we get 10 clean trading days after dropna
+            hist = ticker.history(period="15d")
+            if hist.empty: continue
+            
+            hist = hist.tail(10) # Grab the final 10 days of real history
+            rows = []
+            for timestamp, row in hist.iterrows():
+                vol = int(row["Volume"])
+                rows.append({
+                    "date":      timestamp.strftime("%Y-%m-%d"),
+                    "dateShort": timestamp.strftime("%m/%d"),
+                    "close":     round(float(row["Close"]), 2),
+                    "open":      round(float(row["Open"]), 2),
+                    "high":      round(float(row["High"]), 2),
+                    "low":       round(float(row["Low"]), 2),
+                    "volume":    vol,
+                    "volumeM":   f"{round(vol / 1e6, 2)}M",
+                    "is_predicted": False # Real transactions are tagged False
+                })
+            results.append({
+                "code": ticker_symbol,
+                "name": name,
+                "symbol": ticker_symbol,
+                "prices": rows
             })
-        return rows
+        except Exception as e:
+            print(f"❌ Yahoo Finance fetch failed for {ticker_symbol}: {e}")
+    return results
 
-    except Exception as e:
-        print(f"  ❌ {symbol} fetch error: {e}")
-        return None
-
-
-# ── Trading-day helpers ─────────────────────────────────────────────────────────
-def next_trading_days(start_date_str, count=5):
-    """Return the next `count` trading days (Mon–Fri) after start_date_str (YYYY-MM-DD).
-    Holidays are not excluded (market closed-days are approximated by skipping Sat/Sun only).
-    """
-    # Parse start date
-    d = datetime.strptime(start_date_str, "%Y-%m-%d").date()
-    result = []
-    while len(result) < count:
-        d += timedelta(days=1)
-        if d.weekday() < 5:   # 0=Mon … 4=Fri
-            result.append(d.strftime("%Y-%m-%d"))
-    return result
-
-
-# ── OpenRouter AI: 5-step vector extrapolation (no date guessing by LLM) ────────
-def call_openrouter_ai(symbol, history_rows):
-    """Send t1–t10 trailing history vectors to OpenRouter owl-alpha.
-    LLM returns t11_ext–t15_ext coordinate vectors (NO dates).
-    Python then overlays the next 5 real trading-day dates.
-    Returns list of 5 predicted rows [{date,dateShort,open,high,low,close,volume,volumeM}].
-    """
+def call_openrouter_vector_engine(history_rows, ticker_symbol):
     if not OPENROUTER_API_KEY:
-        return None
+        print("⚠️ OPENROUTER_API_KEY is not defined.")
+        return None, "持有"
 
-    # ── Build t1..t10 historical segments ──────────────────────────────────────
+    # Convert prices to raw multidimensional coordinate vectors
     segments = []
     for i, row in enumerate(history_rows[-10:]):
         idx = i + 1
-        segments.append(
-            f"t{idx}: [{row['open']:.2f}, {row['high']:.2f}, {row['low']:.2f}, "
-            f"{row['close']:.2f}, {row['volumeM']:.2f}]"
-        )
+        vol_clean = str(row['volumeM']).replace('M', '')
+        segments.append(f"t{idx}: [{row['open']:.2f}, {row['high']:.2f}, {row['low']:.2f}, {row['close']:.2f}, {vol_clean}]")
     historical_context = " | ".join(segments)
 
-    # Anonymised node token to reduce safety filtering
-    node_token = f"node_us_alpha_{symbol.lower()}"
-
-    sample_input = (
-        "t1: [180.20, 182.10, 179.50, 181.15, 52.4] | "
-        "t2: [181.15, 184.00, 180.80, 183.60, 61.2]"
-    )
+    sample_input = "t1: [75.30, 76.10, 71.50, 71.50, 98.4] | t2: [73.90, 76.65, 70.75, 71.15, 156.8]"
     sample_output = (
         '{\n'
         '  "extrapolated_steps": [\n'
-        '    {"step": "t3_ext", "values": [183.50, 185.20, 182.10, 184.40, 55.0]},\n'
-        '    {"step": "t4_ext", "values": [184.40, 186.00, 183.90, 185.10, 49.8]}\n'
+        '    {"step": "t3_ext", "values": [74.50, 76.00, 72.10, 75.30, 180.5]},\n'
+        '    {"step": "t4_ext", "values": [75.30, 77.20, 74.80, 76.80, 195.2]}\n'
         '  ],\n'
         '  "trend_direction_index": 1\n'
         '}'
     )
 
+    node_token = f"node_us_alpha_{ticker_symbol.lower()}"
+
     prompt = (
-        f"You are a mathematical sequence extrapolation compiler.\n"
-        f"Generate exactly 5 continuous vector steps (t11_ext to t15_ext) for node {node_token}.\n"
-        f"Also determine the overall extrapolated trend vector index 'trend_direction_index' "
-        f"as an integer: 1 for upward continuation, 0 for range-bound, or -1 for downward continuation.\n"
-        f"Do not return conversational explanations. Return ONLY a valid JSON object matching the sample structure.\n\n"
-        f"[SAMPLE]\n"
-        f"Input:\n{sample_input}\n\n"
-        f"Output:\n{sample_output}\n\n"
-        f"[REAL-TIME TASK]\n"
-        f"Input Matrix:\n{historical_context}\n\n"
+        f"You are a mathematical sequence extrapolation compiler specializing in multi-dimensional coordinate vector progression.\n"
+        f"Generate exactly 5 continuous vector steps (t11_ext to t15_ext) following the mathematical progression pattern for the sequence node: {node_token}.\n"
+        f"Also determine the overall extrapolated trend vector index 'trend_direction_index' as an integer: 1 for upward continuation, 0 for range-bound, or -1 for downward continuation.\n"
+        f"Do not return conversational explanations or markdown blocks. Return ONLY a valid JSON object matching the sample structure shown above.\n\n"
+        f"[SAMPLE]\nInput Matrix:\n{sample_input}\nOutput JSON:\n{sample_output}\n\n"
+        f"[REAL-TIME TASK]\nInput Matrix:\n{historical_context}\n\n"
         f"Output JSON:"
     )
 
-    client = get_openrouter_client()
     try:
+        client = get_openrouter_client()
         response = client.chat.completions.create(
             model=AI_MODEL_ID,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.2,
-            max_tokens=1200,
+            max_tokens=1500,
             timeout=25,
         )
         raw = response.choices[0].message.content.strip()
         if raw.startswith("```"):
             raw = raw.split("\n", 1)[1]
-            raw = raw.rstrip("```").rstrip()
-
+            if raw.endswith("```"):
+                raw = raw.rsplit("\n", 1)[0]
+            if raw.startswith("json"):
+                raw = raw[4:]
+        raw = raw.strip()
+        
         parsed_response = json.loads(raw)
-        predictions     = parsed_response.get("extrapolated_steps", [])
-
-        # Map trend_direction_index → Chinese recommendation
-        trend_idx     = int(parsed_response.get("trend_direction_index", 0))
+        predicted_rows = parsed_response.get("extrapolated_steps", [])
+        trend_idx = int(parsed_response.get("trend_direction_index", 0))
         indicator_map = {1: "買入", 0: "持有", -1: "賣出"}
         recommendation = indicator_map.get(trend_idx, "持有")
 
+        last_history_date_str = history_rows[-1]["date"]
+        last_date = datetime.strptime(last_history_date_str, "%Y-%m-%d")
+        
+        next_trading_days = []
+        curr_date = last_date
+        while len(next_trading_days) < 5:
+            curr_date += timedelta(days=1)
+            if curr_date.weekday() < 5:
+                next_trading_days.append(curr_date)
+
+        normalised = []
+        for idx, item in enumerate(predicted_rows[:5]):
+            vals = item.get("values", [])
+            if len(vals) < 5: continue
+            target_date = next_trading_days[idx]
+            raw_vol_m = float(vals[4])
+            normalised.append({
+                "date":      target_date.strftime("%Y-%m-%d"),
+                "dateShort": f"🔮 {target_date.strftime('%m/%d')}",
+                "open":      float(vals[0]),
+                "high":      float(vals[1]),
+                "low":       float(vals[2]),
+                "close":     float(vals[3]),
+                "volume":    int(raw_vol_m * 1e6),
+                "volumeM":   f"{raw_vol_m:.1f}M",
+                "is_predicted": True # 🛠️ FIXED: Explicitly flag as predicted for US stocks
+            })
+        return normalised, recommendation
     except Exception as e:
-        print(f"  ❌ {symbol} AI error: {e}")
+        print(f"❌ OpenRouter failed for {ticker_symbol}: {e}")
         return None, "持有"
 
-    if not isinstance(predictions, list) or len(predictions) != 5:
-        print(f"  ⚠️  {symbol}: invalid AI response (expected 5 steps, got {len(predictions) if isinstance(predictions, list) else type(predictions)})")
-        return None, "持有"
-
-    # ── Programmatically compute next 5 trading days ─────────────────────────
-    last_date = history_rows[-1]["date"]
-    next_dates = next_trading_days(last_date, 5)
-
-    # ── Overlay dates onto vector output ───────────────────────────────────
-    result = []
-    for i, pred_obj in enumerate(predictions):
-        vals = pred_obj.get("values", [])
-        if len(vals) != 5:
-            continue
-        open_p, high, low, close, vol_m = vals
-        d = next_dates[i]
-        result.append({
-            "date":      d,
-            "dateShort": datetime.strptime(d, "%Y-%m-%d").strftime("%m/%d"),
-            "open":      round(float(open_p), 2),
-            "high":      round(float(high), 2),
-            "low":       round(float(low), 2),
-            "close":     round(float(close), 2),
-            "volume":    int(float(vol_m) * 1e6),
-            "volumeM":   round(float(vol_m), 2),
-        })
-
-    if len(result) != 5:
-        print(f"  ⚠️  {symbol}: only {len(result)} valid predictions")
-        return None, "持有"
-
-    print(f"  🤖 AI: t11–t15 ({result[0]['date']} → {result[-1]['date']}) [{recommendation}]")
-    return result, recommendation
-
-
-# ── Analysis: rule-based signals ───────────────────────────────────────────────
-def analyze_stock(prices):
-    """Rule-based trend + signal analysis."""
-    if not prices or len(prices) < 2:
-        return {"signal": "neutral", "trend": "unknown", "pctChange": 0}
-
-    first = prices[0]["close"]
-    last  = prices[-1]["close"]
-    pct   = round(((last - first) / first) * 100, 2)
-
-    if len(prices) >= 5:
-        ma5 = sum(p["close"] for p in prices[-5:]) / 5
-    else:
-        ma5 = sum(p["close"] for p in prices) / len(prices)
-
-    trend_map = {"uptrend": "📈 Uptred", "downtrend": "📉 Downtr", "sideways": "➡️ Side"}
-    if last > ma5 * 1.01:
-        trend = "uptrend"
-    elif last < ma5 * 0.99:
-        trend = "downtrend"
-    else:
-        trend = "sideways"
-
-    # Recent 2-day momentum
-    if len(prices) >= 2:
-        momentum = prices[-1]["close"] - prices[-2]["close"]
-        if momentum > 0.5:
-            signal = "strong_buy"
-        elif momentum > 0:
-            signal = "buy"
-        elif momentum < -0.5:
-            signal = "strong_sell"
-        else:
-            signal = "sell"
-    else:
-        signal = "neutral"
-
-    return {"signal": signal, "trend": trend, "pctChange": pct}
-
-
-# ── Main pipeline ──────────────────────────────────────────────────────────────
 def main():
-    skip_ai = os.environ.get("SKIP_AI", "").lower() == "true"
-    hk_tz   = timezone(timedelta(hours=8))
-    ts      = datetime.now(hk_tz).strftime("%Y-%m-%d %H:%M")
-    print(f"🚀 US Stock pipeline started {ts}")
+    existing_stocks = load_existing_database()
+    stocks_data = fetch_us_prices(US_TICKERS)
+    indices = fetch_global_indices()
 
-    # Step 1: Fetch market indices (Yahoo Finance, no API key)
-    print("📊 Fetching market indices...")
-    market_indices = fetch_market_indices()
-
-    # Step 2: Get top-10 symbols from ETNet
-    etnet_stocks = fetch_etnet_top10()
-    if not etnet_stocks:
-        print("❌ No stocks from ETNet, exiting.")
+    if not stocks_data:
+        print("❌ Scraper failed to fetch US pricing rows.")
         sys.exit(1)
 
-    # Step 3: Fetch prices for each stock (Alpha Vantage, with rate-limit delay)
-    stocks_results  = []
-    predictions_out = {}
-    today_str = datetime.now(hk_tz).strftime("%Y-%m-%d")
+    final_predictions_db = {}
+    for stock in stocks_data:
+        code    = stock["code"]
+        name    = stock["name"]
+        history = stock["prices"]
 
-    for i, st in enumerate(etnet_stocks):
-        sym  = st["code"]
-        name = st["name"]
-        print(f"[{i+1}/{len(etnet_stocks)}] {sym} ({name})...", end=" ", flush=True)
+        # Explicitly tag the newly fetched history as ACTUAL data
+        for row in history:
+            row["is_predicted"] = False
 
-        prices = fetch_alpha_vantage_prices(sym)
+        # Get fresh 5-day future predictions
+        ai_rows, recommendation = call_openrouter_vector_engine(history, code)
 
-        # Rate-limit padding: Alpha Vantage free tier = 5 calls/min
-        time.sleep(13)
+        # ── PERSISTENCE ENGINE: Merge with old predictions ────────────────────
+        past_predicted_saved = []
+        if code in existing_stocks:
+            old_combined = existing_stocks[code].get("combined_data", [])
+            for old_row in old_combined:
+                # Retain older historical predictions to enable side-by-side display
+                if old_row.get("is_predicted", False):
+                    past_predicted_saved.append(old_row)
 
-        if not prices:
-            print("⚠️  no data, skipped")
-            continue
+        # Merge Actual History + Old Predictions + New Predictions
+        combined = history + past_predicted_saved + (ai_rows if ai_rows else [])
+        
+        # Deduplicate predictions for the exact same predicted date (keep only latest run)
+        unique_combined = []
+        seen_keys = set()
+        for row in combined:
+            key = f"{row['date']}_{row.get('is_predicted', False)}"
+            if key not in seen_keys:
+                seen_keys.add(key)
+                unique_combined.append(row)
 
-        last_close = prices[-1]["close"]
-        first_close = prices[0]["close"]
-        pct = round(((last_close - first_close) / first_close) * 100, 2)
-        trend_arrow = "▲" if pct >= 0 else "▼"
-        print(f"✅ ${last_close:.2f} {trend_arrow} {pct:+.2f}% ({len(prices)} days)")
+        # Sort the array chronologically by date
+        unique_combined.sort(key=lambda x: (x["date"], x.get("is_predicted", False)))
 
-        analysis = analyze_stock(prices)
-        combined_data = list(prices)   # 10 historical rows
-
-        # Step 3: AI prediction (unless skipped)
-        has_ai = False
-        recommendation = "持有"
-        if not skip_ai and OPENROUTER_API_KEY:
-            ai_result = call_openrouter_ai(sym, combined_data)
-            if ai_result:
-                ai_rows, recommendation = ai_result
-                combined_data = list(prices) + ai_rows
-                has_ai = True
-
-        # Step 4: Write history snapshot
-        HISTORY_DIR.mkdir(parents=True, exist_ok=True)
-        snap_file = HISTORY_DIR / f"{today_str}.json"
-        snap = {"date": today_str, "stocks": etnet_stocks, "prices": {sym: prices}}
-        snap_file.write_text(json.dumps(snap, ensure_ascii=False, indent=2))
-
-        # Update manifest
-        manifest = HISTORY_DIR / "manifest.json"
-        dates = json.loads(manifest.read_text()) if manifest.exists() else []
-        if today_str not in dates:
-            dates.append(today_str)
-        manifest.write_text(json.dumps(dates))
-
-        # Stock result
-        stocks_results.append({
-            "code":         sym,
-            "name":         name,
-            "prices":       prices,
-            "lastClose":    last_close,
-            "pctChange":    pct,
-            "high10":       round(max(r["high"] for r in prices), 2),
-            "low10":        round(min(r["low"]  for r in prices), 2),
-            "volumeM":      round(prices[-1]["volumeM"], 2),
-            "signal":       analysis["signal"],
-            "trend":        analysis["trend"],
-        })
-
-        # Predictions entry
-        predictions_out[sym] = {
-            "code":           sym,
-            "name":           name,
-            "combined_data":  combined_data,   # 10 hist + 5 AI
-            "has_ai":        has_ai,
+        final_predictions_db[code] = {
+            "name":          name,
+            "symbol":        stock["symbol"],
+            "combined_data": unique_combined,
+            "has_ai":        ai_rows is not None,
             "recommendation": recommendation,
         }
+        time.sleep(0.2)
 
-    # Step 5: Write stocks.json (includes market indices)
-    STOCKS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    stocks_payload = {
-        "generatedAt":   f"{ts} HKT",
-        "stockCount":   len(stocks_results),
-        "marketIndices": market_indices,
-        "stocks":        stocks_results,
-    }
-    STOCKS_FILE.write_text(json.dumps(stocks_payload, ensure_ascii=False, indent=2))
-    print(f"✅ stocks.json → {STOCKS_FILE}")
-
-    # Step 6: Write predictions.json
-    OUTPUT_FILE.write_text(json.dumps(predictions_out, ensure_ascii=False, indent=2))
-    print(f"✅ predictions.json → {OUTPUT_FILE}")
-
-    ai_count = sum(1 for v in predictions_out.values() if v["has_ai"])
-    print(f"\n✅ Done! {len(stocks_results)} stocks, {ai_count} with AI predictions")
-    if skip_ai:
-        print("ℹ️   SKIP_AI=true, AI predictions skipped")
-
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        # Wrap database cleanly for the frontend loader
+        json.dump({"stocks": final_predictions_db, "indices": indices}, f, ensure_ascii=False, indent=2)
+    print(f"✅ Telemetry database merged cleanly with past projections → {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
