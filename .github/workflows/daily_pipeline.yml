@@ -40,16 +40,20 @@ jobs:
         run: |
           python -c "
           import json
-          s=json.load(open('public/data/stocks.json'))
           pred=json.load(open('public/data/predictions.json'))
-          m=json.load(open('public/data/history/manifest.json'))
-          print(f'stocks.json: {s[\"stockCount\"]} stocks, generated {s[\"generatedAt\"]}')
-          for st in s['stocks']:
-              prices=st['prices']
-              print(f'  {st[\"code\"]} {st[\"name\"]}: last=\${prices[-1][\"close\"]:.2f} ({len(prices)} days)')
-          print(f'history: {len(m)} snapshots: {m[:3]}')
-          ai=[c for c,v in pred.items() if v.get('has_ai')]
-          print(f'predictions.json: {len(pred)} stocks, {len(ai)} with AI')
+          stocks=pred.get('stocks',{})
+          indices=pred.get('indices',{})
+          print(f'predictions.json: {len(stocks)} stocks, {len(indices)} indices')
+          for code, v in list(stocks.items())[:3]:
+              combined=v['combined_data']
+              actuals=[r for r in combined if not r.get('is_predicted')]
+              predicted=[r for r in combined if r.get('is_predicted')]
+              print(f'  {code} ({v[\"name\"]}): {len(combined)} rows ({len(actuals)} actual, {len(predicted)} predicted)')
+          if indices:
+              for k,v in indices.items():
+                  print(f'  {v[\"name\"]}: {v[\"value\"]} ({v[\"pct\"]:+.2f}%)')
+          ai=[c for c,v in stocks.items() if v.get('has_ai')]
+          print(f'Stocks with AI predictions: {len(ai)}')
           "
 
       # Data is written to public/data/ by the Python script and bundled into
