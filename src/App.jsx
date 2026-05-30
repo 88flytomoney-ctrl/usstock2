@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import StockCard from './components/StockCard.jsx';
 import MarketIndices from './components/MarketIndices.jsx';
 
-const STOCKS_URL       = '/usstock2/data/stocks.json';
 const PREDICTIONS_URL  = '/usstock2/data/predictions.json';
 const MANIFEST_URL     = '/usstock2/data/history/manifest.json';
 
@@ -17,22 +16,57 @@ function App() {
   const [selectedDate, setSelectedDate] = useState('');
   const [loadingHistory, setLoadingHistory] = useState(false);
 
+  // Transform predictions.json → { stocks[], marketIndices[], predictions{} }
+  function transformPredictions(predData) {
+    const stocksList = [];
+    const predMap = {};
+    const stocks = predData.stocks || {};
+    for (const code of Object.keys(stocks)) {
+      const s = stocks[code];
+      const combined = s.combined_data || [];
+      // Build stock list item matching the old stocks.json format
+      stocksList.push({
+        code,
+        name: s.name,
+        symbol: s.symbol,
+        prices: combined.filter(r => !r.is_predicted),
+        pctChange: 0, // will compute below
+      });
+      predMap[code] = s;
+    }
+    // Compute pctChange for each stock
+    for (const st of stocksList) {
+      const p = st.prices;
+      if (p.length >= 2) {
+        st.pctChange = ((p[p.length - 1].close - p[0].close) / p[0].close) * 100;
+      }
+    }
+    // Market indices — map from predictions.json indices format
+    const indices = predData.indices || {};
+    const idxArr = Object.entries(indices).map(([key, v]) => ({
+      ticker: key.toUpperCase(),
+      name: v.name,
+      price: v.value,
+      pctChange: v.pct,
+      arrow: v.isPositive ? '▲' : '▼',
+    }));
+
+    return { stocksList, marketIndices: idxArr, predictions: predMap };
+  }
+
   // Load initial (latest) data
   useEffect(() => {
-    fetch(STOCKS_URL)
+    fetch(PREDICTIONS_URL)
       .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
       .then(d => {
-        setStocks(d.stocks || []);
-        setMarketIndices(d.marketIndices || []);
-        setLastUpdated(d.generatedAt || '');
+        const { stocksList, marketIndices, predictions } = transformPredictions(d);
+        setStocks(stocksList);
+        setMarketIndices(marketIndices);
+        setPredictions(predictions);
+        setLastUpdated(new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Hong_Kong' }));
         setLoading(false);
       })
       .catch(e => { setError(e.message); setLoading(false); });
-
-    fetch(PREDICTIONS_URL)
-      .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
-      .then(setPredictions)
-      .catch(() => setPredictions({}));
 
     fetch(MANIFEST_URL)
       .then(r => r.ok ? r.json() : [])
@@ -44,20 +78,18 @@ function App() {
   useEffect(() => {
     if (!selectedDate) {
       // Reload latest
-      fetch(STOCKS_URL)
+      fetch(PREDICTIONS_URL)
         .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
         .then(d => {
-          setStocks(d.stocks || []);
-          setMarketIndices(d.marketIndices || []);
-          setLastUpdated(d.generatedAt || '');
+          const { stocksList, marketIndices, predictions } = transformPredictions(d);
+          setStocks(stocksList);
+          setMarketIndices(marketIndices);
+          setPredictions(predictions);
+          setLastUpdated(new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Hong_Kong' }));
           setError(null);
           setLoadingHistory(false);
         })
         .catch(e => { setError(e.message); setLoadingHistory(false); });
-      fetch(PREDICTIONS_URL)
-        .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
-        .then(setPredictions)
-        .catch(() => setPredictions({}));
       return;
     }
 
@@ -66,8 +98,10 @@ function App() {
     fetch(url)
       .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
       .then(d => {
-        setStocks(d.stocks || []);
-        setMarketIndices(d.marketIndices || []);
+        const { stocksList, marketIndices, predictions } = transformPredictions(d);
+        setStocks(stocksList);
+        setMarketIndices(marketIndices);
+        setPredictions(predictions);
         setLastUpdated(d.generatedAt || '');
         setError(null);
         setLoadingHistory(false);
