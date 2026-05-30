@@ -28,7 +28,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install Python deps
-        run: pip install requests openai -q
+        run: pip install requests openai yfinance pandas openpyxl -q
 
       - name: Scrape ETNet + Fetch prices + AI predictions
         env:
