@@ -20,19 +20,42 @@ function App() {
   function transformPredictions(predData) {
     const stocksList = [];
     const predMap = {};
-    const stocks = predData.stocks || {};
-    for (const code of Object.keys(stocks)) {
-      const s = stocks[code];
-      const combined = s.combined_data || [];
-      // Build stock list item matching the old stocks.json format
-      stocksList.push({
-        code,
-        name: s.name,
-        symbol: s.symbol,
-        prices: combined.filter(r => !r.is_predicted),
-        pctChange: 0, // will compute below
+    let stocks = predData.stocks || {};
+    
+    // Handle both predictions.json (object) and history.json (array) formats
+    if (Array.isArray(stocks)) {
+      // History format: stocks is an array of { code, symbol, name, prices }
+      stocks.forEach(s => {
+        stocksList.push({
+          code: s.code,
+          name: s.name,
+          symbol: s.symbol,
+          prices: s.prices || [],
+          pctChange: 0,
+        });
+        predMap[s.code] = {
+          name: s.name,
+          symbol: s.symbol,
+          combined_data: s.prices || [],
+          has_ai: false,
+          recommendation: "持有",
+        };
       });
-      predMap[code] = s;
+    } else {
+      // Predictions format: stocks is an object { code: { combined_data } }
+      for (const code of Object.keys(stocks)) {
+        const s = stocks[code];
+        const combined = s.combined_data || [];
+        // Build stock list item matching the old stocks.json format
+        stocksList.push({
+          code,
+          name: s.name,
+          symbol: s.symbol,
+          prices: combined.filter(r => !r.is_predicted),
+          pctChange: 0, // will compute below
+        });
+        predMap[code] = s;
+      }
     }
     // Compute pctChange for each stock
     for (const st of stocksList) {
@@ -94,7 +117,7 @@ function App() {
     }
 
     setLoadingHistory(true);
-    const url = `/usstock2/data/history/${selectedDate}.json`;
+    const url = `/usstock2/data/history/${selectedDate}`;
     fetch(url)
       .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
       .then(d => {
@@ -182,7 +205,7 @@ function App() {
                   <option value="" disabled>— 尚無歷史記錄 —</option>
                 )}
                 {historyDates.map(d => (
-                  <option key={d} value={d}>{d}</option>
+                  <option key={d.file} value={d.file}>{d.display}</option>
                 ))}
               </select>
             </div>

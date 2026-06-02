@@ -259,5 +259,72 @@ def main():
         json.dump({"stocks": final_predictions_db, "indices": indices}, f, ensure_ascii=False, indent=2)
     print(f"✅ Telemetry database merged cleanly with past projections → {OUTPUT_FILE}")
 
+    # ── Save to history ─────────────────────────────────────────────────────────
+    HISTORY_DIR = Path("public/data/history")
+    HISTORY_DIR.mkdir(parents=True, exist_ok=True)
+    
+    date_str = datetime.now().strftime('%Y-%m-%d')
+    time_str = datetime.now().strftime('%H')
+    history_file = HISTORY_DIR / f'{date_str}.json'
+    
+    # History file format: { generatedAt, stocks: [{ code, symbol, name, prices }] }
+    history_data = {
+        "generatedAt": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        "generatedDate": date_str,
+        "generatedTime": f"{time_str}:00",
+        "stockCount": len(final_predictions_db),
+        "stocks": [
+            {
+                "code": code,
+                "symbol": details["symbol"],
+                "name": details["name"],
+                "prices": [row for row in details.get("combined_data", []) if not row.get("is_predicted", False)]
+            }
+            for code, details in final_predictions_db.items()
+        ]
+    }
+    
+    with open(history_file, "w", encoding="utf-8") as f:
+        json.dump(history_data, f, ensure_ascii=False, indent=2)
+    print(f"   ✅ History snapshot: {history_file}")
+
+    # Update manifest
+    manifest_file = HISTORY_DIR / 'manifest.json'
+    existing_manifest = []
+    if manifest_file.exists():
+        with open(manifest_file, 'r', encoding='utf-8') as f:
+            try:
+                raw_data = json.load(f)
+                if raw_data and isinstance(raw_data[0], str):
+                    # Old format: ["2026-05-23", ...]
+                    existing_manifest = []
+                    for d in raw_data:
+                        existing_manifest.append({
+                            "date": d,
+                            "time": "00:00",
+                            "file": f"{d}.json",
+                            "display": d
+                        })
+                else:
+                    existing_manifest = raw_data
+            except:
+                existing_manifest = []
+    
+    # Add new entry (avoid duplicates)
+    new_entry = {
+        "date": date_str,
+        "time": f"{time_str}:00",
+        "file": f"{date_str}.json",
+        "display": date_str
+    }
+    existing_manifest = [e for e in existing_manifest if not (e['date'] == date_str)]
+    existing_manifest.append(new_entry)
+    existing_manifest.sort(key=lambda x: x['date'], reverse=True)
+    
+    with open(manifest_file, 'w', encoding='utf-8') as f:
+        json.dump(existing_manifest, f, ensure_ascii=False)
+    print(f"   ✅ Manifest updated")
+
+
 if __name__ == "__main__":
     main()
