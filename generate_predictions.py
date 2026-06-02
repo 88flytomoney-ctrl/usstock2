@@ -19,8 +19,37 @@ OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 OUTPUT_FILE = Path("public/data/predictions.json")
 AI_MODEL_ID = "openrouter/owl-alpha"
 
-# Top 20 High-Turnover US Stocks to track
-US_TICKERS = ["NVDA", "AAPL", "MSFT", "AMZN", "TSLA", "GOOGL", "META", "NFLX", "AMD", "SPY", "QQQ", "IWM", "AVGO", "COIN", "SMCI", "PLTR", "SOXX", "XLF", "XLK", "VGT"]
+# Top 20 High-Turnover US Stocks to track — fetched dynamically from etnet
+US_TICKERS = []
+
+def fetch_us_tickers_from_etnet():
+    """Fetch top 20 US stocks by turnover from etnet."""
+    import urllib.request
+    import re
+    
+    url = "https://www.etnet.com.hk/www/tc/us-stocks/top20.php?tab=turnover"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    }
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=15) as response:
+        html = response.read().decode("utf-8")
+    
+    # Extract unique stock symbols from quote links
+    pattern = r'/www/tc/us-stocks/quote/([A-Z]+)'
+    tickers = sorted(set(re.findall(pattern, html)))[:20]
+    
+    print(f"[Etnet] Fetched {len(tickers)} tickers: {tickers}")
+    return tickers
+
+# Fetch tickers on module load
+if not US_TICKERS:
+    try:
+        US_TICKERS = fetch_us_tickers_from_etnet()
+    except Exception as e:
+        print(f"[Etnet] Failed to fetch tickers: {e}")
+        # Fallback to common US tickers
+        US_TICKERS = ["NVDA", "AAPL", "MSFT", "AMZN", "TSLA", "GOOGL", "META", "NFLX", "AMD", "SPY", "QQQ", "IWM", "AVGO", "COIN", "PLTR", "SOXX", "XLF", "XLK", "VGT", "MU"]
 
 def get_openrouter_client():
     return OpenAI(
