@@ -19,8 +19,8 @@ OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 OUTPUT_FILE = Path("public/data/predictions.json")
 AI_MODEL_ID = "openrouter/owl-alpha"
 
-# Top 10 High-Turnover US Stocks to track
-US_TICKERS = ["NVDA", "AAPL", "MSFT", "AMZN", "TSLA", "GOOGL", "META", "NFLX", "AMD", "SPY"]
+# Top 20 High-Turnover US Stocks to track
+US_TICKERS = ["NVDA", "AAPL", "MSFT", "AMZN", "TSLA", "GOOGL", "META", "NFLX", "AMD", "SPY", "QQQ", "IWM", "AVGO", "COIN", "SMCI", "PLTR", "SOXX", "XLF", "XLK", "VGT"]
 
 def get_openrouter_client():
     return OpenAI(
