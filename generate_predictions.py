@@ -261,10 +261,16 @@ def main():
         # Merge Actual History + Old Predictions + New Predictions
         combined = history + past_predicted_saved + (ai_rows if ai_rows else [])
         
-        # Deduplicate predictions for the exact same predicted date (keep only latest run)
+        # Collect actual dates to filter out stale predictions
+        actual_dates = set(r['date'] for r in combined if not r.get('is_predicted', False))
+        
+        # Deduplicate: skip stale predictions that overlap with actual data dates
         unique_combined = []
         seen_keys = set()
         for row in combined:
+            # Skip AI-predicted rows whose date now has real actual data
+            if row.get('is_predicted', False) and row['date'] in actual_dates:
+                continue
             key = f"{row['date']}_{row.get('is_predicted', False)}"
             if key not in seen_keys:
                 seen_keys.add(key)
