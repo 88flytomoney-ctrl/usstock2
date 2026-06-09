@@ -3,4 +3,4 @@ dist
 .env
 *.pyc
 __pycache__/
-public/data/history/
+# public/data/history/
