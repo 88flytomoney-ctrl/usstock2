@@ -863,7 +863,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "持有"
     },
     "GOOG": {
       "name": "Alphabet Inc.",
@@ -1036,7 +1036,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -1209,7 +1209,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "INTC": {
       "name": "Intel Corporation",
@@ -1382,7 +1382,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "持有"
     },
     "LITE": {
       "name": "Lumentum Holdings Inc.",
@@ -1555,7 +1555,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "持有"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
@@ -1728,7 +1728,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "賣出"
     },
     "MRVL": {
       "name": "Marvell Technology, Inc.",
@@ -2593,7 +2593,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "持有"
     },
     "PLTR": {
       "name": "Palantir Technologies Inc.",
@@ -2939,7 +2939,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "賣出"
     },
     "SNDK": {
       "name": "Sandisk Corporation",
@@ -3458,7 +3458,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "持有"
     }
   },
   "indices": {
