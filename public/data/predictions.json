@@ -1036,7 +1036,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "賣出"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -1368,9 +1368,20 @@
           "volume": 120780000,
           "volumeM": "120.8M",
           "is_predicted": true
+        },
+        {
+          "date": "2026-06-17",
+          "dateShort": "🔮 06/17",
+          "open": 110.2,
+          "high": 112.8,
+          "low": 105.3,
+          "close": 108.9,
+          "volume": 140500000,
+          "volumeM": "140.5M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
+      "has_ai": true,
       "recommendation": "持有"
     },
     "LITE": {
@@ -2063,7 +2074,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
@@ -2409,7 +2420,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "持有"
     },
     "NVDA": {
       "name": "NVIDIA Corporation",
@@ -3260,9 +3271,20 @@
           "volume": 9800000,
           "volumeM": "9.8M",
           "is_predicted": true
+        },
+        {
+          "date": "2026-06-17",
+          "dateShort": "🔮 06/17",
+          "open": 1658.09,
+          "high": 1777.82,
+          "low": 1571.43,
+          "close": 1644.35,
+          "volume": 12240000,
+          "volumeM": "12.2M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
+      "has_ai": true,
       "recommendation": "持有"
     },
     "TSLA": {
@@ -3436,7 +3458,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "買入"
     }
   },
   "indices": {
