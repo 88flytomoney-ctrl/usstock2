@@ -345,16 +345,21 @@ def main():
             except:
                 existing_manifest = []
     
-    # Add new entry (avoid duplicates)
-    new_entry = {
-        "date": date_str,
-        "time": f"{time_str}:00",
-        "file": f"{date_str}.json",
-        "display": date_str
-    }
-    existing_manifest = [e for e in existing_manifest if not (e['date'] == date_str)]
-    existing_manifest.append(new_entry)
-    existing_manifest.sort(key=lambda x: x['date'], reverse=True)
+    # Add new entry (avoid duplicates) only if history file exists
+    if history_file.exists():
+        new_entry = {
+            "date": date_str,
+            "time": f"{time_str}:00",
+            "file": f"{date_str}.json",
+            "display": date_str
+        }
+        existing_manifest = [e for e in existing_manifest if not (e['date'] == date_str)]
+        existing_manifest.append(new_entry)
+        existing_manifest.sort(key=lambda x: x['date'], reverse=True)
+    else:
+        print(f"   ⚠️ History file not found, skipping manifest update")
+        # Filter out non-existent entries from manifest
+        existing_manifest = [e for e in existing_manifest if (HISTORY_DIR / e['file']).exists()]
     
     with open(manifest_file, 'w', encoding='utf-8') as f:
         json.dump(existing_manifest, f, ensure_ascii=False)
