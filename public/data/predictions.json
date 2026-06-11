@@ -1,178 +1,5 @@
 {
   "stocks": {
-    "AAPL": {
-      "name": "Apple Inc.",
-      "symbol": "AAPL",
-      "combined_data": [
-        {
-          "date": "2026-05-29",
-          "dateShort": "05/29",
-          "close": 312.06,
-          "open": 311.78,
-          "high": 315.0,
-          "low": 309.53,
-          "volume": 70026800,
-          "volumeM": "70.03M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-06-01",
-          "dateShort": "06/01",
-          "close": 306.31,
-          "open": 309.63,
-          "high": 310.94,
-          "low": 305.02,
-          "volume": 48849900,
-          "volumeM": "48.85M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-06-02",
-          "dateShort": "06/02",
-          "close": 315.2,
-          "open": 307.46,
-          "high": 315.45,
-          "low": 306.69,
-          "volume": 44534700,
-          "volumeM": "44.53M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-06-03",
-          "dateShort": "06/03",
-          "close": 310.26,
-          "open": 314.18,
-          "high": 316.94,
-          "low": 308.85,
-          "volume": 50836700,
-          "volumeM": "50.84M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-06-04",
-          "dateShort": "06/04",
-          "close": 311.23,
-          "open": 313.23,
-          "high": 313.54,
-          "low": 309.65,
-          "volume": 44869100,
-          "volumeM": "44.87M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-06-05",
-          "dateShort": "06/05",
-          "close": 307.34,
-          "open": 312.86,
-          "high": 315.17,
-          "low": 307.15,
-          "volume": 65310500,
-          "volumeM": "65.31M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-06-08",
-          "dateShort": "06/08",
-          "close": 301.54,
-          "open": 308.74,
-          "high": 317.4,
-          "low": 301.17,
-          "volume": 77949100,
-          "volumeM": "77.95M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-06-09",
-          "dateShort": "06/09",
-          "close": 290.55,
-          "open": 300.28,
-          "high": 300.75,
-          "low": 287.78,
-          "volume": 70108800,
-          "volumeM": "70.11M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-06-10",
-          "dateShort": "06/10",
-          "close": 291.58,
-          "open": 290.74,
-          "high": 294.75,
-          "low": 287.38,
-          "volume": 52793300,
-          "volumeM": "52.79M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-06-11",
-          "dateShort": "06/11",
-          "close": 295.63,
-          "open": 293.72,
-          "high": 297.0,
-          "low": 289.6,
-          "volume": 42458923,
-          "volumeM": "42.46M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-06-12",
-          "dateShort": "🔮 06/12",
-          "open": 316.22,
-          "high": 318.52,
-          "low": 312.08,
-          "close": 315.75,
-          "volume": 60950000,
-          "volumeM": "61.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-06-15",
-          "dateShort": "🔮 06/15",
-          "open": 312.4,
-          "high": 315.6,
-          "low": 308.5,
-          "close": 311.8,
-          "volume": 55200000,
-          "volumeM": "55.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-06-16",
-          "dateShort": "🔮 06/16",
-          "open": 282.1,
-          "high": 288.4,
-          "low": 275.0,
-          "close": 277.1,
-          "volume": 47900000,
-          "volumeM": "47.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-06-17",
-          "dateShort": "🔮 06/17",
-          "open": 266.4,
-          "high": 268.2,
-          "low": 258.3,
-          "close": 264.3,
-          "volume": 22700000,
-          "volumeM": "22.7M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-06-18",
-          "dateShort": "🔮 06/18",
-          "open": 283.1,
-          "high": 287.3,
-          "low": 276.2,
-          "close": 282.2,
-          "volume": 59400000,
-          "volumeM": "59.4M",
-          "is_predicted": true
-        }
-      ],
-      "has_ai": true,
-      "recommendation": "賣出"
-    },
     "AMAT": {
       "name": "Applied Materials, Inc.",
       "symbol": "AMAT",
@@ -517,7 +344,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "持有"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -2247,7 +2074,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
