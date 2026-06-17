@@ -517,7 +517,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "買入"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -690,7 +690,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "持有"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
@@ -1209,7 +1209,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "買入"
     },
     "HOOD": {
       "name": "Robinhood Markets, Inc.",
@@ -1728,7 +1728,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "MRVL": {
       "name": "Marvell Technology, Inc.",
@@ -2766,7 +2766,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "SPCX": {
       "name": "Space Exploration Technologies Corp.",
@@ -3046,7 +3046,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "買入"
     },
     "TSLA": {
       "name": "Tesla, Inc.",
