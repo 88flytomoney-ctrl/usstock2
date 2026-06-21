@@ -71,6 +71,8 @@ def load_existing_database():
 
 def fetch_global_indices():
     """Fetches real-time index data using yfinance (Accurate & Rate-Limit Free)"""
+    import pandas as pd
+    
     indices = {
         "^GSPC": {"name": "S&P 500", "key": "spx"},
         "^IXIC": {"name": "Nasdaq", "key": "ixic"},
@@ -79,25 +81,46 @@ def fetch_global_indices():
     results = {}
     for ticker, info in indices.items():
         try:
+            time.sleep(0.5)  # avoid rate limiting
             obj = yf.Ticker(ticker)
-            hist = obj.history(period="2d")
-            if not hist.empty and len(hist) >= 2:
-                close_today = round(float(hist["Close"].iloc[-1]), 2)
-                close_yesterday = round(float(hist["Close"].iloc[-2]), 2)
-                change = round(close_today - close_yesterday, 2)
-                pct = round((change / close_yesterday) * 100, 2)
-                results[info["key"]] = {
-                    "name": info["name"],
-                    "value": close_today,
-                    "change": change,
-                    "pct": pct,
-                    "isPositive": change >= 0
-                }
+            hist = obj.history(period="5d")  # fetch more days to find 2 valid rows
+            if hist.empty:
+                print(f"⚠️ No history for index {ticker}")
+                continue
+            
+            # Drop NaN rows first (weekends/holidays)
+            hist = hist.dropna(subset=["Close"])
+            if len(hist) < 2:
+                print(f"⚠️ Less than 2 valid days for index {ticker}")
+                continue
+            
+            close_today = round(float(hist["Close"].iloc[-1]), 2)
+            close_yesterday = round(float(hist["Close"].iloc[-2]), 2)
+            
+            if pd.isna(close_today) or pd.isna(close_yesterday):
+                print(f"⚠️ NaN in index {ticker} close values, skipping")
+                continue
+            
+            change = round(close_today - close_yesterday, 2)
+            pct = round((change / close_yesterday) * 100, 2)
+            results[info["key"]] = {
+                "name": info["name"],
+                "value": close_today,
+                "change": change,
+                "pct": pct,
+                "isPositive": change >= 0
+            }
+            print(f"📈 {info['name']}: {close_today} ({change:+.2f} / {pct:+.2f}%)")
         except Exception as e:
             print(f"⚠️ Failed to fetch index {ticker}: {e}")
+    
+    if not results:
+        print("⚠️ No indices fetched — all failed, using empty defaults")
     return results
 
 def fetch_us_prices(tickers):
+    import pandas as pd
+    
     results = []
     for ticker_symbol in tickers:
         try:
@@ -110,17 +133,28 @@ def fetch_us_prices(tickers):
             hist = ticker.history(period="15d")
             if hist.empty: continue
             
+            # Drop NaN rows (weekends/holidays) BEFORE tail
+            hist = hist.dropna(subset=["Open", "High", "Low", "Close"])
             hist = hist.tail(10) # Grab the final 10 days of real history
             rows = []
             for timestamp, row in hist.iterrows():
-                vol = int(row["Volume"])
+                close_val = round(float(row["Close"]), 2)
+                open_val  = round(float(row["Open"]), 2)
+                high_val  = round(float(row["High"]), 2)
+                low_val   = round(float(row["Low"]), 2)
+                
+                # Extra safety: skip any remaining NaN
+                if any(pd.isna(v) for v in [close_val, open_val, high_val, low_val]):
+                    continue
+                
+                vol = int(row["Volume"]) if pd.notna(row["Volume"]) else 0
                 rows.append({
                     "date":      timestamp.strftime("%Y-%m-%d"),
                     "dateShort": timestamp.strftime("%m/%d"),
-                    "close":     round(float(row["Close"]), 2),
-                    "open":      round(float(row["Open"]), 2),
-                    "high":      round(float(row["High"]), 2),
-                    "low":       round(float(row["Low"]), 2),
+                    "close":     close_val,
+                    "open":      open_val,
+                    "high":      high_val,
+                    "low":       low_val,
                     "volume":    vol,
                     "volumeM":   f"{round(vol / 1e6, 2)}M",
                     "is_predicted": False # Real transactions are tagged False
@@ -289,9 +323,16 @@ def main():
         time.sleep(0.2)
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    payload = {"stocks": final_predictions_db, "indices": indices}
+    
+    # Safety check: ensure no NaN/Infinity before writing (invalid JSON)
+    raw_json = json.dumps(payload, ensure_ascii=False, indent=2)
+    if "NaN" in raw_json or "Infinity" in raw_json:
+        print("❌ CRITICAL: NaN/Infinity detected in JSON output! Attempting to clean...")
+        raw_json = raw_json.replace(': NaN', ': null').replace(': Infinity', ': null')
+    
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        # Wrap database cleanly for the frontend loader
-        json.dump({"stocks": final_predictions_db, "indices": indices}, f, ensure_ascii=False, indent=2)
+        f.write(raw_json)
     print(f"✅ Telemetry database merged cleanly with past projections → {OUTPUT_FILE}")
 
     # ── Save to history ─────────────────────────────────────────────────────────
@@ -320,7 +361,11 @@ def main():
     }
     
     with open(history_file, "w", encoding="utf-8") as f:
-        json.dump(history_data, f, ensure_ascii=False, indent=2)
+        hist_json = json.dumps(history_data, ensure_ascii=False, indent=2)
+        if "NaN" in hist_json or "Infinity" in hist_json:
+            print("⚠️ NaN in history JSON, cleaning...")
+            hist_json = hist_json.replace(': NaN', ': null').replace(': Infinity', ': null')
+        f.write(hist_json)
     print(f"   ✅ History snapshot: {history_file}")
 
     # Update manifest
