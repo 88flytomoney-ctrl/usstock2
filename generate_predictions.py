@@ -20,6 +20,8 @@ OUTPUT_FILE = Path("public/data/predictions.json")
 AI_MODEL_ID = "openrouter/owl-alpha"
 
 # Top 20 High-Turnover US Stocks to track — fetched dynamically from etnet
+# PINNED_TICKERS are always tracked (always at top, live data via existing pipeline)
+PINNED_TICKERS = ["QQQ", "VOO"]
 US_TICKERS = []
 
 def fetch_us_tickers_from_etnet():
@@ -42,14 +44,27 @@ def fetch_us_tickers_from_etnet():
     print(f"[Etnet] Fetched {len(tickers)} tickers: {tickers}")
     return tickers
 
-# Fetch tickers on module load
-if not US_TICKERS:
+def build_ticker_list():
+    """Combine PINNED_TICKERS (always first) + ETNet dynamic list (deduped)."""
     try:
-        US_TICKERS = fetch_us_tickers_from_etnet()
+        etnet_tickers = fetch_us_tickers_from_etnet()
     except Exception as e:
         print(f"[Etnet] Failed to fetch tickers: {e}")
         # Fallback to common US tickers
-        US_TICKERS = ["NVDA", "AAPL", "MSFT", "AMZN", "TSLA", "GOOGL", "META", "NFLX", "AMD", "SPY", "QQQ", "IWM", "AVGO", "COIN", "PLTR", "SOXX", "XLF", "XLK", "VGT", "MU"]
+        etnet_tickers = ["NVDA", "AAPL", "MSFT", "AMZN", "TSLA", "GOOGL", "META", "NFLX",
+                         "AMD", "SPY", "IWM", "AVGO", "COIN", "PLTR", "SOXX", "XLF",
+                         "XLK", "VGT", "MU", "INTC"]
+    
+    # Pinned tickers always first; drop any duplicates from ETNet list
+    pinned_set = set(PINNED_TICKERS)
+    deduped_etnet = [t for t in etnet_tickers if t not in pinned_set]
+    combined = PINNED_TICKERS + deduped_etnet
+    print(f"[Tickers] Pinned: {PINNED_TICKERS} | Total: {len(combined)} → {combined}")
+    return combined
+
+# Fetch tickers on module load
+if not US_TICKERS:
+    US_TICKERS = build_ticker_list()
 
 def get_openrouter_client():
     return OpenAI(

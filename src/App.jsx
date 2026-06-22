@@ -5,6 +5,27 @@ import MarketIndices from './components/MarketIndices.jsx';
 const PREDICTIONS_URL  = '/usstock2/data/predictions.json';
 const MANIFEST_URL     = '/usstock2/data/history/manifest.json';
 
+// Pinned tickers — always appear at the top in this exact order.
+// Must match PINNED_TICKERS in generate_predictions.py
+const PINNED_TICKERS = ['QQQ', 'VOO'];
+
+// Sort helper: pinned tickers first (in PINNED_TICKERS order), then everything else
+function applyPinnedOrder(stocksList) {
+  const pinnedOrder = new Map(PINNED_TICKERS.map((code, idx) => [code, idx]));
+  const pinned = [];
+  const rest = [];
+  for (const s of stocksList) {
+    if (pinnedOrder.has(s.code)) {
+      pinned.push(s);
+    } else {
+      rest.push(s);
+    }
+  }
+  // Sort pinned by the order defined in PINNED_TICKERS
+  pinned.sort((a, b) => pinnedOrder.get(a.code) - pinnedOrder.get(b.code));
+  return [...pinned, ...rest];
+}
+
 function App() {
   const [stocks,       setStocks]       = useState([]);
   const [marketIndices, setMarketIndices] = useState([]);
@@ -74,7 +95,10 @@ function App() {
       arrow: v.isPositive ? '▲' : '▼',
     }));
 
-    return { stocksList, marketIndices: idxArr, predictions: predMap };
+    // 📌 Force pinned tickers (QQQ, VOO) to the top, regardless of source order
+    const orderedStocks = applyPinnedOrder(stocksList);
+
+    return { stocksList: orderedStocks, marketIndices: idxArr, predictions: predMap };
   }
 
   // Load initial (latest) data
