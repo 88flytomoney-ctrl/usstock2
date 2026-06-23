@@ -182,7 +182,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "買入"
     },
     "VOO": {
       "name": "Vanguard S&P 500 ETF",
@@ -1459,7 +1459,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "持有"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -2000,7 +2000,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "持有"
     },
     "LRCX": {
       "name": "Lam Research Corporation",
@@ -2357,7 +2357,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "MRVL": {
       "name": "Marvell Technology, Inc.",
