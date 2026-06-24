@@ -366,7 +366,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "持有"
     },
     "AAL": {
       "name": "American Airlines Group Inc.",
@@ -2000,7 +2000,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "買入"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
@@ -3450,7 +3450,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "賣出"
     },
     "SPCX": {
       "name": "Space Exploration Technologies Corp.",
@@ -3612,7 +3612,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "持有"
     },
     "TSLA": {
       "name": "Tesla, Inc.",
