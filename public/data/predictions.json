@@ -132,8 +132,8 @@
           "open": 714.14,
           "high": 716.34,
           "low": 704.9,
-          "volume": 41897122,
-          "volumeM": "41.9M",
+          "volume": 39999571,
+          "volumeM": "40.0M",
           "is_predicted": false
         }
       ],
@@ -272,8 +272,8 @@
           "open": 689.58,
           "high": 690.23,
           "low": 684.99,
-          "volume": 4822915,
-          "volumeM": "4.82M",
+          "volume": 4805146,
+          "volumeM": "4.81M",
           "is_predicted": false
         }
       ],
@@ -412,8 +412,8 @@
           "open": 315.29,
           "high": 315.48,
           "low": 310.15,
-          "volume": 42097217,
-          "volumeM": "42.1M",
+          "volume": 42083263,
+          "volumeM": "42.08M",
           "is_predicted": false
         }
       ],
@@ -545,8 +545,8 @@
           "open": 35.5,
           "high": 40.04,
           "low": 34.65,
-          "volume": 8305982,
-          "volumeM": "8.31M",
+          "volume": 7374261,
+          "volumeM": "7.37M",
           "is_predicted": false
         }
       ],
@@ -583,7 +583,7 @@
           "open": 24.63,
           "high": 24.85,
           "low": 24.64,
-          "volume": 2927,
+          "volume": 2922,
           "volumeM": "0.0M",
           "is_predicted": false
         }
