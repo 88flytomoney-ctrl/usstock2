@@ -17,7 +17,7 @@ from openai import OpenAI
 # ── OpenRouter Configuration ──────────────────────────────────────────────────
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 OUTPUT_FILE = Path("public/data/predictions.json")
-AI_MODEL_ID = "tencent/hy3:free"
+AI_MODEL_ID = "poolside/laguna-xs-2.1:free"
 
 # Top 20 High-Turnover US Stocks to track — fetched dynamically from etnet
 # PINNED_TICKERS are always tracked (always at top, live data via existing pipeline)
