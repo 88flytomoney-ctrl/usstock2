@@ -275,7 +275,7 @@ function App() {
         </div>
 
         <footer className="text-center text-xs text-slate-500 py-8">
-          數據來源：ETNet + Alpha Vantage · 全球指數：Yahoo Finance · AI 預測：OpenRouter owl-alpha · 僅供參考，不構成投資建議
+          數據來源：ETNet + Alpha Vantage · 全球指數：Yahoo Finance · AI 預測：OpenRouter · 僅供參考，不構成投資建議
         </footer>
       </main>
     </div>

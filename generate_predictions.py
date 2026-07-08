@@ -226,10 +226,19 @@ def call_openrouter_vector_engine(history_rows, ticker_symbol):
             model=AI_MODEL_ID,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.2,
-            max_tokens=1500,
-            timeout=25,
+            max_tokens=4000,
+            timeout=30,
+            extra_body={"reasoning": {"enabled": False}},
         )
-        raw = response.choices[0].message.content.strip()
+        msg = response.choices[0].message
+        raw = msg.content
+        if not raw:
+            # Reasoning models may put output in reasoning_content / reasoning
+            raw = getattr(msg, "reasoning_content", None) or getattr(msg, "reasoning", None)
+        if not raw:
+            print(f"⚠️ Model returned empty content for {stock_code}")
+            return None, "持有"
+        raw = raw.strip()
         if raw.startswith("```"):
             raw = raw.split("\n", 1)[1]
             if raw.endswith("```"):
@@ -302,9 +311,18 @@ def main():
         past_predicted_saved = []
         if code in existing_stocks:
             old_combined = existing_stocks[code].get("combined_data", [])
+            # Get the earliest actual data date
+            actual_date_set = set(r['date'] for r in history)
+            first_actual_date = history[0]['date'] if history else None
             for old_row in old_combined:
                 # Retain older historical predictions to enable side-by-side display
                 if old_row.get("is_predicted", False):
+                    # Discard stale predicted rows that fall before or overlap with
+                    # actual data — those dates already have real prices
+                    if first_actual_date and old_row['date'] < first_actual_date:
+                        continue
+                    if old_row['date'] in actual_date_set:
+                        continue
                     past_predicted_saved.append(old_row)
 
         # Merge Actual History + Old Predictions + New Predictions
