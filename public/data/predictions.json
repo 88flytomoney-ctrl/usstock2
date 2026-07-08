@@ -920,7 +920,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "買入"
     },
     "FXACW": {
       "name": "FortuneX Acquisition Corporation Warrant",
@@ -994,7 +994,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "持有"
     },
     "MFP": {
       "name": "Midera Food Processing, Inc. Common Stock When Issued",
