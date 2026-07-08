@@ -1,20 +1,14 @@
 {
-  "stocks": {
-    "QQQ": {
-      "name": "Invesco QQQ Trust",
+  "generatedAt": "2026-07-08 01:57:21",
+  "generatedDate": "2026-07-08",
+  "generatedTime": "01:00",
+  "stockCount": 14,
+  "stocks": [
+    {
+      "code": "QQQ",
       "symbol": "QQQ",
-      "combined_data": [
-        {
-          "date": "2026-06-19",
-          "dateShort": "🔮 06/19",
-          "open": 745.3,
-          "high": 748.5,
-          "low": 738.2,
-          "close": 745.3,
-          "volume": 48700000,
-          "volumeM": "48.7M",
-          "is_predicted": true
-        },
+      "name": "Invesco QQQ Trust",
+      "prices": [
         {
           "date": "2026-06-23",
           "dateShort": "06/23",
@@ -104,17 +98,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-07-03",
-          "dateShort": "🔮 07/03",
-          "open": 717.6,
-          "high": 725.8,
-          "low": 710.9,
-          "close": 717.5,
-          "volume": 48600000,
-          "volumeM": "48.6M",
-          "is_predicted": true
-        },
-        {
           "date": "2026-07-06",
           "dateShort": "07/06",
           "close": 722.82,
@@ -136,25 +119,13 @@
           "volumeM": "41.9M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "VOO": {
-      "name": "Vanguard S&P 500 ETF",
+    {
+      "code": "VOO",
       "symbol": "VOO",
-      "combined_data": [
-        {
-          "date": "2026-06-19",
-          "dateShort": "🔮 06/19",
-          "open": 687.5,
-          "high": 690.2,
-          "low": 682.1,
-          "close": 685.3,
-          "volume": 16800000,
-          "volumeM": "16.8M",
-          "is_predicted": true
-        },
+      "name": "Vanguard S&P 500 ETF",
+      "prices": [
         {
           "date": "2026-06-23",
           "dateShort": "06/23",
@@ -244,17 +215,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-07-03",
-          "dateShort": "🔮 07/03",
-          "open": 665.1,
-          "high": 669.8,
-          "low": 661.5,
-          "close": 663.6,
-          "volume": 16300000,
-          "volumeM": "16.3M",
-          "is_predicted": true
-        },
-        {
           "date": "2026-07-06",
           "dateShort": "07/06",
           "close": 690.62,
@@ -276,25 +236,13 @@
           "volumeM": "4.82M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "AAPL": {
-      "name": "Apple Inc.",
+    {
+      "code": "AAPL",
       "symbol": "AAPL",
-      "combined_data": [
-        {
-          "date": "2026-06-19",
-          "dateShort": "🔮 06/19",
-          "open": 300.0,
-          "high": 303.4,
-          "low": 292.7,
-          "close": 298.7,
-          "volume": 30000000,
-          "volumeM": "30.0M",
-          "is_predicted": true
-        },
+      "name": "Apple Inc.",
+      "prices": [
         {
           "date": "2026-06-23",
           "dateShort": "06/23",
@@ -384,17 +332,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-07-03",
-          "dateShort": "🔮 07/03",
-          "open": 267.3,
-          "high": 278.4,
-          "low": 268.2,
-          "close": 279.0,
-          "volume": 372700000,
-          "volumeM": "372.7M",
-          "is_predicted": true
-        },
-        {
           "date": "2026-07-06",
           "dateShort": "07/06",
           "close": 312.66,
@@ -416,14 +353,13 @@
           "volumeM": "42.1M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "ALPXR": {
-      "name": "Alpex Acquisition Corporation Rights",
+    {
+      "code": "ALPXR",
       "symbol": "ALPXR",
-      "combined_data": [
+      "name": "Alpex Acquisition Corporation Rights",
+      "prices": [
         {
           "date": "2026-07-07",
           "dateShort": "07/07",
@@ -435,14 +371,13 @@
           "volumeM": "1.57M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "ALPXW": {
-      "name": "Alpex Acquisition Corporation Warrants",
+    {
+      "code": "ALPXW",
       "symbol": "ALPXW",
-      "combined_data": [
+      "name": "Alpex Acquisition Corporation Warrants",
+      "prices": [
         {
           "date": "2026-07-07",
           "dateShort": "07/07",
@@ -454,14 +389,13 @@
           "volumeM": "2.15M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "BBUL": {
-      "name": "GraniteShares 2x Long BB Daily ETF",
+    {
+      "code": "BBUL",
       "symbol": "BBUL",
-      "combined_data": [
+      "name": "GraniteShares 2x Long BB Daily ETF",
+      "prices": [
         {
           "date": "2026-07-07",
           "dateShort": "07/07",
@@ -473,14 +407,13 @@
           "volumeM": "0.01M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "BCCQU": {
-      "name": "Bleichroeder Acquisition Corp. III Units",
+    {
+      "code": "BCCQU",
       "symbol": "BCCQU",
-      "combined_data": [
+      "name": "Bleichroeder Acquisition Corp. III Units",
+      "prices": [
         {
           "date": "2026-07-07",
           "dateShort": "07/07",
@@ -492,14 +425,13 @@
           "volumeM": "4.95M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "FXAC": {
-      "name": "FortuneX Acquisition Corporation Ordinary shares",
+    {
+      "code": "FXAC",
       "symbol": "FXAC",
-      "combined_data": [
+      "name": "FortuneX Acquisition Corporation Ordinary shares",
+      "prices": [
         {
           "date": "2026-07-07",
           "dateShort": "07/07",
@@ -511,14 +443,13 @@
           "volumeM": "0.01M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "FXACW": {
-      "name": "FortuneX Acquisition Corporation Warrant",
+    {
+      "code": "FXACW",
       "symbol": "FXACW",
-      "combined_data": [
+      "name": "FortuneX Acquisition Corporation Warrant",
+      "prices": [
         {
           "date": "2026-07-07",
           "dateShort": "07/07",
@@ -530,14 +461,13 @@
           "volumeM": "0.44M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "MFP": {
-      "name": "Midera Food Processing, Inc. Common Stock When Issued",
+    {
+      "code": "MFP",
       "symbol": "MFP",
-      "combined_data": [
+      "name": "Midera Food Processing, Inc. Common Stock When Issued",
+      "prices": [
         {
           "date": "2026-07-07",
           "dateShort": "07/07",
@@ -549,14 +479,13 @@
           "volumeM": "8.31M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "PUL": {
-      "name": "GraniteShares 2x Long P Daily ETF",
+    {
+      "code": "PUL",
       "symbol": "PUL",
-      "combined_data": [
+      "name": "GraniteShares 2x Long P Daily ETF",
+      "prices": [
         {
           "date": "2026-07-07",
           "dateShort": "07/07",
@@ -568,14 +497,13 @@
           "volumeM": "0.0M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "SFYI": {
-      "name": "SFYI",
+    {
+      "code": "SFYI",
       "symbol": "SFYI",
-      "combined_data": [
+      "name": "SFYI",
+      "prices": [
         {
           "date": "2026-07-07",
           "dateShort": "07/07",
@@ -587,14 +515,13 @@
           "volumeM": "0.0M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "USEG": {
-      "name": "Big Sky Industrial Inc.",
+    {
+      "code": "USEG",
       "symbol": "USEG",
-      "combined_data": [
+      "name": "Big Sky Industrial Inc.",
+      "prices": [
         {
           "date": "2026-06-23",
           "dateShort": "06/23",
@@ -705,14 +632,13 @@
           "volumeM": "1.79M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     },
-    "WRDLY": {
-      "name": "Worldline SA",
+    {
+      "code": "WRDLY",
       "symbol": "WRDLY",
-      "combined_data": [
+      "name": "Worldline SA",
+      "prices": [
         {
           "date": "2026-06-18",
           "dateShort": "06/18",
@@ -823,32 +749,7 @@
           "volumeM": "0.0M",
           "is_predicted": false
         }
-      ],
-      "has_ai": false,
-      "recommendation": "持有"
+      ]
     }
-  },
-  "indices": {
-    "spx": {
-      "name": "S&P 500",
-      "value": 7503.85,
-      "change": -33.58,
-      "pct": -0.45,
-      "isPositive": false
-    },
-    "ixic": {
-      "name": "Nasdaq",
-      "value": 25818.69,
-      "change": -302.47,
-      "pct": -1.16,
-      "isPositive": false
-    },
-    "dji": {
-      "name": "Dow Jones",
-      "value": 52925.15,
-      "change": -130.76,
-      "pct": -0.25,
-      "isPositive": false
-    }
-  }
+  ]
 }
