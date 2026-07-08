@@ -129,11 +129,11 @@
           "date": "2026-07-07",
           "dateShort": "07/07",
           "close": 709.43,
-          "open": 714.14,
-          "high": 716.34,
+          "open": 714.17,
+          "high": 716.35,
           "low": 704.9,
-          "volume": 41897122,
-          "volumeM": "41.9M",
+          "volume": 42150000,
+          "volumeM": "42.15M",
           "is_predicted": false
         }
       ],
@@ -270,10 +270,10 @@
           "dateShort": "07/07",
           "close": 687.08,
           "open": 689.58,
-          "high": 690.23,
+          "high": 690.24,
           "low": 684.99,
-          "volume": 4822915,
-          "volumeM": "4.82M",
+          "volume": 4833600,
+          "volumeM": "4.83M",
           "is_predicted": false
         }
       ],
@@ -412,8 +412,8 @@
           "open": 315.29,
           "high": 315.48,
           "low": 310.15,
-          "volume": 42097217,
-          "volumeM": "42.1M",
+          "volume": 42426500,
+          "volumeM": "42.43M",
           "is_predicted": false
         }
       ],
@@ -507,7 +507,7 @@
           "open": 10.0,
           "high": 10.03,
           "low": 10.0,
-          "volume": 8075,
+          "volume": 8100,
           "volumeM": "0.01M",
           "is_predicted": false
         }
@@ -701,7 +701,7 @@
           "open": 1.12,
           "high": 1.15,
           "low": 1.1,
-          "volume": 1792137,
+          "volume": 1792219,
           "volumeM": "1.79M",
           "is_predicted": false
         }
