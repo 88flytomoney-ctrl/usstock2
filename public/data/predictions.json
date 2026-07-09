@@ -550,7 +550,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "AMAT": {
       "name": "Applied Materials, Inc.",
@@ -3837,7 +3837,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     }
   },
   "indices": {
