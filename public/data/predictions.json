@@ -344,7 +344,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "AAPL": {
       "name": "Apple Inc.",
@@ -863,7 +863,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -1036,7 +1036,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "ASML": {
       "name": "ASML Holding N.V.",
@@ -1728,7 +1728,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "IBM": {
       "name": "International Business Machines Corporation",
@@ -1901,7 +1901,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "INTC": {
       "name": "Intel Corporation",
@@ -2420,7 +2420,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
