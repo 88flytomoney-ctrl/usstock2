@@ -863,7 +863,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -2766,7 +2766,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "SKHY": {
       "name": "SK hynix Inc.",
@@ -3057,7 +3057,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "SPCX": {
       "name": "Space Exploration Technologies Corp.",
@@ -3576,7 +3576,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "TSM": {
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
