@@ -344,7 +344,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "AAPL": {
       "name": "Apple Inc.",
@@ -1036,7 +1036,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
@@ -1382,7 +1382,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -1901,7 +1901,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "MRVL": {
       "name": "Marvell Technology, Inc.",
@@ -3782,7 +3782,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     }
   },
   "indices": {
