@@ -171,7 +171,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "VOO": {
       "name": "Vanguard S&P 500 ETF",
@@ -517,7 +517,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "AMAT": {
       "name": "Applied Materials, Inc.",
@@ -1036,7 +1036,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
@@ -2593,7 +2593,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "買入"
     },
     "PLTR": {
       "name": "Palantir Technologies Inc.",
@@ -3288,7 +3288,7 @@
       "recommendation": "賣出"
     },
     "STX": {
-      "name": "Seagate Technology Holdings plc",
+      "name": "STX",
       "symbol": "STX",
       "combined_data": [
         {
