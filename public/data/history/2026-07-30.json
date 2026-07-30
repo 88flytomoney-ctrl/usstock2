@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-30 22:47:10",
+  "generatedAt": "2026-07-30 23:14:45",
   "generatedDate": "2026-07-30",
-  "generatedTime": "22:00",
+  "generatedTime": "23:00",
   "stockCount": 22,
   "stocks": [
     {
@@ -124,7 +124,7 @@
     {
       "code": "VOO",
       "symbol": "VOO",
-      "name": "VOO",
+      "name": "Vanguard S&P 500 ETF",
       "prices": [
         {
           "date": "2026-07-17",
@@ -475,7 +475,7 @@
     {
       "code": "AMD",
       "symbol": "AMD",
-      "name": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
       "prices": [
         {
           "date": "2026-07-17",
@@ -1645,7 +1645,7 @@
     {
       "code": "MU",
       "symbol": "MU",
-      "name": "MU",
+      "name": "Micron Technology, Inc.",
       "prices": [
         {
           "date": "2026-07-17",
@@ -2347,7 +2347,7 @@
     {
       "code": "STX",
       "symbol": "STX",
-      "name": "STX",
+      "name": "Seagate Technology Holdings plc",
       "prices": [
         {
           "date": "2026-07-17",
