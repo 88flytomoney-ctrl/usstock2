@@ -1382,7 +1382,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "買入"
     },
     "FERG": {
       "name": "Ferguson Enterprises Inc.",
@@ -2074,7 +2074,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "LRCX": {
       "name": "Lam Research Corporation",
