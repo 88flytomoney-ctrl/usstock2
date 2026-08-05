@@ -1209,7 +1209,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -2074,7 +2074,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "IWM": {
       "name": "iShares Russell 2000 ETF",
@@ -2593,7 +2593,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "PLTR": {
       "name": "Palantir Technologies Inc.",
