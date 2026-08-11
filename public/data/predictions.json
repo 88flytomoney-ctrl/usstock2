@@ -171,10 +171,10 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "持有"
     },
     "VOO": {
-      "name": "VOO",
+      "name": "Vanguard S&P 500 ETF",
       "symbol": "VOO",
       "combined_data": [
         {
@@ -693,7 +693,7 @@
       "recommendation": "買入"
     },
     "AMD": {
-      "name": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
       "symbol": "AMD",
       "combined_data": [
         {
@@ -1036,7 +1036,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
@@ -2247,7 +2247,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "MRVL": {
       "name": "Marvell Technology, Inc.",
@@ -2420,7 +2420,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
@@ -2596,7 +2596,7 @@
       "recommendation": "買入"
     },
     "MU": {
-      "name": "MU",
+      "name": "Micron Technology, Inc.",
       "symbol": "MU",
       "combined_data": [
         {
@@ -3631,7 +3631,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "TSLA": {
       "name": "Tesla, Inc.",
