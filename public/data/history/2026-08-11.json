@@ -1,9 +1,14 @@
 {
-  "stocks": {
-    "QQQ": {
-      "name": "Invesco QQQ Trust",
+  "generatedAt": "2026-08-11 22:47:26",
+  "generatedDate": "2026-08-11",
+  "generatedTime": "22:00",
+  "stockCount": 22,
+  "stocks": [
+    {
+      "code": "QQQ",
       "symbol": "QQQ",
-      "combined_data": [
+      "name": "Invesco QQQ Trust",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -113,70 +118,14 @@
           "volume": 28969241,
           "volumeM": "28.97M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 747.45,
-          "high": 759.06,
-          "low": 735.24,
-          "close": 742.1,
-          "volume": 41200000,
-          "volumeM": "41.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 693.85,
-          "high": 708.3,
-          "low": 694.4,
-          "close": 702.15,
-          "volume": 28700000,
-          "volumeM": "28.7M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 728.13,
-          "high": 729.41,
-          "low": 718.69,
-          "close": 725.26,
-          "volume": 27510000,
-          "volumeM": "27.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 733.13,
-          "high": 730.34,
-          "low": 729.47,
-          "close": 732.83,
-          "volume": 19920000,
-          "volumeM": "19.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 726.7,
-          "high": 725.1,
-          "low": 718.0,
-          "close": 722.2,
-          "volume": 25300000,
-          "volumeM": "25.3M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "VOO": {
-      "name": "VOO",
+    {
+      "code": "VOO",
       "symbol": "VOO",
-      "combined_data": [
+      "name": "VOO",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -286,70 +235,14 @@
           "volume": 4639703,
           "volumeM": "4.64M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 745.78,
-          "high": 779.11,
-          "low": 751.95,
-          "close": 767.25,
-          "volume": 2450000,
-          "volumeM": "2.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 710.57,
-          "high": 711.85,
-          "low": 700.88,
-          "close": 705.07,
-          "volume": 3470000,
-          "volumeM": "3.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 712.37,
-          "high": 718.77,
-          "low": 710.88,
-          "close": 715.29,
-          "volume": 4120000,
-          "volumeM": "4.1M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 716.59,
-          "high": 719.61,
-          "low": 713.29,
-          "close": 719.06,
-          "volume": 10570000,
-          "volumeM": "10.6M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 719.5,
-          "high": 714.5,
-          "low": 712.0,
-          "close": 713.0,
-          "volume": 2500000,
-          "volumeM": "2.5M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "AAPL": {
-      "name": "Apple Inc.",
+    {
+      "code": "AAPL",
       "symbol": "AAPL",
-      "combined_data": [
+      "name": "Apple Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -459,70 +352,14 @@
           "volume": 34168163,
           "volumeM": "34.17M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 304.93,
-          "high": 309.13,
-          "low": 301.49,
-          "close": 305.4,
-          "volume": 36850000,
-          "volumeM": "36.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 312.04,
-          "high": 313.13,
-          "low": 303.52,
-          "close": 305.7,
-          "volume": 37180000,
-          "volumeM": "37.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 315.23,
-          "high": 318.45,
-          "low": 312.56,
-          "close": 316.56,
-          "volume": 29780000,
-          "volumeM": "29.8M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 290.29,
-          "high": 297.72,
-          "low": 288.99,
-          "close": 293.23,
-          "volume": 33009999,
-          "volumeM": "33.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 302.4,
-          "high": 305.4,
-          "low": 298.7,
-          "close": 303.2,
-          "volume": 27500000,
-          "volumeM": "27.5M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      ]
     },
-    "AMAT": {
-      "name": "Applied Materials, Inc.",
+    {
+      "code": "AMAT",
       "symbol": "AMAT",
-      "combined_data": [
+      "name": "Applied Materials, Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -632,70 +469,14 @@
           "volume": 6384413,
           "volumeM": "6.38M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 552.4,
-          "high": 561.5,
-          "low": 537.25,
-          "close": 541.3,
-          "volume": 7150000,
-          "volumeM": "7.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 556.55,
-          "high": 564.7,
-          "low": 540.38,
-          "close": 544.15,
-          "volume": 7480000,
-          "volumeM": "7.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 560.7,
-          "high": 567.9,
-          "low": 543.51,
-          "close": 547.0,
-          "volume": 7810000,
-          "volumeM": "7.8M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 564.85,
-          "high": 571.1,
-          "low": 546.64,
-          "close": 549.85,
-          "volume": 8140000,
-          "volumeM": "8.1M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 554.12,
-          "high": 559.67,
-          "low": 535.44,
-          "close": 547.33,
-          "volume": 8010000,
-          "volumeM": "8.0M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "AMD": {
-      "name": "AMD",
+    {
+      "code": "AMD",
       "symbol": "AMD",
-      "combined_data": [
+      "name": "AMD",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -805,70 +586,14 @@
           "volume": 17265042,
           "volumeM": "17.27M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 531.55,
-          "high": 546.9,
-          "low": 513.6,
-          "close": 533.8,
-          "volume": 39400000,
-          "volumeM": "39.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 521.95,
-          "high": 531.65,
-          "low": 507.45,
-          "close": 526.35,
-          "volume": 47320000,
-          "volumeM": "47.3M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 514.4,
-          "high": 524.6,
-          "low": 499.3,
-          "close": 517.9,
-          "volume": 29600000,
-          "volumeM": "29.6M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 497.0,
-          "high": 504.0,
-          "low": 484.0,
-          "close": 490.0,
-          "volume": 26000000,
-          "volumeM": "26.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 482.5,
-          "high": 484.0,
-          "low": 471.0,
-          "close": 479.0,
-          "volume": 18700000,
-          "volumeM": "18.7M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "AMZN": {
-      "name": "Amazon.com, Inc.",
+    {
+      "code": "AMZN",
       "symbol": "AMZN",
-      "combined_data": [
+      "name": "Amazon.com, Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -978,70 +703,14 @@
           "volume": 29512425,
           "volumeM": "29.51M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 290.12,
-          "high": 291.19,
-          "low": 276.78,
-          "close": 281.23,
-          "volume": 49560000,
-          "volumeM": "49.6M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 265.22,
-          "high": 268.05,
-          "low": 264.15,
-          "close": 266.02,
-          "volume": 12240000,
-          "volumeM": "12.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 275.76,
-          "high": 282.84,
-          "low": 278.39,
-          "close": 279.17,
-          "volume": 35230000,
-          "volumeM": "35.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 280.37,
-          "high": 286.78,
-          "low": 277.05,
-          "close": 282.56,
-          "volume": 37780000,
-          "volumeM": "37.8M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 281.5,
-          "high": 282.5,
-          "low": 274.0,
-          "close": 277.0,
-          "volume": 24000000,
-          "volumeM": "24.0M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "AVGO": {
-      "name": "Broadcom Inc.",
+    {
+      "code": "AVGO",
       "symbol": "AVGO",
-      "combined_data": [
+      "name": "Broadcom Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -1151,70 +820,14 @@
           "volume": 12814188,
           "volumeM": "12.81M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 425.37,
-          "high": 431.75,
-          "low": 415.44,
-          "close": 422.14,
-          "volume": 25960000,
-          "volumeM": "26.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 412.21,
-          "high": 418.11,
-          "low": 402.07,
-          "close": 414.64,
-          "volume": 6790000,
-          "volumeM": "6.8M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 447.12,
-          "high": 457.27,
-          "low": 438.87,
-          "close": 449.94,
-          "volume": 10100000,
-          "volumeM": "10.1M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 435.12,
-          "high": 438.23,
-          "low": 426.45,
-          "close": 430.12,
-          "volume": 12550000,
-          "volumeM": "12.6M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 420.7,
-          "high": 420.37,
-          "low": 406.0,
-          "close": 406.68,
-          "volume": 9260000,
-          "volumeM": "9.3M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      ]
     },
-    "CRWV": {
-      "name": "CoreWeave, Inc.",
+    {
+      "code": "CRWV",
       "symbol": "CRWV",
-      "combined_data": [
+      "name": "CoreWeave, Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -1324,70 +937,14 @@
           "volume": 29581984,
           "volumeM": "29.58M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 90.85,
-          "high": 93.45,
-          "low": 87.12,
-          "close": 89.95,
-          "volume": 28450000,
-          "volumeM": "28.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 90.45,
-          "high": 93.25,
-          "low": 86.85,
-          "close": 89.65,
-          "volume": 27850000,
-          "volumeM": "27.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 90.05,
-          "high": 93.05,
-          "low": 86.58,
-          "close": 89.35,
-          "volume": 27250000,
-          "volumeM": "27.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 89.65,
-          "high": 92.85,
-          "low": 86.31,
-          "close": 89.05,
-          "volume": 26650000,
-          "volumeM": "26.6M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 89.25,
-          "high": 92.65,
-          "low": 86.04,
-          "close": 88.75,
-          "volume": 26050000,
-          "volumeM": "26.1M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      ]
     },
-    "GOOG": {
-      "name": "Alphabet Inc.",
+    {
+      "code": "GOOG",
       "symbol": "GOOG",
-      "combined_data": [
+      "name": "Alphabet Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -1497,70 +1054,14 @@
           "volume": 18199544,
           "volumeM": "18.2M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 370.79,
-          "high": 375.57,
-          "low": 363.9,
-          "close": 371.37,
-          "volume": 14500000,
-          "volumeM": "14.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 373.57,
-          "high": 378.13,
-          "low": 365.79,
-          "close": 374.11,
-          "volume": 13080000,
-          "volumeM": "13.1M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 345.85,
-          "high": 348.95,
-          "low": 344.01,
-          "close": 346.55,
-          "volume": 11920000,
-          "volumeM": "11.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 348.64,
-          "high": 350.3,
-          "low": 345.52,
-          "close": 346.89,
-          "volume": 10450000,
-          "volumeM": "10.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 343.87,
-          "high": 347.4,
-          "low": 334.24,
-          "close": 335.1,
-          "volume": 11600000,
-          "volumeM": "11.6M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      ]
     },
-    "GOOGL": {
-      "name": "Alphabet Inc.",
+    {
+      "code": "GOOGL",
       "symbol": "GOOGL",
-      "combined_data": [
+      "name": "Alphabet Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -1670,70 +1171,14 @@
           "volume": 28664272,
           "volumeM": "28.66M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 394.44,
-          "high": 396.45,
-          "low": 351.69,
-          "close": 369.17,
-          "volume": 54440000,
-          "volumeM": "54.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 375.8,
-          "high": 379.45,
-          "low": 367.84,
-          "close": 374.65,
-          "volume": 33049999,
-          "volumeM": "33.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 365.34,
-          "high": 369.23,
-          "low": 365.9,
-          "close": 366.23,
-          "volume": 30450000,
-          "volumeM": "30.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 348.57,
-          "high": 350.04,
-          "low": 347.41,
-          "close": 354.04,
-          "volume": 16460000,
-          "volumeM": "16.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 347.4,
-          "high": 350.6,
-          "low": 335.7,
-          "close": 335.7,
-          "volume": 22600000,
-          "volumeM": "22.6M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      ]
     },
-    "INTC": {
-      "name": "Intel Corporation",
+    {
+      "code": "INTC",
       "symbol": "INTC",
-      "combined_data": [
+      "name": "Intel Corporation",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -1843,70 +1288,14 @@
           "volume": 163634859,
           "volumeM": "163.63M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 93.91,
-          "high": 110.31,
-          "low": 92.35,
-          "close": 106.63,
-          "volume": 96100000,
-          "volumeM": "96.1M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 96.12,
-          "high": 105.04,
-          "low": 97.65,
-          "close": 97.97,
-          "volume": 70420000,
-          "volumeM": "70.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 103.89,
-          "high": 106.12,
-          "low": 99.45,
-          "close": 104.05,
-          "volume": 67320000,
-          "volumeM": "67.3M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 102.1,
-          "high": 103.64,
-          "low": 99.16,
-          "close": 101.74,
-          "volume": 79900000,
-          "volumeM": "79.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 100.7,
-          "high": 102.5,
-          "low": 97.4,
-          "close": 101.8,
-          "volume": 125600000,
-          "volumeM": "125.6M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "LITE": {
-      "name": "Lumentum Holdings Inc.",
+    {
+      "code": "LITE",
       "symbol": "LITE",
-      "combined_data": [
+      "name": "Lumentum Holdings Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -2016,70 +1405,14 @@
           "volume": 5622997,
           "volumeM": "5.62M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 852.35,
-          "high": 928.48,
-          "low": 861.9,
-          "close": 890.17,
-          "volume": 5730000,
-          "volumeM": "5.7M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 852.35,
-          "high": 928.48,
-          "low": 861.9,
-          "close": 890.17,
-          "volume": 5730000,
-          "volumeM": "5.7M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 852.35,
-          "high": 928.48,
-          "low": 861.9,
-          "close": 890.17,
-          "volume": 5730000,
-          "volumeM": "5.7M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 995.5,
-          "high": 971.5,
-          "low": 860.0,
-          "close": 840.0,
-          "volume": 8500000,
-          "volumeM": "8.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 909.78,
-          "high": 925.67,
-          "low": 845.89,
-          "close": 897.45,
-          "volume": 7890000,
-          "volumeM": "7.9M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "META": {
-      "name": "Meta Platforms, Inc.",
+    {
+      "code": "META",
       "symbol": "META",
-      "combined_data": [
+      "name": "Meta Platforms, Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -2189,70 +1522,14 @@
           "volume": 12274440,
           "volumeM": "12.27M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 658.0,
-          "high": 637.45,
-          "low": 546.0,
-          "close": 598.7,
-          "volume": 8400000,
-          "volumeM": "8.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 595.1,
-          "high": 599.59,
-          "low": 589.98,
-          "close": 595.23,
-          "volume": 11920000,
-          "volumeM": "11.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 578.5,
-          "high": 604.0,
-          "low": 578.0,
-          "close": 587.0,
-          "volume": 8500000,
-          "volumeM": "8.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 609.91,
-          "high": 622.44,
-          "low": 604.04,
-          "close": 610.28,
-          "volume": 10450000,
-          "volumeM": "10.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 622.5,
-          "high": 632.45,
-          "low": 613.15,
-          "close": 621.85,
-          "volume": 14050000,
-          "volumeM": "14.1M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "MRVL": {
-      "name": "Marvell Technology, Inc.",
+    {
+      "code": "MRVL",
       "symbol": "MRVL",
-      "combined_data": [
+      "name": "Marvell Technology, Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -2362,70 +1639,14 @@
           "volume": 11992312,
           "volumeM": "11.99M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 224.12,
-          "high": 235.67,
-          "low": 217.89,
-          "close": 231.56,
-          "volume": 22590000,
-          "volumeM": "22.6M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 231.45,
-          "high": 241.89,
-          "low": 223.78,
-          "close": 238.67,
-          "volume": 24010000,
-          "volumeM": "24.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 223.19,
-          "high": 227.67,
-          "low": 214.79,
-          "close": 223.89,
-          "volume": 23780000,
-          "volumeM": "23.8M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 223.19,
-          "high": 225.44,
-          "low": 202.03,
-          "close": 210.1,
-          "volume": 13890000,
-          "volumeM": "13.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 228.18,
-          "high": 216.82,
-          "low": 210.04,
-          "close": 224.94,
-          "volume": 8230000,
-          "volumeM": "8.2M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      ]
     },
-    "MSFT": {
-      "name": "Microsoft Corporation",
+    {
+      "code": "MSFT",
       "symbol": "MSFT",
-      "combined_data": [
+      "name": "Microsoft Corporation",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -2535,70 +1756,14 @@
           "volume": 22984523,
           "volumeM": "22.98M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 506.7,
-          "high": 509.6,
-          "low": 495.7,
-          "close": 500.5,
-          "volume": 24500000,
-          "volumeM": "24.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 507.945,
-          "high": 508.095,
-          "low": 505.8,
-          "close": 505.975,
-          "volume": 32490000,
-          "volumeM": "32.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 514.67,
-          "high": 517.53,
-          "low": 507.6,
-          "close": 519.58,
-          "volume": 18180000,
-          "volumeM": "18.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 512.39,
-          "high": 524.53,
-          "low": 511.7,
-          "close": 516.89,
-          "volume": 25000000,
-          "volumeM": "25.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 511.6,
-          "high": 514.12,
-          "low": 510.11,
-          "close": 515.22,
-          "volume": 15880000,
-          "volumeM": "15.9M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "MU": {
-      "name": "MU",
+    {
+      "code": "MU",
       "symbol": "MU",
-      "combined_data": [
+      "name": "MU",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -2708,70 +1873,14 @@
           "volume": 29137529,
           "volumeM": "29.14M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 917.45,
-          "high": 962.6,
-          "low": 913.2,
-          "close": 955.0,
-          "volume": 25800000,
-          "volumeM": "25.8M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 889.78,
-          "high": 947.2,
-          "low": 862.4,
-          "close": 900.58,
-          "volume": 32470000,
-          "volumeM": "32.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 894.0,
-          "high": 933.05,
-          "low": 862.4,
-          "close": 901.9,
-          "volume": 28350000,
-          "volumeM": "28.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 896.12,
-          "high": 923.45,
-          "low": 875.67,
-          "close": 890.89,
-          "volume": 20340000,
-          "volumeM": "20.3M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 883.13,
-          "high": 876.56,
-          "low": 841.45,
-          "close": 866.8,
-          "volume": 29800000,
-          "volumeM": "29.8M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      ]
     },
-    "NBIS": {
-      "name": "NBIS",
+    {
+      "code": "NBIS",
       "symbol": "NBIS",
-      "combined_data": [
+      "name": "NBIS",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -2881,70 +1990,14 @@
           "volume": 19739205,
           "volumeM": "19.74M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 188.45,
-          "high": 196.25,
-          "low": 188.15,
-          "close": 192.85,
-          "volume": 18920000,
-          "volumeM": "18.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 189.62,
-          "high": 196.88,
-          "low": 189.02,
-          "close": 192.51,
-          "volume": 18150000,
-          "volumeM": "18.1M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 190.78,
-          "high": 197.51,
-          "low": 189.89,
-          "close": 192.18,
-          "volume": 17380000,
-          "volumeM": "17.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 191.94,
-          "high": 198.14,
-          "low": 190.76,
-          "close": 191.85,
-          "volume": 16610000,
-          "volumeM": "16.6M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 193.1,
-          "high": 198.77,
-          "low": 191.63,
-          "close": 191.52,
-          "volume": 15840000,
-          "volumeM": "15.8M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "NVDA": {
-      "name": "NVIDIA Corporation",
+    {
+      "code": "NVDA",
       "symbol": "NVDA",
-      "combined_data": [
+      "name": "NVIDIA Corporation",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -3054,70 +2107,14 @@
           "volume": 95707655,
           "volumeM": "95.71M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 227.7,
-          "high": 239.8,
-          "low": 230.75,
-          "close": 240.15,
-          "volume": 180550000,
-          "volumeM": "180.6M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 232.35,
-          "high": 237.05,
-          "low": 230.25,
-          "close": 236.4,
-          "volume": 146100000,
-          "volumeM": "146.1M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 230.9,
-          "high": 235.41,
-          "low": 235.65,
-          "close": 233.62,
-          "volume": 93880000,
-          "volumeM": "93.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 226.5,
-          "high": 225.7,
-          "low": 220.0,
-          "close": 221.0,
-          "volume": 106000000,
-          "volumeM": "106.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 220.4,
-          "high": 220.45,
-          "low": 214.55,
-          "close": 215.8,
-          "volume": 109700000,
-          "volumeM": "109.7M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      ]
     },
-    "PLTR": {
-      "name": "Palantir Technologies Inc.",
+    {
+      "code": "PLTR",
       "symbol": "PLTR",
-      "combined_data": [
+      "name": "Palantir Technologies Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -3227,70 +2224,14 @@
           "volume": 41866512,
           "volumeM": "41.87M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 148.92,
-          "high": 155.12,
-          "low": 147.78,
-          "close": 151.34,
-          "volume": 48290000,
-          "volumeM": "48.3M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 165.05,
-          "high": 168.45,
-          "low": 161.45,
-          "close": 165.9,
-          "volume": 56750000,
-          "volumeM": "56.8M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 168.5,
-          "high": 180.0,
-          "low": 167.0,
-          "close": 179.5,
-          "volume": 106000000,
-          "volumeM": "106.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 178.5,
-          "high": 187.0,
-          "low": 178.0,
-          "close": 186.0,
-          "volume": 66000000,
-          "volumeM": "66.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 181.85,
-          "high": 184.2,
-          "low": 179.1,
-          "close": 185.5,
-          "volume": 27900000,
-          "volumeM": "27.9M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "SNDK": {
-      "name": "Sandisk Corporation",
+    {
+      "code": "SNDK",
       "symbol": "SNDK",
-      "combined_data": [
+      "name": "Sandisk Corporation",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -3400,70 +2341,14 @@
           "volume": 9197659,
           "volumeM": "9.2M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 1463.24,
-          "high": 1521.38,
-          "low": 1398.45,
-          "close": 1489.34,
-          "volume": 20920000,
-          "volumeM": "20.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 1527.18,
-          "high": 1585.67,
-          "low": 1458.76,
-          "close": 1545.21,
-          "volume": 21950000,
-          "volumeM": "21.9M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 1340.56,
-          "high": 1337.12,
-          "low": 1217.34,
-          "close": 1269.05,
-          "volume": 13980000,
-          "volumeM": "14.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 1346.33,
-          "high": 1328.11,
-          "low": 1216.91,
-          "close": 1250.85,
-          "volume": 8830000,
-          "volumeM": "8.8M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 1306.34,
-          "high": 1293.83,
-          "low": 1268.7,
-          "close": 1289.27,
-          "volume": 6450000,
-          "volumeM": "6.5M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     },
-    "SPCX": {
-      "name": "Space Exploration Technologies Corp.",
+    {
+      "code": "SPCX",
       "symbol": "SPCX",
-      "combined_data": [
+      "name": "Space Exploration Technologies Corp.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -3573,70 +2458,14 @@
           "volume": 108280221,
           "volumeM": "108.28M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 106.2,
-          "high": 113.2,
-          "low": 102.45,
-          "close": 108.8,
-          "volume": 304710000,
-          "volumeM": "304.7M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 104.85,
-          "high": 112.0,
-          "low": 101.3,
-          "close": 107.6,
-          "volume": 317840000,
-          "volumeM": "317.8M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 118.13,
-          "high": 127.76,
-          "low": 115.55,
-          "close": 126.97,
-          "volume": 279580000,
-          "volumeM": "279.6M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 145.45,
-          "high": 151.68,
-          "low": 139.26,
-          "close": 151.05,
-          "volume": 209020000,
-          "volumeM": "209.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 140.2,
-          "high": 140.75,
-          "low": 132.0,
-          "close": 130.6,
-          "volume": 66800000,
-          "volumeM": "66.8M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      ]
     },
-    "TSLA": {
-      "name": "Tesla, Inc.",
+    {
+      "code": "TSLA",
       "symbol": "TSLA",
-      "combined_data": [
+      "name": "Tesla, Inc.",
+      "prices": [
         {
           "date": "2026-07-29",
           "dateShort": "07/29",
@@ -3746,88 +2575,8 @@
           "volume": 23158961,
           "volumeM": "23.16M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-08-12",
-          "dateShort": "🔮 08/12",
-          "open": 331.19,
-          "high": 334.09,
-          "low": 324.28,
-          "close": 329.27,
-          "volume": 24380000,
-          "volumeM": "24.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-13",
-          "dateShort": "🔮 08/13",
-          "open": 309.0,
-          "high": 315.0,
-          "low": 308.0,
-          "close": 312.0,
-          "volume": 22500000,
-          "volumeM": "22.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-14",
-          "dateShort": "🔮 08/14",
-          "open": 314.79,
-          "high": 323.97,
-          "low": 313.04,
-          "close": 319.52,
-          "volume": 33840000,
-          "volumeM": "33.8M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-17",
-          "dateShort": "🔮 08/17",
-          "open": 326.5,
-          "high": 334.0,
-          "low": 327.0,
-          "close": 331.0,
-          "volume": 21000000,
-          "volumeM": "21.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-08-18",
-          "dateShort": "🔮 08/18",
-          "open": 340.5,
-          "high": 344.6,
-          "low": 337.6,
-          "close": 341.3,
-          "volume": 20000000,
-          "volumeM": "20.0M",
-          "is_predicted": true
         }
-      ],
-      "has_ai": true,
-      "recommendation": "買入"
+      ]
     }
-  },
-  "indices": {
-    "spx": {
-      "name": "S&P 500",
-      "value": 7728.2,
-      "change": -24.91,
-      "pct": -0.32,
-      "isPositive": false
-    },
-    "ixic": {
-      "name": "Nasdaq",
-      "value": 26445.45,
-      "change": -159.91,
-      "pct": -0.6,
-      "isPositive": false
-    },
-    "dji": {
-      "name": "Dow Jones",
-      "value": 53791.85,
-      "change": -184.13,
-      "pct": -0.34,
-      "isPositive": false
-    }
-  }
+  ]
 }
