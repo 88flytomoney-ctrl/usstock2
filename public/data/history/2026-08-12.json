@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-12 22:51:33",
+  "generatedAt": "2026-08-12 23:42:59",
   "generatedDate": "2026-08-12",
-  "generatedTime": "22:00",
+  "generatedTime": "23:00",
   "stockCount": 22,
   "stocks": [
     {
@@ -124,7 +124,7 @@
     {
       "code": "VOO",
       "symbol": "VOO",
-      "name": "VOO",
+      "name": "Vanguard S&P 500 ETF",
       "prices": [
         {
           "date": "2026-07-30",
@@ -358,7 +358,7 @@
     {
       "code": "AMD",
       "symbol": "AMD",
-      "name": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
       "prices": [
         {
           "date": "2026-07-30",
@@ -1645,7 +1645,7 @@
     {
       "code": "MU",
       "symbol": "MU",
-      "name": "MU",
+      "name": "Micron Technology, Inc.",
       "prices": [
         {
           "date": "2026-07-30",
