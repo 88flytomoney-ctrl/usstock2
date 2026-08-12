@@ -22,6 +22,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 DATA_URL = "https://88flytomoney-ctrl.github.io/usstock2/data/predictions.json"
+LOCAL_DATA = "public/data/predictions.json"
 PUBLIC_DIR = Path("public")
 OUTPUT_FILE = PUBLIC_DIR / "report.html"
 ARCHIVE_DIR = PUBLIC_DIR / "archive"
@@ -30,7 +31,13 @@ HK_TZ = timezone(timedelta(hours=8))
 
 
 def fetch_data():
-    """Fetch predictions JSON from the live GitHub Pages deployment."""
+    """Read predictions JSON from local file (pipeline just wrote it),
+    or fall back to the live URL if the local file doesn't exist."""
+    import os
+    if os.path.exists(LOCAL_DATA):
+        with open(LOCAL_DATA, "r", encoding="utf-8") as f:
+            return json.loads(f.read())
+    # Fallback: fetch from live site
     req = urllib.request.Request(DATA_URL, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.loads(resp.read())
