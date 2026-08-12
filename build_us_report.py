@@ -2,13 +2,16 @@
 """
 build_us_report.py — Fetch US Stock 2 data, generate a static report.html
 with market indices, 22 tracked stocks, today's highlights, and 10-day standouts.
+Supports historical archives with a date selector dropdown.
 
 Data source: https://88flytomoney-ctrl.github.io/usstock2/data/predictions.json
-Output:      public/report.html  (Vite copies public/ → dist/ on build)
+Output:      public/report.html      (latest report)
+             public/archive/*.html    (historical snapshots)
+             public/archive/index.json (archive manifest)
 
 Usage:
   python3 build_us_report.py --dry-run   # generate locally, don't push
-  python3 build_us_report.py             # generate + git commit + push
+  python3 build_us_report.py             # generate + archive + git commit + push
 """
 import json
 import os
@@ -16,9 +19,13 @@ import sys
 import subprocess
 import urllib.request
 from datetime import datetime, timezone, timedelta
+from pathlib import Path
 
 DATA_URL = "https://88flytomoney-ctrl.github.io/usstock2/data/predictions.json"
-OUTPUT_FILE = "public/report.html"
+PUBLIC_DIR = Path("public")
+OUTPUT_FILE = PUBLIC_DIR / "report.html"
+ARCHIVE_DIR = PUBLIC_DIR / "archive"
+ARCHIVE_INDEX = ARCHIVE_DIR / "index.json"
 HK_TZ = timezone(timedelta(hours=8))
 
 
@@ -52,15 +59,43 @@ def compute_stock_stats(stocks):
             "ten_chg": ten_chg,
             "rec": rec,
         })
-    # group by recommendation: buy first, then hold, then sell
     order = {"買入": 0, "持有": 1, "賣出": 2}
     rows.sort(key=lambda r: order.get(r["rec"], 9))
     return rows
 
 
-def build_html(data, rows):
+def build_html(data, rows, archive_dates=None, current_date=None):
+    """Build the full HTML report. If current_date is set, it's an archive page."""
     indices = data.get("indices", {})
-    now_str = datetime.now(HK_TZ).strftime("%Y/%m/%d %H:%M HKT")
+    is_archive = current_date is not None
+    now_str = current_date if current_date else datetime.now(HK_TZ).strftime("%Y/%m/%d %H:%M HKT")
+
+    # Build archive dropdown
+    archive_options = '<option value="">最新數據</option>\n'
+    if archive_dates:
+        for d in archive_dates:
+            selected = ' selected' if d == current_date else ''
+            label = d.replace("-", "/")
+            archive_options += f'<option value="{d}"{selected}>{label}</option>\n'
+
+    # Dropdown redirect script
+    dropdown_html = ""
+    if archive_dates is not None:
+        if is_archive:
+            onchange = ("document.location.href="
+                         "this.value? '../archive/'+this.value+'.html'"
+                         ": '../report.html'")
+        else:
+            onchange = ("document.location.href="
+                         "this.value? 'archive/'+this.value+'.html'"
+                         ": 'report.html'")
+        dropdown_html = f"""
+  <div class="mb-4">
+    <label class="text-sm text-gray-400 mr-2">📜 歷史記錄:</label>
+    <select onchange="{onchange}" class="bg-gray-800 text-gray-100 border border-gray-600 rounded px-3 py-1.5 text-sm">
+      {archive_options}
+    </select>
+  </div>"""
 
     # Indices rows
     idx_rows = ""
@@ -117,12 +152,14 @@ def build_html(data, rows):
     buy_list = ", ".join(f'{r["name"]} ({r["code"]})' for r in rows if r["rec"] == "買入")
     sell_list = ", ".join(f'{r["name"]} ({r["code"]})' for r in rows if r["rec"] == "賣出")
 
+    title = f"US Stock 2 AI — {current_date}" if is_archive else "US Stock 2 AI — Summary Report"
+
     html = f"""<!DOCTYPE html>
 <html lang="zh-HK">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>US Stock 2 AI — Summary Report</title>
+<title>{title}</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>body{{font-family:system-ui,-apple-system,sans-serif;}}table{{border-collapse:collapse;}}</style>
 </head>
@@ -131,7 +168,8 @@ def build_html(data, rows):
 
   <!-- Header -->
   <h1 class="text-3xl font-bold mb-1">US Stock 2 🤖 AI — Summary Report</h1>
-  <p class="text-gray-400 mb-6">最後更新: {now_str}</p>
+  <p class="text-gray-400 mb-2">最後更新: {now_str}</p>
+  {dropdown_html}
 
   <!-- Market Indices -->
   <h2 class="text-xl font-semibold mb-3">🇺🇸 US Market Indices</h2>
@@ -205,18 +243,54 @@ def build_html(data, rows):
     return html
 
 
-def git_push():
-    """Commit and push report.html to main branch."""
-    cmds = [
-        ["git", "add", OUTPUT_FILE],
-        ["git", "commit", "-m", f"🤖 Auto-update US report.html {datetime.now(HK_TZ).strftime('%Y-%m-%d %H:%M')}"],
-    ]
-    for cmd in cmds:
-        r = subprocess.run(cmd, capture_output=True, text=True)
-        if r.returncode != 0 and "nothing to commit" not in r.stdout:
-            print(f"  git: {r.stdout.strip()} {r.stderr.strip()}")
+def load_archive_index():
+    """Load existing archive/index.json, or return empty list."""
+    if ARCHIVE_INDEX.exists():
+        with open(ARCHIVE_INDEX) as f:
+            return json.load(f)
+    return []
 
-    # Pull rebase then push
+
+def save_archive_index(dates):
+    """Save archive dates to index.json (newest first)."""
+    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+    with open(ARCHIVE_INDEX, "w", encoding="utf-8") as f:
+        json.dump(dates, f, ensure_ascii=False, indent=2)
+
+
+def archive_today(data, rows, archive_dates):
+    """Save today's report as an archive snapshot and update index."""
+    today = datetime.now(HK_TZ).strftime("%Y-%m-%d")
+
+    # Build archive HTML with the dropdown showing all dates
+    archive_html = build_html(data, rows, archive_dates=archive_dates, current_date=today)
+
+    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+    archive_file = ARCHIVE_DIR / f"{today}.html"
+    with open(archive_file, "w", encoding="utf-8") as f:
+        f.write(archive_html)
+    print(f"✅ Archive saved: {archive_file}")
+
+    # Update index (newest first, no duplicates)
+    if today not in archive_dates:
+        archive_dates.insert(0, today)
+    save_archive_index(archive_dates)
+    print(f"✅ Archive index updated: {len(archive_dates)} dates")
+
+    return archive_dates
+
+
+def git_push():
+    """Commit and push report.html + archive/ to main branch."""
+    subprocess.run(["git", "add", str(OUTPUT_FILE), "public/archive/"], capture_output=True, text=True)
+
+    r = subprocess.run(
+        ["git", "commit", "-m", f"🤖 Auto-update US report + archive {datetime.now(HK_TZ).strftime('%Y-%m-%d %H:%M')}"],
+        capture_output=True, text=True
+    )
+    if r.returncode != 0 and "nothing to commit" not in r.stdout:
+        print(f"  git commit: {r.stdout.strip()} {r.stderr.strip()}")
+
     subprocess.run(["git", "pull", "--rebase"], capture_output=True, text=True)
     r = subprocess.run(["git", "push"], capture_output=True, text=True)
     if r.returncode == 0:
@@ -231,9 +305,17 @@ def main():
 
     data = fetch_data()
     rows = compute_stock_stats(data["stocks"])
-    html = build_html(data, rows)
 
-    os.makedirs("public", exist_ok=True)
+    # Load existing archive dates
+    archive_dates = load_archive_index()
+    print(f"  → Existing archives: {len(archive_dates)}")
+
+    # 1. Save today's archive snapshot
+    archive_dates = archive_today(data, rows, archive_dates)
+
+    # 2. Generate the latest report.html (with dropdown showing all archive dates)
+    html = build_html(data, rows, archive_dates=archive_dates, current_date=None)
+    PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"✅ Written {OUTPUT_FILE} ({len(html)} bytes, {len(rows)} stocks)")
