@@ -1541,10 +1541,21 @@
           "volume": 22600000,
           "volumeM": "22.6M",
           "is_predicted": true
+        },
+        {
+          "date": "2026-08-19",
+          "dateShort": "🔮 08/19",
+          "open": 334.56,
+          "high": 336.89,
+          "low": 332.89,
+          "close": 335.12,
+          "volume": 17010000,
+          "volumeM": "17.0M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "INTC": {
       "name": "Intel Corporation",
@@ -2581,8 +2592,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "買入"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "NBIS": {
       "name": "NBIS",
