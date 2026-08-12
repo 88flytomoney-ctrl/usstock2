@@ -58,15 +58,16 @@ jobs:
 
       # ── Generate Report ─────────────────────────────────────────────────────
       - name: Build daily report
-        run: python build_us_report.py --dry-run
+        run: python build_us_report.py
 
       # Data is written to public/data/ by the Python script.
-      # Commit it back to the repo so history is persisted on GitHub Pages.
+      # Report + archive snapshots are written to public/report.html and public/archive/.
+      # Commit it all back to the repo so history is persisted on GitHub Pages.
       - name: Commit data
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add public/data/ public/report.html
+          git add public/data/ public/report.html public/archive/
           git diff --staged --quiet && echo "No data changes" || {
             git commit -m "🤖 Auto-update US stock data $(date +%Y-%m-%d\ %H:%M)" &&
             git pull --rebase && git push
