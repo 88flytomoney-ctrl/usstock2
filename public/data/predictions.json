@@ -171,7 +171,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "持有"
     },
     "VOO": {
       "name": "VOO",
@@ -690,7 +690,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -862,8 +862,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
@@ -1208,8 +1208,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "買入"
     },
     "GOOG": {
       "name": "Alphabet Inc.",
@@ -2420,7 +2420,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "MU": {
       "name": "MU",
@@ -2765,8 +2765,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "買入"
     },
     "NVDA": {
       "name": "NVIDIA Corporation",
@@ -3803,8 +3803,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "買入"
     }
   },
   "indices": {
