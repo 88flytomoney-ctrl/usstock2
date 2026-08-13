@@ -44,13 +44,14 @@ def fetch_data():
 
 
 def compute_stock_stats(stocks):
-    """Return a list of dicts with today % and 10-day % for each stock."""
+    """Return a list of dicts with today %, 10-day %, and 5-day AI predictions for each stock."""
     rows = []
     for code, stock in stocks.items():
         name = stock.get("name", "?")
         rec = stock.get("recommendation", "—")
         combined = stock.get("combined_data", [])
         actual = [d for d in combined if not d.get("is_predicted")]
+        predicted = [d for d in combined if d.get("is_predicted")]
         if len(actual) < 2:
             continue
         last = actual[-1]
@@ -58,6 +59,20 @@ def compute_stock_stats(stocks):
         first = actual[0]
         today_chg = ((last["close"] - prev["close"]) / prev["close"]) * 100
         ten_chg = ((last["close"] - first["close"]) / first["close"]) * 100
+
+        # Extract 5-day predicted closes
+        pred_closes = [p["close"] for p in predicted[:5]]
+        pred_dates = [p.get("date", "") for p in predicted[:5]]
+        # 5-day predicted change: last predicted close vs today's close
+        pred_5d_chg = None
+        if pred_closes:
+            pred_5d_chg = ((pred_closes[-1] - last["close"]) / last["close"]) * 100
+        # Min/max predicted close
+        pred_min = min(pred_closes) if pred_closes else None
+        pred_max = max(pred_closes) if pred_closes else None
+        pred_min_chg = ((pred_min - last["close"]) / last["close"]) * 100 if pred_closes else None
+        pred_max_chg = ((pred_max - last["close"]) / last["close"]) * 100 if pred_closes else None
+
         rows.append({
             "code": code,
             "name": name,
@@ -65,6 +80,13 @@ def compute_stock_stats(stocks):
             "today_chg": today_chg,
             "ten_chg": ten_chg,
             "rec": rec,
+            "pred_closes": pred_closes,
+            "pred_dates": pred_dates,
+            "pred_5d_chg": pred_5d_chg,
+            "pred_min": pred_min,
+            "pred_max": pred_max,
+            "pred_min_chg": pred_min_chg,
+            "pred_max_chg": pred_max_chg,
         })
     order = {"買入": 0, "持有": 1, "賣出": 2}
     rows.sort(key=lambda r: order.get(r["rec"], 9))
@@ -159,6 +181,78 @@ def build_html(data, rows, archive_dates=None, current_date=None):
     buy_list = ", ".join(f'{r["name"]} ({r["code"]})' for r in rows if r["rec"] == "買入")
     sell_list = ", ".join(f'{r["name"]} ({r["code"]})' for r in rows if r["rec"] == "賣出")
 
+    # ── AI 5-Day Prediction Section ────────────────────────────────────────────
+    # Build prediction day headers (e.g. "08/13", "08/14", ...)
+    pred_day_headers = ""
+    pred_dates_raw = rows[0]["pred_dates"] if rows and rows[0]["pred_dates"] else []
+    for d in pred_dates_raw:
+        if d:
+            label = d[5:].replace("-", "/")  # "2026-08-13" → "08/13"
+            pred_day_headers += f'<th class="px-2 py-2 text-right">{label}</th>\n'
+
+    # Build prediction table rows (sorted by AI recommendation order already)
+    pred_table_rows = ""
+    for r in rows:
+        if not r["pred_closes"]:
+            continue
+        # Each predicted close
+        pred_cells = ""
+        for pc in r["pred_closes"]:
+            pred_cells += f'<td class="px-2 py-2 text-right text-gray-300">{pc:,.2f}</td>\n'
+
+        # 5-day expected change (last predicted vs today's close)
+        chg = r["pred_5d_chg"]
+        if chg is not None:
+            arrow = "▲" if chg > 0 else "▼" if chg < 0 else "→"
+            color = "#22c55e" if chg > 0 else "#ef4444" if chg < 0 else "#888"
+            chg_str = f'<span style="color:{color}">{arrow} {chg:+.2f}%</span>'
+        else:
+            chg_str = "—"
+
+        # Range high/low
+        hi = r["pred_max_chg"]
+        lo = r["pred_min_chg"]
+        hi_color = "#22c55e" if hi and hi > 0 else "#ef4444"
+        lo_color = "#ef4444" if lo and lo < 0 else "#22c55e"
+        range_str = f'<span style="color:{hi_color}">+{hi:+.2f}%</span> / <span style="color:{lo_color}">{lo:+.2f}%</span>' if (hi is not None and lo is not None) else "—"
+
+        rec_color = {"買入": "#22c55e", "賣出": "#ef4444", "持有": "#f59e0b"}.get(r["rec"], "#888")
+
+        pred_table_rows += (
+            f'<tr>'
+            f'<td class="px-2 py-2 font-mono"><span style="color:{rec_color}">●</span> {r["code"]}</td>'
+            f'<td class="px-2 py-2 text-right">{r["close"]:,.2f}</td>'
+            f'{pred_cells}'
+            f'<td class="px-2 py-2 text-right">{chg_str}</td>'
+            f'<td class="px-2 py-2 text-right text-xs">{range_str}</td>'
+            f'</tr>\n'
+        )
+
+    # AI prediction highlights
+    pred_capable = [r for r in rows if r["pred_5d_chg"] is not None]
+    if pred_capable:
+        sorted_pred = sorted(pred_capable, key=lambda x: x["pred_5d_chg"], reverse=True)
+        top_pred_gainer_name = sorted_pred[0]["name"]
+        top_pred_gainer_code = sorted_pred[0]["code"]
+        top_pred_gainer_chg = sorted_pred[0]["pred_5d_chg"]
+        top_pred_gainer = f'{top_pred_gainer_name} ({top_pred_gainer_code}) ▲ {top_pred_gainer_chg:+.2f}% → ${sorted_pred[0]["pred_closes"][-1]:,.2f}'
+
+        top_pred_loser_name = sorted_pred[-1]["name"]
+        top_pred_loser_code = sorted_pred[-1]["code"]
+        top_pred_loser_chg = sorted_pred[-1]["pred_5d_chg"]
+        top_pred_loser = f'{top_pred_loser_name} ({top_pred_loser_code}) {("▼" if top_pred_loser_chg < 0 else "▲")} {top_pred_loser_chg:+.2f}% → ${sorted_pred[-1]["pred_closes"][-1]:,.2f}'
+
+        # Volatility = max - min predicted range
+        for r in pred_capable:
+            r["_volatility"] = r["pred_max_chg"] - r["pred_min_chg"] if r["pred_max_chg"] is not None else 0
+        sorted_vol = sorted(pred_capable, key=lambda x: x["_volatility"], reverse=True)
+        most_volatile = f'{sorted_vol[0]["name"]} ({sorted_vol[0]["code"]}) — 區間 {sorted_vol[0]["pred_min_chg"]:+.2f}% ~ {sorted_vol[0]["pred_max_chg"]:+.2f}%'
+
+        sorted_stable = sorted(pred_capable, key=lambda x: x["_volatility"])
+        most_stable = f'{sorted_stable[0]["name"]} ({sorted_stable[0]["code"]}) — 區間 {sorted_stable[0]["pred_min_chg"]:+.2f}% ~ {sorted_stable[0]["pred_max_chg"]:+.2f}%'
+    else:
+        top_pred_gainer = top_pred_loser = most_volatile = most_stable = "無預測數據"
+
     title = f"US Stock 2 AI — {current_date}" if is_archive else "US Stock 2 AI — Summary Report"
 
     html = f"""<!DOCTYPE html>
@@ -237,6 +331,37 @@ def build_html(data, rows, archive_dates=None, current_date=None):
       <div><b class="text-green-400">Buy ({buy_count}):</b> {buy_list}</div>
       <div><b class="text-red-400">Sell ({sell_count}):</b> {sell_list}</div>
     </div>
+  </div>
+
+  <!-- AI 5-Day Predictions -->
+  <h2 class="text-xl font-semibold mb-3">🔮 AI 預測（未來5日）</h2>
+  <div class="bg-gray-900 rounded-lg p-5 mb-4 border border-gray-700 overflow-x-auto">
+    <p class="text-sm text-gray-400 mb-3">基於 OpenRouter AI 模型對未來5個交易日的收盤價預測，與今日收盤價比較計算預期變動幅度。</p>
+    <table class="w-full text-sm border border-gray-700 rounded-lg overflow-hidden" style="border-collapse:collapse">
+      <thead class="bg-gray-800">
+        <tr>
+          <th class="px-2 py-2 text-left">Ticker</th>
+          <th class="px-2 py-2 text-right">現價</th>
+          {pred_day_headers}
+          <th class="px-2 py-2 text-right">5日預期</th>
+          <th class="px-2 py-2 text-right">區間高/低</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-800">
+        {pred_table_rows}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- AI Prediction Highlights -->
+  <div class="bg-gray-900 rounded-lg p-5 mb-4 border border-gray-700">
+    <h3 class="text-lg font-semibold mb-3">📊 AI 預測精選</h3>
+    <ul class="space-y-1 text-sm">
+      <li><b class="text-green-400">預期升幅最大:</b> {top_pred_gainer}</li>
+      <li><b class="text-red-400">預期跌幅最大:</b> {top_pred_loser}</li>
+      <li><b>預期波動最大:</b> {most_volatile}</li>
+      <li><b>預期最穩定:</b> {most_stable}</li>
+    </ul>
   </div>
 
   <!-- Footer -->
