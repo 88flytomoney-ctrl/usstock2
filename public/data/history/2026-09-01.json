@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-01 22:47:04",
+  "generatedAt": "2026-09-01 23:58:23",
   "generatedDate": "2026-09-01",
-  "generatedTime": "22:00",
+  "generatedTime": "23:00",
   "stockCount": 22,
   "stocks": [
     {
@@ -361,17 +361,6 @@
       "name": "Applied Materials, Inc.",
       "prices": [
         {
-          "date": "2026-08-18",
-          "dateShort": "08/18",
-          "close": 513.78,
-          "open": 506.83,
-          "high": 516.28,
-          "low": 497.2,
-          "volume": 8611900,
-          "volumeM": "8.61M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-08-19",
           "dateShort": "08/19",
           "close": 495.64,
@@ -446,6 +435,17 @@
           "low": 471.0,
           "volume": 6285600,
           "volumeM": "6.29M",
+          "is_predicted": false
+        },
+        {
+          "date": "2026-08-28",
+          "dateShort": "08/28",
+          "close": 461.67,
+          "open": 476.26,
+          "high": 477.97,
+          "low": 460.51,
+          "volume": 6524800,
+          "volumeM": "6.52M",
           "is_predicted": false
         },
         {
@@ -1297,17 +1297,6 @@
       "name": "Lumentum Holdings Inc.",
       "prices": [
         {
-          "date": "2026-08-18",
-          "dateShort": "08/18",
-          "close": 873.31,
-          "open": 909.28,
-          "high": 943.76,
-          "low": 863.11,
-          "volume": 6012800,
-          "volumeM": "6.01M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-08-19",
           "dateShort": "08/19",
           "close": 827.6,
@@ -1382,6 +1371,17 @@
           "low": 918.01,
           "volume": 4119600,
           "volumeM": "4.12M",
+          "is_predicted": false
+        },
+        {
+          "date": "2026-08-28",
+          "dateShort": "08/28",
+          "close": 895.0,
+          "open": 941.71,
+          "high": 942.91,
+          "low": 893.65,
+          "volume": 3442100,
+          "volumeM": "3.44M",
           "is_predicted": false
         },
         {
