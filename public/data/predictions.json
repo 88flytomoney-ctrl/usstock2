@@ -690,7 +690,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -1209,7 +1209,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "買入"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -2579,10 +2579,21 @@
           "volume": 29200000,
           "volumeM": "29.2M",
           "is_predicted": true
+        },
+        {
+          "date": "2026-09-17",
+          "dateShort": "🔮 09/17",
+          "open": 988.4,
+          "high": 1003.0,
+          "low": 985.3,
+          "close": 989.3,
+          "volume": 26000000,
+          "volumeM": "26.0M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "NVDA": {
       "name": "NVIDIA Corporation",
@@ -2928,7 +2939,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "PLTR": {
       "name": "Palantir Technologies Inc.",
@@ -3446,8 +3457,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "SPCX": {
       "name": "Space Exploration Technologies Corp.",
@@ -3619,8 +3630,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "買入"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "TSLA": {
       "name": "Tesla, Inc.",
