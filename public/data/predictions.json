@@ -108,10 +108,10 @@
           "dateShort": "10/28",
           "close": 725.61,
           "open": 724.12,
-          "high": 726.12,
+          "high": 726.14,
           "low": 720.3,
-          "volume": 28955146,
-          "volumeM": "28.96M",
+          "volume": 29912000,
+          "volumeM": "29.91M",
           "is_predicted": false
         },
         {
@@ -157,10 +157,21 @@
           "volume": 37250000,
           "volumeM": "37.2M",
           "is_predicted": true
+        },
+        {
+          "date": "2026-11-04",
+          "dateShort": "🔮 11/04",
+          "open": 713.5,
+          "high": 719.65,
+          "low": 712.2,
+          "close": 713.8,
+          "volume": 36700000,
+          "volumeM": "36.7M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "VOO": {
       "name": "Vanguard S&P 500 ETF",
@@ -272,8 +283,8 @@
           "open": 709.15,
           "high": 710.84,
           "low": 707.1,
-          "volume": 4770870,
-          "volumeM": "4.77M",
+          "volume": 4763300,
+          "volumeM": "4.76M",
           "is_predicted": false
         },
         {
@@ -431,11 +442,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 343.83,
-          "open": 346.89,
+          "open": 346.92,
           "high": 347.18,
-          "low": 343.53,
-          "volume": 34405006,
-          "volumeM": "34.41M",
+          "low": 343.52,
+          "volume": 35595700,
+          "volumeM": "35.6M",
           "is_predicted": false
         },
         {
@@ -495,7 +506,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "賣出"
     },
     "AMD": {
       "name": "Advanced Micro Devices, Inc.",
@@ -604,11 +615,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 578.44,
-          "open": 572.52,
-          "high": 579.11,
+          "open": 573.08,
+          "high": 579.18,
           "low": 560.52,
-          "volume": 18557439,
-          "volumeM": "18.56M",
+          "volume": 18765500,
+          "volumeM": "18.77M",
           "is_predicted": false
         },
         {
@@ -777,11 +788,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 254.6,
-          "open": 252.96,
+          "open": 253.0,
           "high": 255.36,
           "low": 251.98,
-          "volume": 33783543,
-          "volumeM": "33.78M",
+          "volume": 34594500,
+          "volumeM": "34.59M",
           "is_predicted": false
         },
         {
@@ -950,11 +961,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 351.81,
-          "open": 348.72,
-          "high": 352.0,
+          "open": 349.22,
+          "high": 352.4,
           "low": 344.35,
-          "volume": 22140399,
-          "volumeM": "22.14M",
+          "volume": 22629700,
+          "volumeM": "22.63M",
           "is_predicted": false
         },
         {
@@ -1126,8 +1137,8 @@
           "open": 319.88,
           "high": 323.13,
           "low": 319.68,
-          "volume": 29362508,
-          "volumeM": "29.36M",
+          "volume": 33361200,
+          "volumeM": "33.36M",
           "is_predicted": false
         },
         {
@@ -1296,11 +1307,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 324.89,
-          "open": 323.84,
-          "high": 326.4,
-          "low": 322.65,
-          "volume": 54011739,
-          "volumeM": "54.01M",
+          "open": 323.77,
+          "high": 326.41,
+          "low": 322.66,
+          "volume": 60294600,
+          "volumeM": "60.29M",
           "is_predicted": false
         },
         {
@@ -1469,11 +1480,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 95.53,
-          "open": 95.13,
+          "open": 95.09,
           "high": 95.68,
           "low": 93.0,
-          "volume": 81290887,
-          "volumeM": "81.29M",
+          "volume": 81862000,
+          "volumeM": "81.86M",
           "is_predicted": false
         },
         {
@@ -1642,11 +1653,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 913.95,
-          "open": 878.13,
+          "open": 877.22,
           "high": 921.0,
-          "low": 872.84,
-          "volume": 4662830,
-          "volumeM": "4.66M",
+          "low": 872.4,
+          "volume": 5598600,
+          "volumeM": "5.6M",
           "is_predicted": false
         },
         {
@@ -1705,8 +1716,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "買入"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
@@ -1815,11 +1826,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 612.49,
-          "open": 621.64,
+          "open": 621.85,
           "high": 624.42,
           "low": 609.0,
-          "volume": 34485035,
-          "volumeM": "34.49M",
+          "volume": 35004200,
+          "volumeM": "35.0M",
           "is_predicted": false
         },
         {
@@ -1988,11 +1999,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 531.01,
-          "open": 532.2,
-          "high": 534.57,
+          "open": 531.82,
+          "high": 535.0,
           "low": 526.14,
-          "volume": 25128542,
-          "volumeM": "25.13M",
+          "volume": 27681000,
+          "volumeM": "27.68M",
           "is_predicted": false
         },
         {
@@ -2038,10 +2049,21 @@
           "volume": 15050000,
           "volumeM": "15.1M",
           "is_predicted": true
+        },
+        {
+          "date": "2026-11-04",
+          "dateShort": "🔮 11/04",
+          "open": 535.6,
+          "high": 536.7,
+          "low": 529.5,
+          "close": 534.6,
+          "volume": 26900000,
+          "volumeM": "26.9M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "買入"
     },
     "MU": {
       "name": "Micron Technology, Inc.",
@@ -2150,11 +2172,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 983.23,
-          "open": 962.2,
+          "open": 961.71,
           "high": 990.0,
           "low": 959.34,
-          "volume": 30135209,
-          "volumeM": "30.14M",
+          "volume": 30518000,
+          "volumeM": "30.52M",
           "is_predicted": false
         },
         {
@@ -2323,11 +2345,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 182.34,
-          "open": 173.65,
+          "open": 173.49,
           "high": 182.74,
           "low": 168.92,
-          "volume": 24307350,
-          "volumeM": "24.31M",
+          "volume": 24753300,
+          "volumeM": "24.75M",
           "is_predicted": false
         },
         {
@@ -2496,11 +2518,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 215.38,
-          "open": 219.88,
+          "open": 219.92,
           "high": 219.99,
           "low": 214.47,
-          "volume": 91664984,
-          "volumeM": "91.66M",
+          "volume": 92463400,
+          "volumeM": "92.46M",
           "is_predicted": false
         },
         {
@@ -2559,8 +2581,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "ORCL": {
       "name": "Oracle Corporation",
@@ -2670,10 +2692,10 @@
           "dateShort": "10/28",
           "close": 144.54,
           "open": 131.32,
-          "high": 148.47,
-          "low": 128.42,
-          "volume": 81527008,
-          "volumeM": "81.53M",
+          "high": 148.48,
+          "low": 128.38,
+          "volume": 81418100,
+          "volumeM": "81.42M",
           "is_predicted": false
         },
         {
@@ -2843,10 +2865,10 @@
           "dateShort": "10/28",
           "close": 196.81,
           "open": 197.01,
-          "high": 198.72,
+          "high": 198.74,
           "low": 193.13,
-          "volume": 20375259,
-          "volumeM": "20.38M",
+          "volume": 20744600,
+          "volumeM": "20.74M",
           "is_predicted": false
         },
         {
@@ -3015,11 +3037,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 164.7,
-          "open": 157.62,
+          "open": 157.76,
           "high": 166.06,
           "low": 156.5,
-          "volume": 49007879,
-          "volumeM": "49.01M",
+          "volume": 49486400,
+          "volumeM": "49.49M",
           "is_predicted": false
         },
         {
@@ -3191,8 +3213,8 @@
           "open": 1356.6,
           "high": 1408.45,
           "low": 1343.85,
-          "volume": 9017771,
-          "volumeM": "9.02M",
+          "volume": 9166200,
+          "volumeM": "9.17M",
           "is_predicted": false
         },
         {
@@ -3361,11 +3383,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 145.23,
-          "open": 147.29,
-          "high": 147.57,
+          "open": 147.37,
+          "high": 148.2,
           "low": 142.13,
-          "volume": 97570461,
-          "volumeM": "97.57M",
+          "volume": 98242900,
+          "volumeM": "98.24M",
           "is_predicted": false
         },
         {
@@ -3523,11 +3545,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 697.97,
-          "open": 648.58,
+          "open": 646.84,
           "high": 698.94,
-          "low": 621.55,
-          "volume": 10753440,
-          "volumeM": "10.75M",
+          "low": 621.5,
+          "volume": 10807900,
+          "volumeM": "10.81M",
           "is_predicted": false
         },
         {
@@ -3586,8 +3608,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "買入"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "TSLA": {
       "name": "Tesla, Inc.",
@@ -3696,11 +3718,11 @@
           "date": "2026-10-28",
           "dateShort": "10/28",
           "close": 404.22,
-          "open": 410.21,
+          "open": 410.16,
           "high": 410.85,
           "low": 397.18,
-          "volume": 35080523,
-          "volumeM": "35.08M",
+          "volume": 35450700,
+          "volumeM": "35.45M",
           "is_predicted": false
         },
         {
