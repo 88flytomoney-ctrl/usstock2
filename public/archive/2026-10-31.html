@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>US Stock 2 AI — 2026-10-31</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>body{font-family:system-ui,-apple-system,sans-serif;}table{border-collapse:collapse;}</style>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+<div class="max-w-5xl mx-auto px-4 py-8">
+
+  <!-- Header -->
+  <h1 class="text-3xl font-bold mb-1">US Stock 2 🤖 AI — Summary Report</h1>
+  <p class="text-gray-400 mb-2">最後更新: 2026-10-31</p>
+  
+  <div class="mb-4">
+    <label class="text-sm text-gray-400 mr-2">📜 歷史記錄:</label>
+    <select onchange="document.location.href=this.value? '../archive/'+this.value+'.html': '../report.html'" class="bg-gray-800 text-gray-100 border border-gray-600 rounded px-3 py-1.5 text-sm">
+      <option value="">最新數據</option>
+<option value="2026-10-30">2026/10/30</option>
+<option value="2026-10-29">2026/10/29</option>
+<option value="2026-10-28">2026/10/28</option>
+<option value="2026-10-27">2026/10/27</option>
+<option value="2026-10-25">2026/10/25</option>
+<option value="2026-10-24">2026/10/24</option>
+<option value="2026-10-23">2026/10/23</option>
+<option value="2026-10-22">2026/10/22</option>
+<option value="2026-10-21">2026/10/21</option>
+<option value="2026-10-20">2026/10/20</option>
+<option value="2026-10-18">2026/10/18</option>
+<option value="2026-10-17">2026/10/17</option>
+<option value="2026-10-16">2026/10/16</option>
+<option value="2026-10-15">2026/10/15</option>
+<option value="2026-10-14">2026/10/14</option>
+<option value="2026-10-13">2026/10/13</option>
+<option value="2026-10-11">2026/10/11</option>
+<option value="2026-10-10">2026/10/10</option>
+<option value="2026-10-09">2026/10/09</option>
+<option value="2026-10-08">2026/10/08</option>
+<option value="2026-10-07">2026/10/07</option>
+<option value="2026-10-06">2026/10/06</option>
+<option value="2026-10-04">2026/10/04</option>
+<option value="2026-10-03">2026/10/03</option>
+<option value="2026-10-02">2026/10/02</option>
+<option value="2026-10-01">2026/10/01</option>
+<option value="2026-09-30">2026/09/30</option>
+<option value="2026-09-29">2026/09/29</option>
+<option value="2026-09-27">2026/09/27</option>
+<option value="2026-09-26">2026/09/26</option>
+<option value="2026-09-25">2026/09/25</option>
+<option value="2026-09-24">2026/09/24</option>
+<option value="2026-09-23">2026/09/23</option>
+<option value="2026-09-22">2026/09/22</option>
+<option value="2026-09-20">2026/09/20</option>
+<option value="2026-09-19">2026/09/19</option>
+<option value="2026-09-18">2026/09/18</option>
+<option value="2026-09-17">2026/09/17</option>
+<option value="2026-09-16">2026/09/16</option>
+<option value="2026-09-15">2026/09/15</option>
+<option value="2026-09-13">2026/09/13</option>
+<option value="2026-09-12">2026/09/12</option>
+<option value="2026-09-11">2026/09/11</option>
+<option value="2026-09-10">2026/09/10</option>
+<option value="2026-09-09">2026/09/09</option>
+<option value="2026-09-08">2026/09/08</option>
+<option value="2026-09-06">2026/09/06</option>
+<option value="2026-09-05">2026/09/05</option>
+<option value="2026-09-04">2026/09/04</option>
+<option value="2026-09-03">2026/09/03</option>
+<option value="2026-09-02">2026/09/02</option>
+<option value="2026-09-01">2026/09/01</option>
+<option value="2026-08-30">2026/08/30</option>
+<option value="2026-08-29">2026/08/29</option>
+<option value="2026-08-28">2026/08/28</option>
+<option value="2026-08-27">2026/08/27</option>
+<option value="2026-08-26">2026/08/26</option>
+<option value="2026-08-25">2026/08/25</option>
+<option value="2026-08-23">2026/08/23</option>
+<option value="2026-08-22">2026/08/22</option>
+<option value="2026-08-21">2026/08/21</option>
+<option value="2026-08-20">2026/08/20</option>
+<option value="2026-08-19">2026/08/19</option>
+<option value="2026-08-18">2026/08/18</option>
+<option value="2026-08-16">2026/08/16</option>
+<option value="2026-08-15">2026/08/15</option>
+<option value="2026-08-14">2026/08/14</option>
+<option value="2026-08-13">2026/08/13</option>
+
+    </select>
+  </div>
+
+  <!-- Market Indices -->
+  <h2 class="text-xl font-semibold mb-3">🇺🇸 US Market Indices</h2>
+  <table class="w-full mb-6 text-sm border border-gray-700 rounded-lg overflow-hidden">
+    <thead class="bg-gray-800">
+      <tr><th class="px-4 py-2 text-left">指數</th><th class="px-4 py-2 text-right">Value</th><th class="px-4 py-2 text-right">Change</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="px-4 py-2 font-semibold">S&P 500</td><td class="px-4 py-2 text-right">7,580.07</td><td class="px-4 py-2 text-right" style="color:#ef4444">▼ -140.32 (-1.82%)</td></tr>
+<tr><td class="px-4 py-2 font-semibold">Nasdaq</td><td class="px-4 py-2 text-right">25,437.00</td><td class="px-4 py-2 text-right" style="color:#ef4444">▼ -747.72 (-2.86%)</td></tr>
+<tr><td class="px-4 py-2 font-semibold">Dow Jones</td><td class="px-4 py-2 text-right">51,770.31</td><td class="px-4 py-2 text-right" style="color:#ef4444">▼ -572.25 (-1.09%)</td></tr>
+
+    </tbody>
+  </table>
+
+  <!-- Tracked Stocks -->
+  <h2 class="text-xl font-semibold mb-3">📈 Tracked Stocks (22 tickers)</h2>
+  <table class="w-full mb-6 text-sm border border-gray-700 rounded-lg overflow-hidden">
+    <thead class="bg-gray-800">
+      <tr>
+        <th class="px-3 py-2 text-left">Ticker</th>
+        <th class="px-3 py-2 text-left">Company</th>
+        <th class="px-3 py-2 text-right">Price (USD)</th>
+        <th class="px-3 py-2 text-right">Today Chg %</th>
+        <th class="px-3 py-2 text-right">10-Day Chg %</th>
+        <th class="px-3 py-2 text-center">AI 建議</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-800">
+      <tr><td class="px-3 py-2 font-mono">AAPL</td><td class="px-3 py-2">Apple Inc.</td><td class="px-3 py-2 text-right">344.63</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -1.23%</td><td class="px-3 py-2 text-right" style="color:#22c55e">▲ +0.49%</td><td class="px-3 py-2 text-center font-semibold" style="color:#22c55e">買入</td></tr>
+<tr><td class="px-3 py-2 font-mono">AMD</td><td class="px-3 py-2">Advanced Micro Devices, Inc.</td><td class="px-3 py-2 text-right">504.80</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -10.88%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -6.18%</td><td class="px-3 py-2 text-center font-semibold" style="color:#22c55e">買入</td></tr>
+<tr><td class="px-3 py-2 font-mono">AVGO</td><td class="px-3 py-2">Broadcom Inc.</td><td class="px-3 py-2 text-right">326.08</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -5.48%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -2.54%</td><td class="px-3 py-2 text-center font-semibold" style="color:#22c55e">買入</td></tr>
+<tr><td class="px-3 py-2 font-mono">LITE</td><td class="px-3 py-2">Lumentum Holdings Inc.</td><td class="px-3 py-2 text-right">840.70</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -8.57%</td><td class="px-3 py-2 text-right" style="color:#22c55e">▲ +0.74%</td><td class="px-3 py-2 text-center font-semibold" style="color:#22c55e">買入</td></tr>
+<tr><td class="px-3 py-2 font-mono">LRCX</td><td class="px-3 py-2">Lam Research Corporation</td><td class="px-3 py-2 text-right">239.11</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -6.01%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -12.16%</td><td class="px-3 py-2 text-center font-semibold" style="color:#22c55e">買入</td></tr>
+<tr><td class="px-3 py-2 font-mono">MU</td><td class="px-3 py-2">Micron Technology, Inc.</td><td class="px-3 py-2 text-right">884.74</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -5.30%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -2.23%</td><td class="px-3 py-2 text-center font-semibold" style="color:#22c55e">買入</td></tr>
+<tr><td class="px-3 py-2 font-mono">TSLA</td><td class="px-3 py-2">Tesla, Inc.</td><td class="px-3 py-2 text-right">399.81</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -0.87%</td><td class="px-3 py-2 text-right" style="color:#22c55e">▲ +8.63%</td><td class="px-3 py-2 text-center font-semibold" style="color:#22c55e">買入</td></tr>
+<tr><td class="px-3 py-2 font-mono">QQQ</td><td class="px-3 py-2">Invesco QQQ Trust</td><td class="px-3 py-2 text-right">690.49</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -3.47%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -3.88%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">VOO</td><td class="px-3 py-2">Vanguard S&P 500 ETF</td><td class="px-3 py-2 text-right">694.81</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -1.77%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -1.39%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">AMZN</td><td class="px-3 py-2">Amazon.com, Inc.</td><td class="px-3 py-2 text-right">240.35</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -1.41%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -8.42%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">GOOGL</td><td class="px-3 py-2">Alphabet Inc.</td><td class="px-3 py-2 text-right">279.84</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -1.40%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -18.69%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">MRVL</td><td class="px-3 py-2">Marvell Technology, Inc.</td><td class="px-3 py-2 text-right">196.40</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -10.05%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -17.16%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">MSFT</td><td class="px-3 py-2">Microsoft Corporation</td><td class="px-3 py-2 text-right">521.91</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -1.55%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -2.18%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">NVDA</td><td class="px-3 py-2">NVIDIA Corporation</td><td class="px-3 py-2 text-right">204.64</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -4.22%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -5.73%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">PLTR</td><td class="px-3 py-2">Palantir Technologies Inc.</td><td class="px-3 py-2 text-right">184.11</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -6.27%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -5.17%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">SNDK</td><td class="px-3 py-2">Sandisk Corporation</td><td class="px-3 py-2 text-right">1,150.89</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -13.47%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -16.06%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">SPCX</td><td class="px-3 py-2">Space Exploration Technologies Corp.</td><td class="px-3 py-2 text-right">134.72</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -6.37%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -8.95%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">TSM</td><td class="px-3 py-2">Taiwan Semiconductor Manufacturing Company Limited</td><td class="px-3 py-2 text-right">406.13</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -5.95%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -3.35%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">TXN</td><td class="px-3 py-2">Texas Instruments Incorporated</td><td class="px-3 py-2 text-right">300.84</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -3.40%</td><td class="px-3 py-2 text-right" style="color:#22c55e">▲ +9.47%</td><td class="px-3 py-2 text-center font-semibold" style="color:#f59e0b">持有</td></tr>
+<tr><td class="px-3 py-2 font-mono">GOOG</td><td class="px-3 py-2">Alphabet Inc.</td><td class="px-3 py-2 text-right">278.22</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -1.45%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -18.21%</td><td class="px-3 py-2 text-center font-semibold" style="color:#ef4444">賣出</td></tr>
+<tr><td class="px-3 py-2 font-mono">INTC</td><td class="px-3 py-2">Intel Corporation</td><td class="px-3 py-2 text-right">65.76</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -28.58%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -28.55%</td><td class="px-3 py-2 text-center font-semibold" style="color:#ef4444">賣出</td></tr>
+<tr><td class="px-3 py-2 font-mono">META</td><td class="px-3 py-2">Meta Platforms, Inc.</td><td class="px-3 py-2 text-right">614.99</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -1.53%</td><td class="px-3 py-2 text-right" style="color:#ef4444">▼ -12.82%</td><td class="px-3 py-2 text-center font-semibold" style="color:#ef4444">賣出</td></tr>
+
+    </tbody>
+  </table>
+
+  <!-- Today Highlights -->
+  <h2 class="text-xl font-semibold mb-3">🔑 Key Highlights</h2>
+  <div class="bg-gray-900 rounded-lg p-5 mb-4 border border-gray-700">
+    <h3 class="text-lg font-semibold mb-3">📅 Today</h3>
+    <ul class="space-y-1 text-sm">
+      <li><b>大市:</b> S&P 500 -140.32 (-1.82%), Nasdaq -747.72 (-2.86%), Dow -572.25 (-1.09%)</li>
+      <li><b class="text-green-400">今日最強:</b> </li>
+      <li><b class="text-red-400">今日最弱:</b> Intel Corporation (INTC) -28.58%, Sandisk Corporation (SNDK) -13.47%, Advanced Micro Devices, Inc. (AMD) -10.88%</li>
+      <li><b>升跌比:</b> 0 升 22 跌</li>
+      <li><b>AI 分佈:</b> 買入 7 檔 · 賣出 3 檔 · 持有 12 檔</li>
+    </ul>
+  </div>
+
+  <!-- 10-Day Highlights -->
+  <div class="bg-gray-900 rounded-lg p-5 mb-4 border border-gray-700">
+    <h3 class="text-lg font-semibold mb-3">📊 10-Day Standouts</h3>
+    <ul class="space-y-1 text-sm">
+      <li><b class="text-green-400">Biggest gainer:</b> Texas Instruments Incorporated (TXN) ▲ +9.47% → $300.84</li>
+      <li><b class="text-green-400">Runner-up:</b> Tesla, Inc. (TSLA) ▲ +8.63% → $399.81</li>
+      <li><b class="text-red-400">Biggest loser:</b> Intel Corporation (INTC) ▼ -28.55% → $65.76</li>
+    </ul>
+  </div>
+
+  <!-- AI Signals -->
+  <div class="bg-gray-900 rounded-lg p-5 mb-4 border border-gray-700">
+    <h3 class="text-lg font-semibold mb-3">🤖 AI Signals</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+      <div><b class="text-green-400">Buy (7):</b> Apple Inc. (AAPL), Advanced Micro Devices, Inc. (AMD), Broadcom Inc. (AVGO), Lumentum Holdings Inc. (LITE), Lam Research Corporation (LRCX), Micron Technology, Inc. (MU), Tesla, Inc. (TSLA)</div>
+      <div><b class="text-red-400">Sell (3):</b> Alphabet Inc. (GOOG), Intel Corporation (INTC), Meta Platforms, Inc. (META)</div>
+    </div>
+  </div>
+
+  <!-- AI 5-Day Predictions -->
+  <h2 class="text-xl font-semibold mb-3">🔮 AI 預測（未來5日）</h2>
+  <div class="bg-gray-900 rounded-lg p-5 mb-4 border border-gray-700 overflow-x-auto">
+    <p class="text-sm text-gray-400 mb-3">基於 OpenRouter AI 模型對未來5個交易日的收盤價預測，與今日收盤價比較計算預期變動幅度。</p>
+    <table class="w-full text-sm border border-gray-700 rounded-lg overflow-hidden" style="border-collapse:collapse">
+      <thead class="bg-gray-800">
+        <tr>
+          <th class="px-2 py-2 text-left">Ticker</th>
+          <th class="px-2 py-2 text-right">現價</th>
+          <th class="px-2 py-2 text-right">11/02</th>
+<th class="px-2 py-2 text-right">11/03</th>
+<th class="px-2 py-2 text-right">11/04</th>
+<th class="px-2 py-2 text-right">11/05</th>
+<th class="px-2 py-2 text-right">11/06</th>
+
+          <th class="px-2 py-2 text-right">5日預期</th>
+          <th class="px-2 py-2 text-right">區間高/低</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-800">
+        <tr><td class="px-2 py-2 font-mono"><span style="color:#22c55e">●</span> AAPL</td><td class="px-2 py-2 text-right">344.63</td><td class="px-2 py-2 text-right text-gray-300">348.00</td>
+<td class="px-2 py-2 text-right text-gray-300">351.40</td>
+<td class="px-2 py-2 text-right text-gray-300">344.30</td>
+<td class="px-2 py-2 text-right text-gray-300">350.50</td>
+<td class="px-2 py-2 text-right text-gray-300">352.11</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +2.17%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++2.17%</span> / <span style="color:#ef4444">-0.10%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#22c55e">●</span> AMD</td><td class="px-2 py-2 text-right">504.80</td><td class="px-2 py-2 text-right text-gray-300">557.83</td>
+<td class="px-2 py-2 text-right text-gray-300">598.80</td>
+<td class="px-2 py-2 text-right text-gray-300">576.17</td>
+<td class="px-2 py-2 text-right text-gray-300">566.89</td>
+<td class="px-2 py-2 text-right text-gray-300">542.90</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +7.55%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++18.62%</span> / <span style="color:#22c55e">+7.55%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#22c55e">●</span> AVGO</td><td class="px-2 py-2 text-right">326.08</td><td class="px-2 py-2 text-right text-gray-300">323.50</td>
+<td class="px-2 py-2 text-right text-gray-300">353.88</td>
+<td class="px-2 py-2 text-right text-gray-300">353.70</td>
+<td class="px-2 py-2 text-right text-gray-300">353.00</td>
+<td class="px-2 py-2 text-right text-gray-300">347.61</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +6.60%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++8.53%</span> / <span style="color:#ef4444">-0.79%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#22c55e">●</span> LITE</td><td class="px-2 py-2 text-right">840.70</td><td class="px-2 py-2 text-right text-gray-300">882.12</td>
+<td class="px-2 py-2 text-right text-gray-300">895.89</td>
+<td class="px-2 py-2 text-right text-gray-300">933.45</td>
+<td class="px-2 py-2 text-right text-gray-300">1,057.30</td>
+<td class="px-2 py-2 text-right text-gray-300">948.70</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +12.85%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++25.76%</span> / <span style="color:#22c55e">+4.93%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#22c55e">●</span> LRCX</td><td class="px-2 py-2 text-right">239.11</td><td class="px-2 py-2 text-right text-gray-300">245.21</td>
+<td class="px-2 py-2 text-right text-gray-300">248.93</td>
+<td class="px-2 py-2 text-right text-gray-300">252.65</td>
+<td class="px-2 py-2 text-right text-gray-300">256.37</td>
+<td class="px-2 py-2 text-right text-gray-300">260.09</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +8.77%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++8.77%</span> / <span style="color:#22c55e">+2.55%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#22c55e">●</span> MU</td><td class="px-2 py-2 text-right">884.74</td><td class="px-2 py-2 text-right text-gray-300">931.82</td>
+<td class="px-2 py-2 text-right text-gray-300">938.27</td>
+<td class="px-2 py-2 text-right text-gray-300">994.89</td>
+<td class="px-2 py-2 text-right text-gray-300">1,021.78</td>
+<td class="px-2 py-2 text-right text-gray-300">953.79</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +7.80%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++15.49%</span> / <span style="color:#22c55e">+5.32%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#22c55e">●</span> TSLA</td><td class="px-2 py-2 text-right">399.81</td><td class="px-2 py-2 text-right text-gray-300">393.12</td>
+<td class="px-2 py-2 text-right text-gray-300">392.58</td>
+<td class="px-2 py-2 text-right text-gray-300">389.49</td>
+<td class="px-2 py-2 text-right text-gray-300">414.70</td>
+<td class="px-2 py-2 text-right text-gray-300">418.23</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +4.61%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++4.61%</span> / <span style="color:#ef4444">-2.58%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#f59e0b">●</span> QQQ</td><td class="px-2 py-2 text-right">690.49</td><td class="px-2 py-2 text-right text-gray-300">708.50</td>
+<td class="px-2 py-2 text-right text-gray-300">727.20</td>
+<td class="px-2 py-2 text-right text-gray-300">713.80</td>
+<td class="px-2 py-2 text-right text-gray-300">725.10</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +5.01%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++5.32%</span> / <span style="color:#22c55e">+2.61%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#f59e0b">●</span> VOO</td><td class="px-2 py-2 text-right">694.81</td><td class="px-2 py-2 text-right text-gray-300">696.25</td>
+<td class="px-2 py-2 text-right text-gray-300">709.00</td>
+<td class="px-2 py-2 text-right text-gray-300">711.08</td>
+<td class="px-2 py-2 text-right text-gray-300">711.55</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +2.41%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++2.41%</span> / <span style="color:#22c55e">+0.21%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#f59e0b">●</span> AMZN</td><td class="px-2 py-2 text-right">240.35</td><td class="px-2 py-2 text-right text-gray-300">257.48</td>
+<td class="px-2 py-2 text-right text-gray-300">258.57</td>
+<td class="px-2 py-2 text-right text-gray-300">257.90</td>
+<td class="px-2 py-2 text-right text-gray-300">256.10</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +6.55%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++7.58%</span> / <span style="color:#22c55e">+6.55%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#f59e0b">●</span> GOOGL</td><td class="px-2 py-2 text-right">279.84</td><td class="px-2 py-2 text-right text-gray-300">314.50</td>
+<td class="px-2 py-2 text-right text-gray-300">313.10</td>
+<td class="px-2 py-2 text-right text-gray-300">332.13</td>
+<td class="px-2 py-2 text-right text-gray-300">277.47</td>
+<td class="px-2 py-2 text-right"><span style="color:#ef4444">▼ -0.85%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++18.69%</span> / <span style="color:#ef4444">-0.85%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#f59e0b">●</span> MRVL</td><td class="px-2 py-2 text-right">196.40</td><td class="px-2 py-2 text-right text-gray-300">239.50</td>
+<td class="px-2 py-2 text-right text-gray-300">244.00</td>
+<td class="px-2 py-2 text-right text-gray-300">248.50</td>
+<td class="px-2 py-2 text-right text-gray-300">253.00</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +28.82%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++28.82%</span> / <span style="color:#22c55e">+21.95%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#f59e0b">●</span> MSFT</td><td class="px-2 py-2 text-right">521.91</td><td class="px-2 py-2 text-right text-gray-300">523.80</td>
+<td class="px-2 py-2 text-right text-gray-300">522.10</td>
+<td class="px-2 py-2 text-right text-gray-300">534.60</td>
+<td class="px-2 py-2 text-right text-gray-300">529.85</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +1.52%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++2.43%</span> / <span style="color:#22c55e">+0.04%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#f59e0b">●</span> NVDA</td><td class="px-2 py-2 text-right">204.64</td><td class="px-2 py-2 text-right text-gray-300">219.10</td>
+<td class="px-2 py-2 text-right text-gray-300">215.45</td>
+<td class="px-2 py-2 text-right text-gray-300">214.34</td>
+<td class="px-2 py-2 text-right text-gray-300">217.60</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +6.33%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++7.07%</span> / <span style="color:#22c55e">+4.74%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#f59e0b">●</span> PLTR</td><td class="px-2 py-2 text-right">184.11</td><td class="px-2 py-2 text-right text-gray-300">201.00</td>
+<td class="px-2 py-2 text-right text-gray-300">202.00</td>
+<td class="px-2 py-2 text-right text-gray-300">199.00</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +8.09%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++9.72%</span> / <span style="color:#22c55e">+8.09%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#f59e0b">●</span> SNDK</td><td class="px-2 py-2 text-right">1,150.89</td><td class="px-2 py-2 text-right text-gray-300">1,221.40</td>
+<td class="px-2 py-2 text-right text-gray-300">1,498.65</td>
+<td class="px-2 py-2 text-right text-gray-300">1,521.90</td>
+<td class="px-2 py-2 text-right text-gray-300">1,402.70</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +21.88%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++32.24%</span> / <span style="color:#22c55e">+6.13%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#f59e0b">●</span> SPCX</td><td class="px-2 py-2 text-right">134.72</td><td class="px-2 py-2 text-right text-gray-300">149.89</td>
+<td class="px-2 py-2 text-right text-gray-300">151.30</td>
+<td class="px-2 py-2 text-right text-gray-300">146.70</td>
+<td class="px-2 py-2 text-right text-gray-300">147.50</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +9.49%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++12.31%</span> / <span style="color:#22c55e">+8.89%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#ef4444">●</span> GOOG</td><td class="px-2 py-2 text-right">278.22</td><td class="px-2 py-2 text-right text-gray-300">312.50</td>
+<td class="px-2 py-2 text-right text-gray-300">311.45</td>
+<td class="px-2 py-2 text-right text-gray-300">328.75</td>
+<td class="px-2 py-2 text-right text-gray-300">246.25</td>
+<td class="px-2 py-2 text-right text-gray-300">261.88</td>
+<td class="px-2 py-2 text-right"><span style="color:#ef4444">▼ -5.87%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++18.16%</span> / <span style="color:#ef4444">-11.49%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#ef4444">●</span> INTC</td><td class="px-2 py-2 text-right">65.76</td><td class="px-2 py-2 text-right text-gray-300">92.61</td>
+<td class="px-2 py-2 text-right text-gray-300">95.31</td>
+<td class="px-2 py-2 text-right text-gray-300">96.00</td>
+<td class="px-2 py-2 text-right text-gray-300">96.80</td>
+<td class="px-2 py-2 text-right text-gray-300">75.34</td>
+<td class="px-2 py-2 text-right"><span style="color:#22c55e">▲ +14.57%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#22c55e">++47.20%</span> / <span style="color:#22c55e">+14.57%</span></td></tr>
+<tr><td class="px-2 py-2 font-mono"><span style="color:#ef4444">●</span> META</td><td class="px-2 py-2 text-right">614.99</td><td class="px-2 py-2 text-right text-gray-300">587.73</td>
+<td class="px-2 py-2 text-right text-gray-300">579.59</td>
+<td class="px-2 py-2 text-right text-gray-300">571.84</td>
+<td class="px-2 py-2 text-right text-gray-300">597.01</td>
+<td class="px-2 py-2 text-right text-gray-300">587.29</td>
+<td class="px-2 py-2 text-right"><span style="color:#ef4444">▼ -4.50%</span></td><td class="px-2 py-2 text-right text-xs"><span style="color:#ef4444">+-2.92%</span> / <span style="color:#ef4444">-7.02%</span></td></tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- AI Prediction Highlights -->
+  <div class="bg-gray-900 rounded-lg p-5 mb-4 border border-gray-700">
+    <h3 class="text-lg font-semibold mb-3">📊 AI 預測精選</h3>
+    <ul class="space-y-1 text-sm">
+      <li><b class="text-green-400">預期升幅最大:</b> Marvell Technology, Inc. (MRVL) ▲ +28.82% → $253.00</li>
+      <li><b class="text-red-400">預期跌幅最大:</b> Alphabet Inc. (GOOG) ▼ -5.87% → $261.88</li>
+      <li><b>預期波動最大:</b> Intel Corporation (INTC) — 區間 +14.57% ~ +47.20%</li>
+      <li><b>預期最穩定:</b> Amazon.com, Inc. (AMZN) — 區間 +6.55% ~ +7.58%</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <p class="text-xs text-gray-500 mt-8 text-center">
+    數據來源：Yahoo Finance · AI 預測：OpenRouter · 僅供參考，不構成投資建議
+  </p>
+
+</div>
+</body>
+</html>
