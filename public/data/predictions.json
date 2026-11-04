@@ -5,6 +5,17 @@
       "symbol": "QQQ",
       "combined_data": [
         {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 717.63,
+          "open": 715.25,
+          "high": 722.75,
+          "low": 710.39,
+          "volume": 30518500,
+          "volumeM": "30.52M",
+          "is_predicted": false
+        },
+        {
           "date": "2026-10-21",
           "dateShort": "10/21",
           "close": 725.2,
@@ -104,17 +115,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 685.28,
-          "open": 684.39,
-          "high": 688.69,
-          "low": 683.18,
-          "volume": 35664298,
-          "volumeM": "35.66M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 713.5,
@@ -144,6 +144,17 @@
       "name": "Vanguard S&P 500 ETF",
       "symbol": "VOO",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 706.8,
+          "open": 704.01,
+          "high": 709.81,
+          "low": 702.49,
+          "volume": 5798000,
+          "volumeM": "5.8M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -244,17 +255,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 693.54,
-          "open": 691.88,
-          "high": 695.87,
-          "low": 691.64,
-          "volume": 6173422,
-          "volumeM": "6.17M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 710.67,
@@ -284,6 +284,17 @@
       "name": "Apple Inc.",
       "symbol": "AAPL",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 339.5,
+          "open": 339.86,
+          "high": 343.06,
+          "low": 338.7,
+          "volume": 35851400,
+          "volumeM": "35.85M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -384,17 +395,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 331.9,
-          "open": 325.58,
-          "high": 334.5,
-          "low": 325.33,
-          "volume": 61365001,
-          "volumeM": "61.37M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 345.0,
@@ -435,6 +435,17 @@
       "name": "Advanced Micro Devices, Inc.",
       "symbol": "AMD",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 534.74,
+          "open": 530.02,
+          "high": 548.11,
+          "low": 524.6,
+          "volume": 15187000,
+          "volumeM": "15.19M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -535,17 +546,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 483.9,
-          "open": 479.99,
-          "high": 497.35,
-          "low": 473.54,
-          "volume": 32065405,
-          "volumeM": "32.07M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 573.76,
@@ -586,6 +586,17 @@
       "name": "Amazon.com, Inc.",
       "symbol": "AMZN",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 262.63,
+          "open": 264.08,
+          "high": 265.34,
+          "low": 260.42,
+          "volume": 34927200,
+          "volumeM": "34.93M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -686,17 +697,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 250.69,
-          "open": 248.59,
-          "high": 252.44,
-          "low": 245.89,
-          "volume": 37573600,
-          "volumeM": "37.57M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 257.25,
@@ -726,6 +726,17 @@
       "name": "Broadcom Inc.",
       "symbol": "AVGO",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 334.37,
+          "open": 334.0,
+          "high": 341.1,
+          "low": 330.8,
+          "volume": 15951800,
+          "volumeM": "15.95M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -826,17 +837,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 332.13,
-          "open": 328.97,
-          "high": 335.74,
-          "low": 326.61,
-          "volume": 16950972,
-          "volumeM": "16.95M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 351.6,
@@ -877,6 +877,17 @@
       "name": "Alphabet Inc.",
       "symbol": "GOOG",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 336.4,
+          "open": 339.71,
+          "high": 341.0,
+          "low": 334.6,
+          "volume": 14790300,
+          "volumeM": "14.79M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -977,17 +988,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 278.27,
-          "open": 279.19,
-          "high": 280.33,
-          "low": 276.32,
-          "volume": 22764187,
-          "volumeM": "22.76M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 332.05,
@@ -1028,6 +1028,17 @@
       "name": "Alphabet Inc.",
       "symbol": "GOOGL",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 340.28,
+          "open": 343.65,
+          "high": 344.77,
+          "low": 338.36,
+          "volume": 18316900,
+          "volumeM": "18.32M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -1128,17 +1139,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 280.03,
-          "open": 280.23,
-          "high": 281.6,
-          "low": 277.2,
-          "volume": 34646571,
-          "volumeM": "34.65M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 331.66,
@@ -1168,6 +1168,17 @@
       "name": "Intel Corporation",
       "symbol": "INTC",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 91.69,
+          "open": 90.73,
+          "high": 93.73,
+          "low": 88.77,
+          "volume": 84058600,
+          "volumeM": "84.06M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -1268,17 +1279,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 60.55,
-          "open": 61.33,
-          "high": 62.59,
-          "low": 59.87,
-          "volume": 145974178,
-          "volumeM": "145.97M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 97.45,
@@ -1319,6 +1319,17 @@
       "name": "Lumentum Holdings Inc.",
       "symbol": "LITE",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 822.51,
+          "open": 816.58,
+          "high": 837.78,
+          "low": 785.0,
+          "volume": 4526900,
+          "volumeM": "4.53M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -1419,17 +1430,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 680.16,
-          "open": 681.01,
-          "high": 719.97,
-          "low": 667.4,
-          "volume": 7100625,
-          "volumeM": "7.1M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 906.33,
@@ -1470,6 +1470,17 @@
       "name": "Meta Platforms, Inc.",
       "symbol": "META",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 694.25,
+          "open": 694.98,
+          "high": 696.51,
+          "low": 681.05,
+          "volume": 17049100,
+          "volumeM": "17.05M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -1570,17 +1581,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 621.03,
-          "open": 610.76,
-          "high": 624.84,
-          "low": 610.1,
-          "volume": 13536034,
-          "volumeM": "13.54M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 585.96,
@@ -1621,6 +1621,17 @@
       "name": "Marvell Technology, Inc.",
       "symbol": "MRVL",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 240.42,
+          "open": 232.45,
+          "high": 243.96,
+          "low": 226.52,
+          "volume": 16744900,
+          "volumeM": "16.74M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -1721,17 +1732,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 171.97,
-          "open": 174.27,
-          "high": 177.31,
-          "low": 167.4,
-          "volume": 38719161,
-          "volumeM": "38.72M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 246.5,
@@ -1761,6 +1761,17 @@
       "name": "Microsoft Corporation",
       "symbol": "MSFT",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 531.87,
+          "open": 533.91,
+          "high": 534.21,
+          "low": 525.84,
+          "volume": 14576000,
+          "volumeM": "14.58M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -1861,17 +1872,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 520.99,
-          "open": 509.01,
-          "high": 523.44,
-          "low": 507.85,
-          "volume": 19912678,
-          "volumeM": "19.91M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 535.6,
@@ -1901,6 +1901,17 @@
       "name": "Micron Technology, Inc.",
       "symbol": "MU",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 896.07,
+          "open": 884.13,
+          "high": 918.89,
+          "low": 881.52,
+          "volume": 20304200,
+          "volumeM": "20.3M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -2001,17 +2012,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 855.1,
-          "open": 859.92,
-          "high": 871.49,
-          "low": 845.27,
-          "volume": 20688636,
-          "volumeM": "20.69M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 998.3,
@@ -2052,6 +2052,17 @@
       "name": "NVIDIA Corporation",
       "symbol": "NVDA",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 216.47,
+          "open": 215.98,
+          "high": 218.46,
+          "low": 212.77,
+          "volume": 79609100,
+          "volumeM": "79.61M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -2152,17 +2163,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 206.69,
-          "open": 207.96,
-          "high": 209.14,
-          "low": 205.93,
-          "volume": 90303192,
-          "volumeM": "90.3M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 216.21,
@@ -2192,6 +2192,17 @@
       "name": "Okta, Inc.",
       "symbol": "OKTA",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 194.02,
+          "open": 186.64,
+          "high": 195.37,
+          "low": 183.6,
+          "volume": 2360400,
+          "volumeM": "2.36M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -2290,17 +2301,6 @@
           "volume": 5905700,
           "volumeM": "5.91M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 189.68,
-          "open": 183.75,
-          "high": 190.43,
-          "low": 180.0,
-          "volume": 33767452,
-          "volumeM": "33.77M",
-          "is_predicted": false
         }
       ],
       "has_ai": false,
@@ -2310,6 +2310,17 @@
       "name": "Oracle Corporation",
       "symbol": "ORCL",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 131.14,
+          "open": 128.51,
+          "high": 134.35,
+          "low": 127.45,
+          "volume": 26751800,
+          "volumeM": "26.75M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -2408,17 +2419,6 @@
           "volume": 58749300,
           "volumeM": "58.75M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 126.19,
-          "open": 122.0,
-          "high": 128.13,
-          "low": 121.35,
-          "volume": 83790427,
-          "volumeM": "83.79M",
-          "is_predicted": false
         }
       ],
       "has_ai": false,
@@ -2428,6 +2428,17 @@
       "name": "Palantir Technologies Inc.",
       "symbol": "PLTR",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 192.6,
+          "open": 192.44,
+          "high": 196.11,
+          "low": 189.42,
+          "volume": 15095200,
+          "volumeM": "15.1M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -2528,17 +2539,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 175.4,
-          "open": 168.18,
-          "high": 176.54,
-          "low": 165.25,
-          "volume": 52575776,
-          "volumeM": "52.58M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 199.5,
@@ -2557,6 +2557,17 @@
       "name": "Sandisk Corporation",
       "symbol": "SNDK",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 1365.38,
+          "open": 1336.96,
+          "high": 1388.88,
+          "low": 1330.0,
+          "volume": 6579900,
+          "volumeM": "6.58M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -2657,17 +2668,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 1126.52,
-          "open": 1107.53,
-          "high": 1153.19,
-          "low": 1100.53,
-          "volume": 8360384,
-          "volumeM": "8.36M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 1457.85,
@@ -2697,6 +2697,17 @@
       "name": "Space Exploration Technologies Corp.",
       "symbol": "SPCX",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 147.79,
+          "open": 146.17,
+          "high": 148.66,
+          "low": 143.27,
+          "volume": 117204900,
+          "volumeM": "117.2M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -2797,17 +2808,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 141.31,
-          "open": 137.62,
-          "high": 142.73,
-          "low": 137.56,
-          "volume": 71608414,
-          "volumeM": "71.61M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 145.3,
@@ -2837,6 +2837,17 @@
       "name": "Tesla, Inc.",
       "symbol": "TSLA",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 373.71,
+          "open": 370.28,
+          "high": 377.59,
+          "low": 363.64,
+          "volume": 32123300,
+          "volumeM": "32.12M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -2937,17 +2948,6 @@
           "is_predicted": false
         },
         {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 398.5,
-          "open": 406.25,
-          "high": 406.49,
-          "low": 396.54,
-          "volume": 26080290,
-          "volumeM": "26.08M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-11-04",
           "dateShort": "🔮 11/04",
           "open": 392.38,
@@ -2988,6 +2988,17 @@
       "name": "Texas Instruments Incorporated",
       "symbol": "TXN",
       "combined_data": [
+        {
+          "date": "2026-10-20",
+          "dateShort": "10/20",
+          "close": 276.43,
+          "open": 271.37,
+          "high": 281.08,
+          "low": 270.69,
+          "volume": 7659700,
+          "volumeM": "7.66M",
+          "is_predicted": false
+        },
         {
           "date": "2026-10-21",
           "dateShort": "10/21",
@@ -3085,17 +3096,6 @@
           "low": 301.24,
           "volume": 11078400,
           "volumeM": "11.08M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-11-03",
-          "dateShort": "11/03",
-          "close": 312.49,
-          "open": 309.83,
-          "high": 316.75,
-          "low": 305.18,
-          "volume": 9700727,
-          "volumeM": "9.7M",
           "is_predicted": false
         }
       ],
