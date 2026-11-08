@@ -595,17 +595,6 @@
       "symbol": "APP",
       "combined_data": [
         {
-          "date": "2026-10-23",
-          "dateShort": "10/23",
-          "close": 260.25,
-          "open": 263.04,
-          "high": 264.0,
-          "low": 258.32,
-          "volume": 2348400,
-          "volumeM": "2.35M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-10-26",
           "dateShort": "10/26",
           "close": 260.74,
@@ -702,6 +691,17 @@
           "low": 338.88,
           "volume": 22224300,
           "volumeM": "22.22M",
+          "is_predicted": false
+        },
+        {
+          "date": "2026-11-06",
+          "dateShort": "11/06",
+          "close": 391.22,
+          "open": 355.95,
+          "high": 398.0,
+          "low": 348.69,
+          "volume": 11691900,
+          "volumeM": "11.69M",
           "is_predicted": false
         }
       ],
@@ -831,17 +831,6 @@
       "symbol": "GOOG",
       "combined_data": [
         {
-          "date": "2026-10-23",
-          "dateShort": "10/23",
-          "close": 317.28,
-          "open": 317.75,
-          "high": 321.23,
-          "low": 316.99,
-          "volume": 10856500,
-          "volumeM": "10.86M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-10-26",
           "dateShort": "10/26",
           "close": 314.19,
@@ -942,14 +931,14 @@
         },
         {
           "date": "2026-11-06",
-          "dateShort": "🔮 11/06",
-          "open": 260.45,
-          "high": 262.82,
-          "low": 260.12,
-          "close": 261.88,
-          "volume": 27480000,
-          "volumeM": "27.5M",
-          "is_predicted": true
+          "dateShort": "11/06",
+          "close": 283.93,
+          "open": 283.42,
+          "high": 289.22,
+          "low": 283.0,
+          "volume": 24585600,
+          "volumeM": "24.59M",
+          "is_predicted": false
         }
       ],
       "has_ai": false,
@@ -1314,17 +1303,6 @@
       "symbol": "META",
       "combined_data": [
         {
-          "date": "2026-10-23",
-          "dateShort": "10/23",
-          "close": 642.62,
-          "open": 638.18,
-          "high": 648.04,
-          "low": 633.27,
-          "volume": 14791600,
-          "volumeM": "14.79M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-10-26",
           "dateShort": "10/26",
           "close": 630.56,
@@ -1425,14 +1403,14 @@
         },
         {
           "date": "2026-11-06",
-          "dateShort": "🔮 11/06",
-          "open": 584.06,
-          "high": 594.92,
-          "low": 580.45,
-          "close": 587.29,
-          "volume": 17890000,
-          "volumeM": "17.9M",
-          "is_predicted": true
+          "dateShort": "11/06",
+          "close": 610.15,
+          "open": 607.33,
+          "high": 625.6,
+          "low": 606.66,
+          "volume": 15682300,
+          "volumeM": "15.68M",
+          "is_predicted": false
         }
       ],
       "has_ai": false,
@@ -2033,17 +2011,6 @@
       "symbol": "PLTR",
       "combined_data": [
         {
-          "date": "2026-10-23",
-          "dateShort": "10/23",
-          "close": 196.75,
-          "open": 195.02,
-          "high": 197.49,
-          "low": 190.57,
-          "volume": 17668400,
-          "volumeM": "17.67M",
-          "is_predicted": false
-        },
-        {
           "date": "2026-10-26",
           "dateShort": "10/26",
           "close": 198.84,
@@ -2141,6 +2108,17 @@
           "volume": 50014300,
           "volumeM": "50.01M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-06",
+          "dateShort": "11/06",
+          "close": 160.38,
+          "open": 158.68,
+          "high": 163.97,
+          "low": 157.24,
+          "volume": 24298100,
+          "volumeM": "24.3M",
+          "is_predicted": false
         }
       ],
       "has_ai": false,
@@ -2150,17 +2128,6 @@
       "name": "Sandisk Corporation",
       "symbol": "SNDK",
       "combined_data": [
-        {
-          "date": "2026-10-23",
-          "dateShort": "10/23",
-          "close": 1238.03,
-          "open": 1271.62,
-          "high": 1299.99,
-          "low": 1228.89,
-          "volume": 7923500,
-          "volumeM": "7.92M",
-          "is_predicted": false
-        },
         {
           "date": "2026-10-26",
           "dateShort": "10/26",
@@ -2259,6 +2226,17 @@
           "volume": 30722600,
           "volumeM": "30.72M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-06",
+          "dateShort": "11/06",
+          "close": 835.06,
+          "open": 898.27,
+          "high": 912.09,
+          "low": 816.42,
+          "volume": 17692600,
+          "volumeM": "17.69M",
+          "is_predicted": false
         }
       ],
       "has_ai": false,
@@ -2268,17 +2246,6 @@
       "name": "Space Exploration Technologies Corp.",
       "symbol": "SPCX",
       "combined_data": [
-        {
-          "date": "2026-10-23",
-          "dateShort": "10/23",
-          "close": 147.49,
-          "open": 147.93,
-          "high": 149.75,
-          "low": 144.09,
-          "volume": 110617500,
-          "volumeM": "110.62M",
-          "is_predicted": false
-        },
         {
           "date": "2026-10-26",
           "dateShort": "10/26",
@@ -2376,6 +2343,17 @@
           "low": 120.39,
           "volume": 171356200,
           "volumeM": "171.36M",
+          "is_predicted": false
+        },
+        {
+          "date": "2026-11-06",
+          "dateShort": "11/06",
+          "close": 134.27,
+          "open": 130.94,
+          "high": 135.32,
+          "low": 128.57,
+          "volume": 114807000,
+          "volumeM": "114.81M",
           "is_predicted": false
         }
       ],
@@ -2629,8 +2607,8 @@
     },
     "ixic": {
       "name": "Nasdaq",
-      "value": 24579.42,
-      "change": 264.42,
+      "value": 24579.43,
+      "change": 264.43,
       "pct": 1.09,
       "isPositive": true
     },
