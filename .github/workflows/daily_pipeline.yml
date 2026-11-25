@@ -8,6 +8,10 @@ on:
   push:
     branches: [main]
 
+concurrency:
+  group: daily-pipeline-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   pipeline:
     runs-on: ubuntu-latest
@@ -67,10 +71,12 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          git fetch origin main
+          git reset --soft origin/main
           git add public/data/ public/report.html public/archive/
           git diff --staged --quiet && echo "No data changes" || {
             git commit -m "🤖 Auto-update US stock data $(date +%Y-%m-%d\ %H:%M)" &&
-            git pull --rebase && git push
+            git push origin HEAD:main
           }
 
       # ── Frontend Build ───────────────────────────────────────────────────────
