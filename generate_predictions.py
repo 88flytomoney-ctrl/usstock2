@@ -227,8 +227,7 @@ def call_openrouter_vector_engine(history_rows, ticker_symbol):
             messages=[{"role": "user", "content": prompt}],
             temperature=0.2,
             max_tokens=4000,
-            timeout=30,
-            extra_body={"reasoning": {"enabled": False}},
+            timeout=45,
         )
         msg = response.choices[0].message
         raw = msg.content
@@ -246,7 +245,13 @@ def call_openrouter_vector_engine(history_rows, ticker_symbol):
             if raw.startswith("json"):
                 raw = raw[4:]
         raw = raw.strip()
-        
+
+        # Safely extract the JSON object even if reasoning text precedes it
+        start_idx = raw.find("{")
+        end_idx = raw.rfind("}")
+        if start_idx != -1 and end_idx != -1 and end_idx > start_idx:
+            raw = raw[start_idx:end_idx + 1]
+
         parsed_response = json.loads(raw)
         predicted_rows = parsed_response.get("extrapolated_steps", [])
         trend_idx = int(parsed_response.get("trend_direction_index", 0))
@@ -278,7 +283,7 @@ def call_openrouter_vector_engine(history_rows, ticker_symbol):
                 "close":     float(vals[3]),
                 "volume":    int(raw_vol_m * 1e6),
                 "volumeM":   f"{raw_vol_m:.1f}M",
-                "is_predicted": True # 🛠️ FIXED: Explicitly flag as predicted for US stocks
+                "is_predicted": True
             })
         return normalised, recommendation
     except Exception as e:
@@ -311,22 +316,15 @@ def main():
         past_predicted_saved = []
         if code in existing_stocks:
             old_combined = existing_stocks[code].get("combined_data", [])
-            # Get the earliest actual data date
             actual_date_set = set(r['date'] for r in history)
             first_actual_date = history[0]['date'] if history else None
             last_actual_date = history[-1]['date'] if history else None
             for old_row in old_combined:
-                # Retain older historical predictions to enable side-by-side display
                 if old_row.get("is_predicted", False):
-                    # Discard stale predicted rows that fall before or overlap with
-                    # actual data — those dates already have real prices
                     if first_actual_date and old_row['date'] < first_actual_date:
                         continue
                     if old_row['date'] in actual_date_set:
                         continue
-                    # Discard predicted rows that fall on or before the last actual
-                    # date — they are stale (e.g., predicted for a US holiday like
-                    # 07-03 that has no actual data, or dates already passed)
                     if last_actual_date and old_row['date'] <= last_actual_date:
                         continue
                     past_predicted_saved.append(old_row)
@@ -341,7 +339,6 @@ def main():
         unique_combined = []
         seen_keys = set()
         for row in combined:
-            # Skip AI-predicted rows whose date now has real actual data
             if row.get('is_predicted', False) and row['date'] in actual_dates:
                 continue
             key = f"{row['date']}_{row.get('is_predicted', False)}"
@@ -382,7 +379,6 @@ def main():
     time_str = datetime.now().strftime('%H')
     history_file = HISTORY_DIR / f'{date_str}.json'
     
-    # History file format: { generatedAt, stocks: [{ code, symbol, name, prices }] }
     history_data = {
         "generatedAt": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         "generatedDate": date_str,
@@ -415,7 +411,6 @@ def main():
             try:
                 raw_data = json.load(f)
                 if raw_data and isinstance(raw_data[0], str):
-                    # Old format: ["2026-05-23", ...]
                     existing_manifest = []
                     for d in raw_data:
                         existing_manifest.append({
@@ -429,7 +424,6 @@ def main():
             except:
                 existing_manifest = []
     
-    # Add new entry (avoid duplicates) only if history file exists
     if history_file.exists():
         new_entry = {
             "date": date_str,
@@ -442,7 +436,6 @@ def main():
         existing_manifest.sort(key=lambda x: x['date'], reverse=True)
     else:
         print(f"   ⚠️ History file not found, skipping manifest update")
-        # Filter out non-existent entries from manifest
         existing_manifest = [e for e in existing_manifest if (HISTORY_DIR / e['file']).exists()]
     
     with open(manifest_file, 'w', encoding='utf-8') as f:
