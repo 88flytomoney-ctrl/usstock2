@@ -524,8 +524,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "AMD": {
       "name": "Advanced Micro Devices, Inc.",
@@ -815,8 +815,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "ANT": {
       "name": "Anthropic, PBC",
@@ -1512,8 +1512,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "買入"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "INTC": {
       "name": "Intel Corporation",
@@ -2039,8 +2039,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "MU": {
       "name": "Micron Technology, Inc.",
