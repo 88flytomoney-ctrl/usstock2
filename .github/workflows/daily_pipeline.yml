@@ -8,10 +8,6 @@ on:
   push:
     branches: [main]
 
-concurrency:
-  group: daily-pipeline-${{ github.ref }}
-  cancel-in-progress: false
-
 jobs:
   pipeline:
     runs-on: ubuntu-latest
@@ -71,12 +67,10 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git fetch origin main
-          git reset --soft origin/main
           git add public/data/ public/report.html public/archive/
           git diff --staged --quiet && echo "No data changes" || {
             git commit -m "🤖 Auto-update US stock data $(date +%Y-%m-%d\ %H:%M)" &&
-            git push origin HEAD:main
+            git pull --rebase && git push
           }
 
       # ── Frontend Build ───────────────────────────────────────────────────────
@@ -92,12 +86,9 @@ jobs:
           npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-
-      - name: Wait for artifact indexing
-        run: sleep 5
 
       - name: Deploy to GitHub Pages
         id: deployment
