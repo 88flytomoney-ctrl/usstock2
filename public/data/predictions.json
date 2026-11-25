@@ -2023,8 +2023,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "MRVL": {
       "name": "Marvell Technology, Inc.",
@@ -2959,8 +2959,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "買入"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "TXN": {
       "name": "Texas Instruments Incorporated",
