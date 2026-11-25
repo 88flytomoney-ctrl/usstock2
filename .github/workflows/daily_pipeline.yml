@@ -1,4 +1,4 @@
-name: Daily Pipeline — Scrape + Prices + AI + Deploy
+name: Daily Pipeline — Scrape + Prices + AI + Deploy +v2
 
 on:
   schedule:
