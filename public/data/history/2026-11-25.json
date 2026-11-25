@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25 08:01:32",
+  "generatedAt": "2026-11-25 08:11:09",
   "generatedDate": "2026-11-25",
   "generatedTime": "08:00",
   "stockCount": 22,
@@ -709,7 +709,7 @@
     {
       "code": "ANT",
       "symbol": "ANT",
-      "name": "Anthropic, PBC Class A Common Stock",
+      "name": "Anthropic, PBC",
       "prices": [
         {
           "date": "2026-11-19",

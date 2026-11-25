@@ -697,8 +697,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -874,7 +874,7 @@
       "recommendation": "持有"
     },
     "ANT": {
-      "name": "Anthropic, PBC Class A Common Stock",
+      "name": "Anthropic, PBC",
       "symbol": "ANT",
       "combined_data": [
         {
@@ -977,8 +977,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
@@ -1966,10 +1966,65 @@
           "volume": 12149700,
           "volumeM": "12.15M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 585.2,
+          "high": 596.1,
+          "low": 578.5,
+          "close": 584.3,
+          "volume": 14800000,
+          "volumeM": "14.8M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 580.85,
+          "high": 591.9,
+          "low": 572.75,
+          "close": 578.8,
+          "volume": 17450000,
+          "volumeM": "17.4M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 576.5,
+          "high": 587.7,
+          "low": 567.0,
+          "close": 573.3,
+          "volume": 20100000,
+          "volumeM": "20.1M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 572.15,
+          "high": 583.5,
+          "low": 561.25,
+          "close": 567.8,
+          "volume": 22750000,
+          "volumeM": "22.8M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 567.8,
+          "high": 579.3,
+          "low": 555.5,
+          "close": 562.3,
+          "volume": 25400000,
+          "volumeM": "25.4M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "MRVL": {
       "name": "Marvell Technology, Inc.",
@@ -2847,10 +2902,65 @@
           "volume": 28697600,
           "volumeM": "28.7M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 386.5,
+          "high": 392.1,
+          "low": 378.2,
+          "close": 386.4,
+          "volume": 27500000,
+          "volumeM": "27.5M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 387.8,
+          "high": 393.5,
+          "low": 379.1,
+          "close": 387.9,
+          "volume": 26800000,
+          "volumeM": "26.8M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 388.9,
+          "high": 394.8,
+          "low": 380.3,
+          "close": 389.2,
+          "volume": 26100000,
+          "volumeM": "26.1M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 390.2,
+          "high": 396.1,
+          "low": 381.5,
+          "close": 390.6,
+          "volume": 25400000,
+          "volumeM": "25.4M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 391.5,
+          "high": 397.4,
+          "low": 382.8,
+          "close": 392.0,
+          "volume": 24700000,
+          "volumeM": "24.7M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "買入"
     },
     "TXN": {
       "name": "Texas Instruments Incorporated",
