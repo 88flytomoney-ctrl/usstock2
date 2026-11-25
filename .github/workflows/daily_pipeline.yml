@@ -86,9 +86,12 @@ jobs:
           npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: dist
+
+      - name: Wait for artifact indexing
+        run: sleep 5
 
       - name: Deploy to GitHub Pages
         id: deployment
