@@ -467,10 +467,65 @@
           "volume": 13097500,
           "volumeM": "13.1M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 305.44,
+          "high": 314.53,
+          "low": 282.72,
+          "close": 291.41,
+          "volume": 14200000,
+          "volumeM": "14.2M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 282.88,
+          "high": 291.49,
+          "low": 261.21,
+          "close": 269.87,
+          "volume": 15300000,
+          "volumeM": "15.3M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 260.32,
+          "high": 268.45,
+          "low": 239.7,
+          "close": 248.33,
+          "volume": 16399999,
+          "volumeM": "16.4M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 237.76,
+          "high": 245.41,
+          "low": 218.19,
+          "close": 226.79,
+          "volume": 17500000,
+          "volumeM": "17.5M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 215.2,
+          "high": 222.37,
+          "low": 196.68,
+          "close": 205.25,
+          "volume": 18600000,
+          "volumeM": "18.6M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "AMD": {
       "name": "Advanced Micro Devices, Inc.",
@@ -703,13 +758,68 @@
           "volume": 33845600,
           "volumeM": "33.85M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 250.15,
+          "high": 253.4,
+          "low": 248.2,
+          "close": 249.85,
+          "volume": 30500000,
+          "volumeM": "30.5M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 248.3,
+          "high": 251.1,
+          "low": 246.1,
+          "close": 247.6,
+          "volume": 28100000,
+          "volumeM": "28.1M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 246.75,
+          "high": 249.2,
+          "low": 244.5,
+          "close": 245.9,
+          "volume": 26400000,
+          "volumeM": "26.4M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 245.4,
+          "high": 247.6,
+          "low": 243.1,
+          "close": 244.4,
+          "volume": 25000000,
+          "volumeM": "25.0M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 244.2,
+          "high": 246.3,
+          "low": 241.9,
+          "close": 243.15,
+          "volume": 23800000,
+          "volumeM": "23.8M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "ANT": {
-      "name": "Anthropic, PBC Class A Common Stock",
+      "name": "Anthropic, PBC",
       "symbol": "ANT",
       "combined_data": [
         {
@@ -1345,10 +1455,65 @@
           "volume": 78940200,
           "volumeM": "78.94M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 171.5,
+          "high": 171.8,
+          "low": 171.2,
+          "close": 171.4,
+          "volume": 82500000,
+          "volumeM": "82.5M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 172.8,
+          "high": 173.1,
+          "low": 172.4,
+          "close": 172.7,
+          "volume": 86200000,
+          "volumeM": "86.2M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 174.2,
+          "high": 174.5,
+          "low": 173.8,
+          "close": 174.1,
+          "volume": 90100000,
+          "volumeM": "90.1M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 175.6,
+          "high": 175.9,
+          "low": 175.2,
+          "close": 175.5,
+          "volume": 94300000,
+          "volumeM": "94.3M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 177.1,
+          "high": 177.4,
+          "low": 176.7,
+          "close": 177.0,
+          "volume": 98700000,
+          "volumeM": "98.7M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "買入"
     },
     "INTC": {
       "name": "Intel Corporation",
@@ -1817,10 +1982,65 @@
           "volume": 23086900,
           "volumeM": "23.09M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 485.2,
+          "high": 496.5,
+          "low": 482.1,
+          "close": 489.8,
+          "volume": 25400000,
+          "volumeM": "25.4M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 480.15,
+          "high": 491.2,
+          "low": 476.35,
+          "close": 483.5,
+          "volume": 27100000,
+          "volumeM": "27.1M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 475.8,
+          "high": 486.4,
+          "low": 471.2,
+          "close": 477.9,
+          "volume": 24800000,
+          "volumeM": "24.8M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 471.3,
+          "high": 482.1,
+          "low": 466.8,
+          "close": 472.6,
+          "volume": 26500000,
+          "volumeM": "26.5M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 467.5,
+          "high": 478.3,
+          "low": 462.9,
+          "close": 468.1,
+          "volume": 23900000,
+          "volumeM": "23.9M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "MU": {
       "name": "Micron Technology, Inc.",
