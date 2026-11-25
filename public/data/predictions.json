@@ -640,10 +640,65 @@
           "volume": 46075500,
           "volumeM": "46.08M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 401.5,
+          "high": 404.2,
+          "low": 375.1,
+          "close": 390.5,
+          "volume": 42100000,
+          "volumeM": "42.1M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 388.2,
+          "high": 391.5,
+          "low": 362.4,
+          "close": 378.9,
+          "volume": 38500000,
+          "volumeM": "38.5M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 375.8,
+          "high": 378.9,
+          "low": 350.2,
+          "close": 367.4,
+          "volume": 35200000,
+          "volumeM": "35.2M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 364.1,
+          "high": 367.2,
+          "low": 338.5,
+          "close": 356.1,
+          "volume": 32100000,
+          "volumeM": "32.1M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 353.2,
+          "high": 356.1,
+          "low": 327.3,
+          "close": 345.2,
+          "volume": 29300000,
+          "volumeM": "29.3M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -1101,10 +1156,65 @@
           "volume": 20630000,
           "volumeM": "20.63M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 305.0,
+          "high": 312.0,
+          "low": 284.0,
+          "close": 289.0,
+          "volume": 24500000,
+          "volumeM": "24.5M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 299.0,
+          "high": 306.0,
+          "low": 278.0,
+          "close": 283.0,
+          "volume": 28000000,
+          "volumeM": "28.0M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 293.0,
+          "high": 300.0,
+          "low": 272.0,
+          "close": 277.0,
+          "volume": 31500000,
+          "volumeM": "31.5M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 287.0,
+          "high": 294.0,
+          "low": 266.0,
+          "close": 271.0,
+          "volume": 35000000,
+          "volumeM": "35.0M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 281.0,
+          "high": 288.0,
+          "low": 260.0,
+          "close": 265.0,
+          "volume": 38500000,
+          "volumeM": "38.5M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "GOOG": {
       "name": "Alphabet Inc.",
@@ -1337,10 +1447,65 @@
           "volume": 33820500,
           "volumeM": "33.82M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 276.45,
+          "high": 277.1,
+          "low": 269.8,
+          "close": 272.5,
+          "volume": 28900000,
+          "volumeM": "28.9M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 273.8,
+          "high": 274.45,
+          "low": 266.5,
+          "close": 269.2,
+          "volume": 25100000,
+          "volumeM": "25.1M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 271.15,
+          "high": 271.8,
+          "low": 263.2,
+          "close": 265.9,
+          "volume": 21300000,
+          "volumeM": "21.3M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 268.5,
+          "high": 269.15,
+          "low": 259.9,
+          "close": 262.6,
+          "volume": 17500000,
+          "volumeM": "17.5M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 265.85,
+          "high": 266.5,
+          "low": 256.6,
+          "close": 259.3,
+          "volume": 13700000,
+          "volumeM": "13.7M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "INSM": {
       "name": "Insmed Incorporated",
@@ -2745,10 +2910,65 @@
           "volume": 13679200,
           "volumeM": "13.68M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 285.4,
+          "high": 289.5,
+          "low": 265.2,
+          "close": 266.1,
+          "volume": 14200000,
+          "volumeM": "14.2M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 293.46,
+          "high": 297.6,
+          "low": 272.6,
+          "close": 273.76,
+          "volume": 14720000,
+          "volumeM": "14.7M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 301.52,
+          "high": 305.7,
+          "low": 280.0,
+          "close": 281.42,
+          "volume": 15240000,
+          "volumeM": "15.2M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 309.58,
+          "high": 313.8,
+          "low": 287.4,
+          "close": 289.08,
+          "volume": 15760000,
+          "volumeM": "15.8M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 317.64,
+          "high": 321.9,
+          "low": 294.8,
+          "close": 296.74,
+          "volume": 16280000,
+          "volumeM": "16.3M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "買入"
     }
   },
   "indices": {
