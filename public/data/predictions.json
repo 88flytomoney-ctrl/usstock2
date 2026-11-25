@@ -107,11 +107,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 638.1,
-          "open": 640.02,
-          "high": 643.47,
+          "open": 640.04,
+          "high": 648.0,
           "low": 631.15,
-          "volume": 56270876,
-          "volumeM": "56.27M",
+          "volume": 57091400,
+          "volumeM": "57.09M",
           "is_predicted": false
         }
       ],
@@ -226,10 +226,10 @@
           "dateShort": "11/24",
           "close": 660.71,
           "open": 657.39,
-          "high": 662.66,
-          "low": 654.63,
-          "volume": 15145589,
-          "volumeM": "15.15M",
+          "high": 662.71,
+          "low": 654.61,
+          "volume": 15161900,
+          "volumeM": "15.16M",
           "is_predicted": false
         }
       ],
@@ -343,11 +343,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 354.07,
-          "open": 348.12,
-          "high": 354.37,
+          "open": 348.06,
+          "high": 354.4,
           "low": 345.88,
-          "volume": 40235897,
-          "volumeM": "40.24M",
+          "volume": 41214200,
+          "volumeM": "41.21M",
           "is_predicted": false
         }
       ],
@@ -464,8 +464,8 @@
           "open": 328.0,
           "high": 337.57,
           "low": 304.23,
-          "volume": 12871045,
-          "volumeM": "12.87M",
+          "volume": 13097500,
+          "volumeM": "13.1M",
           "is_predicted": false
         }
       ],
@@ -579,11 +579,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 413.27,
-          "open": 425.12,
+          "open": 425.13,
           "high": 428.87,
-          "low": 396.03,
-          "volume": 45929868,
-          "volumeM": "45.93M",
+          "low": 396.01,
+          "volume": 46075500,
+          "volumeM": "46.08M",
           "is_predicted": false
         }
       ],
@@ -697,11 +697,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 252.29,
-          "open": 252.54,
+          "open": 252.29,
           "high": 255.56,
           "low": 250.53,
-          "volume": 33796817,
-          "volumeM": "33.8M",
+          "volume": 33845600,
+          "volumeM": "33.85M",
           "is_predicted": false
         }
       ],
@@ -709,7 +709,7 @@
       "recommendation": "持有"
     },
     "ANT": {
-      "name": "Anthropic, PBC Class A Common Stock",
+      "name": "Anthropic, PBC",
       "symbol": "ANT",
       "combined_data": [
         {
@@ -748,12 +748,12 @@
         {
           "date": "2026-11-24",
           "dateShort": "11/24",
-          "close": 81.9,
-          "open": 83.44,
+          "close": 81.91,
+          "open": 83.4,
           "high": 83.49,
           "low": 75.61,
-          "volume": 311641596,
-          "volumeM": "311.64M",
+          "volume": 312136500,
+          "volumeM": "312.14M",
           "is_predicted": false
         }
       ],
@@ -867,11 +867,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 301.08,
-          "open": 300.89,
+          "open": 301.29,
           "high": 309.18,
           "low": 297.8,
-          "volume": 30133180,
-          "volumeM": "30.13M",
+          "volume": 31199400,
+          "volumeM": "31.2M",
           "is_predicted": false
         }
       ],
@@ -986,10 +986,10 @@
           "dateShort": "11/24",
           "close": 295.28,
           "open": 311.0,
-          "high": 318.06,
+          "high": 318.22,
           "low": 290.5,
-          "volume": 19758390,
-          "volumeM": "19.76M",
+          "volume": 20630000,
+          "volumeM": "20.63M",
           "is_predicted": false
         }
       ],
@@ -1103,11 +1103,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 276.58,
-          "open": 278.7,
-          "high": 278.94,
+          "open": 279.05,
+          "high": 279.05,
           "low": 273.91,
-          "volume": 23411727,
-          "volumeM": "23.41M",
+          "volume": 23974400,
+          "volumeM": "23.97M",
           "is_predicted": false
         }
       ],
@@ -1221,11 +1221,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 279.05,
-          "open": 281.39,
-          "high": 281.39,
-          "low": 276.04,
-          "volume": 33470372,
-          "volumeM": "33.47M",
+          "open": 281.6,
+          "high": 281.78,
+          "low": 276.03,
+          "volume": 33820500,
+          "volumeM": "33.82M",
           "is_predicted": false
         }
       ],
@@ -1341,8 +1341,8 @@
           "close": 170.15,
           "open": 170.49,
           "high": 170.61,
-          "low": 170.1,
-          "volume": 78939191,
+          "low": 170.09,
+          "volume": 78940200,
           "volumeM": "78.94M",
           "is_predicted": false
         }
@@ -1457,11 +1457,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 54.8,
-          "open": 57.28,
+          "open": 57.3,
           "high": 57.54,
           "low": 53.54,
-          "volume": 131883108,
-          "volumeM": "131.88M",
+          "volume": 132167700,
+          "volumeM": "132.17M",
           "is_predicted": false
         }
       ],
@@ -1578,8 +1578,8 @@
           "open": 589.5,
           "high": 600.32,
           "low": 584.26,
-          "volume": 12129127,
-          "volumeM": "12.13M",
+          "volume": 12149700,
+          "volumeM": "12.15M",
           "is_predicted": false
         }
       ],
@@ -1693,11 +1693,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 131.57,
-          "open": 139.7,
+          "open": 139.54,
           "high": 140.75,
           "low": 128.14,
-          "volume": 27921229,
-          "volumeM": "27.92M",
+          "volume": 28020900,
+          "volumeM": "28.02M",
           "is_predicted": false
         }
       ],
@@ -1811,11 +1811,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 496.13,
-          "open": 490.43,
-          "high": 501.8,
+          "open": 490.13,
+          "high": 501.82,
           "low": 488.43,
-          "volume": 22448885,
-          "volumeM": "22.45M",
+          "volume": 23086900,
+          "volumeM": "23.09M",
           "is_predicted": false
         }
       ],
@@ -1932,8 +1932,8 @@
           "open": 669.39,
           "high": 672.07,
           "low": 622.22,
-          "volume": 38650391,
-          "volumeM": "38.65M",
+          "volume": 38858600,
+          "volumeM": "38.86M",
           "is_predicted": false
         }
       ],
@@ -2047,11 +2047,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 155.38,
-          "open": 159.06,
+          "open": 159.1,
           "high": 159.92,
           "low": 150.5,
-          "volume": 382058256,
-          "volumeM": "382.06M",
+          "volume": 383594200,
+          "volumeM": "383.59M",
           "is_predicted": false
         }
       ],
@@ -2062,6 +2062,17 @@
       "name": "Sandisk Corporation",
       "symbol": "SNDK",
       "combined_data": [
+        {
+          "date": "2026-11-06",
+          "dateShort": "11/06",
+          "close": 104.38,
+          "open": 112.28,
+          "high": 114.01,
+          "low": 102.05,
+          "volume": 142109336,
+          "volumeM": "142.11M",
+          "is_predicted": false
+        },
         {
           "date": "2026-11-09",
           "dateShort": "11/09",
@@ -2159,17 +2170,6 @@
           "low": 94.16,
           "volume": 119852712,
           "volumeM": "119.85M",
-          "is_predicted": false
-        },
-        {
-          "date": "2026-11-24",
-          "dateShort": "11/24",
-          "close": 77.95,
-          "open": 82.74,
-          "high": 83.82,
-          "low": 74.87,
-          "volume": 96114209,
-          "volumeM": "96.11M",
           "is_predicted": false
         }
       ],
@@ -2285,9 +2285,9 @@
           "close": 125.81,
           "open": 131.9,
           "high": 132.5,
-          "low": 123.53,
-          "volume": 103186106,
-          "volumeM": "103.19M",
+          "low": 123.52,
+          "volume": 103453000,
+          "volumeM": "103.45M",
           "is_predicted": false
         }
       ],
@@ -2401,11 +2401,11 @@
           "date": "2026-11-24",
           "dateShort": "11/24",
           "close": 384.68,
-          "open": 383.89,
+          "open": 383.77,
           "high": 390.09,
           "low": 375.5,
-          "volume": 28208872,
-          "volumeM": "28.21M",
+          "volume": 28697600,
+          "volumeM": "28.7M",
           "is_predicted": false
         }
       ],
@@ -2521,9 +2521,9 @@
           "close": 258.44,
           "open": 277.34,
           "high": 281.38,
-          "low": 257.83,
-          "volume": 13671672,
-          "volumeM": "13.67M",
+          "low": 257.84,
+          "volume": 13679200,
+          "volumeM": "13.68M",
           "is_predicted": false
         }
       ],
