@@ -17,7 +17,7 @@ from openai import OpenAI
 # ── OpenRouter Configuration ──────────────────────────────────────────────────
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 OUTPUT_FILE = Path("public/data/predictions.json")
-AI_MODEL_ID = "poolside/laguna-xs-2.1:free"
+AI_MODEL_ID = "@preset/free"
 
 # Top 20 High-Turnover US Stocks to track — fetched dynamically from etnet
 # PINNED_TICKERS are always tracked (always at top, live data via existing pipeline)
@@ -236,7 +236,7 @@ def call_openrouter_vector_engine(history_rows, ticker_symbol):
             # Reasoning models may put output in reasoning_content / reasoning
             raw = getattr(msg, "reasoning_content", None) or getattr(msg, "reasoning", None)
         if not raw:
-            print(f"⚠️ Model returned empty content for {stock_code}")
+            print(f"⚠️ Model returned empty content for {ticker_symbol}")
             return None, "持有"
         raw = raw.strip()
         if raw.startswith("```"):
