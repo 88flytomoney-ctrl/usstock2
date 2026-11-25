@@ -113,65 +113,10 @@
           "volume": 57091400,
           "volumeM": "57.09M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-11-25",
-          "dateShort": "🔮 11/25",
-          "open": 637.52,
-          "high": 640.18,
-          "low": 615.02,
-          "close": 620.08,
-          "volume": 94500000,
-          "volumeM": "94.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-26",
-          "dateShort": "🔮 11/26",
-          "open": 632.4,
-          "high": 634.71,
-          "low": 608.32,
-          "close": 613.2,
-          "volume": 100450000,
-          "volumeM": "100.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-27",
-          "dateShort": "🔮 11/27",
-          "open": 627.27,
-          "high": 629.24,
-          "low": 601.61,
-          "close": 606.32,
-          "volume": 106410000,
-          "volumeM": "106.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-30",
-          "dateShort": "🔮 11/30",
-          "open": 622.14,
-          "high": 623.77,
-          "low": 594.91,
-          "close": 599.44,
-          "volume": 112370000,
-          "volumeM": "112.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-12-01",
-          "dateShort": "🔮 12/01",
-          "open": 617.02,
-          "high": 618.3,
-          "low": 588.21,
-          "close": 592.56,
-          "volume": 118330000,
-          "volumeM": "118.3M",
-          "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "VOO": {
       "name": "Vanguard S&P 500 ETF",
@@ -286,10 +231,65 @@
           "volume": 15161900,
           "volumeM": "15.16M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 653.14,
+          "high": 658.46,
+          "low": 650.24,
+          "close": 656.53,
+          "volume": 16300000,
+          "volumeM": "16.3M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 648.89,
+          "high": 654.21,
+          "low": 645.87,
+          "close": 652.35,
+          "volume": 17440000,
+          "volumeM": "17.4M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 644.64,
+          "high": 649.96,
+          "low": 641.5,
+          "close": 648.17,
+          "volume": 18580000,
+          "volumeM": "18.6M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 640.39,
+          "high": 645.71,
+          "low": 637.13,
+          "close": 643.99,
+          "volume": 19720000,
+          "volumeM": "19.7M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 636.14,
+          "high": 641.46,
+          "low": 632.76,
+          "close": 639.81,
+          "volume": 20860000,
+          "volumeM": "20.9M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "AAPL": {
       "name": "Apple Inc.",
@@ -925,11 +925,11 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "ANT": {
-      "name": "Anthropic, PBC",
+      "name": "Anthropic, PBC Class A Common Stock",
       "symbol": "ANT",
       "combined_data": [
         {
@@ -1148,65 +1148,10 @@
           "volume": 31199400,
           "volumeM": "31.2M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-11-25",
-          "dateShort": "🔮 11/25",
-          "open": 280.74,
-          "high": 289.15,
-          "low": 282.07,
-          "close": 285.89,
-          "volume": 26200000,
-          "volumeM": "26.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-26",
-          "dateShort": "🔮 11/26",
-          "open": 260.19,
-          "high": 269.12,
-          "low": 266.34,
-          "close": 270.7,
-          "volume": 21200000,
-          "volumeM": "21.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-27",
-          "dateShort": "🔮 11/27",
-          "open": 239.64,
-          "high": 249.09,
-          "low": 250.61,
-          "close": 255.51,
-          "volume": 16200000,
-          "volumeM": "16.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-30",
-          "dateShort": "🔮 11/30",
-          "open": 219.09,
-          "high": 229.06,
-          "low": 234.88,
-          "close": 240.32,
-          "volume": 11200000,
-          "volumeM": "11.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-12-01",
-          "dateShort": "🔮 12/01",
-          "open": 198.54,
-          "high": 209.03,
-          "low": 219.15,
-          "close": 225.13,
-          "volume": 6200000,
-          "volumeM": "6.2M",
-          "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "DELL": {
       "name": "Dell Technologies Inc.",
@@ -1378,8 +1323,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "GOOG": {
       "name": "Alphabet Inc.",
@@ -1494,10 +1439,65 @@
           "volume": 23974400,
           "volumeM": "23.97M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 277.72,
+          "high": 278.49,
+          "low": 270.26,
+          "close": 275.05,
+          "volume": 30930000,
+          "volumeM": "30.9M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 276.62,
+          "high": 276.87,
+          "low": 269.89,
+          "close": 275.37,
+          "volume": 31570000,
+          "volumeM": "31.6M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 275.51,
+          "high": 275.25,
+          "low": 269.53,
+          "close": 275.7,
+          "volume": 32210000,
+          "volumeM": "32.2M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 274.4,
+          "high": 273.63,
+          "low": 269.16,
+          "close": 276.03,
+          "volume": 32860000,
+          "volumeM": "32.9M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 273.29,
+          "high": 272.01,
+          "low": 268.79,
+          "close": 276.36,
+          "volume": 33500000,
+          "volumeM": "33.5M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -1669,8 +1669,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "INSM": {
       "name": "Insmed Incorporated",
@@ -1958,10 +1958,65 @@
           "volume": 132167700,
           "volumeM": "132.17M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 55.32,
+          "high": 55.77,
+          "low": 51.61,
+          "close": 52.96,
+          "volume": 163990000,
+          "volumeM": "164.0M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 54.88,
+          "high": 55.18,
+          "low": 50.91,
+          "close": 52.22,
+          "volume": 171110000,
+          "volumeM": "171.1M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 54.44,
+          "high": 54.6,
+          "low": 50.22,
+          "close": 51.48,
+          "volume": 178230000,
+          "volumeM": "178.2M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 53.99,
+          "high": 54.02,
+          "low": 49.53,
+          "close": 50.74,
+          "volume": 185340000,
+          "volumeM": "185.3M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 53.55,
+          "high": 53.55,
+          "low": 48.83,
+          "close": 50.0,
+          "volume": 192460000,
+          "volumeM": "192.5M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
@@ -2249,65 +2304,10 @@
           "volume": 28020900,
           "volumeM": "28.02M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-11-25",
-          "dateShort": "🔮 11/25",
-          "open": 135.3,
-          "high": 134.92,
-          "low": 122.66,
-          "close": 124.36,
-          "volume": 33460000,
-          "volumeM": "33.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-26",
-          "dateShort": "🔮 11/26",
-          "open": 132.54,
-          "high": 131.45,
-          "low": 119.12,
-          "close": 120.3,
-          "volume": 34370000,
-          "volumeM": "34.4M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-27",
-          "dateShort": "🔮 11/27",
-          "open": 129.77,
-          "high": 127.98,
-          "low": 115.58,
-          "close": 116.25,
-          "volume": 35280000,
-          "volumeM": "35.3M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-30",
-          "dateShort": "🔮 11/30",
-          "open": 127.01,
-          "high": 124.51,
-          "low": 112.03,
-          "close": 112.19,
-          "volume": 36180000,
-          "volumeM": "36.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-12-01",
-          "dateShort": "🔮 12/01",
-          "open": 124.24,
-          "high": 121.04,
-          "low": 108.49,
-          "close": 108.14,
-          "volume": 37090000,
-          "volumeM": "37.1M",
-          "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
@@ -2595,65 +2595,10 @@
           "volume": 38858600,
           "volumeM": "38.86M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-11-25",
-          "dateShort": "🔮 11/25",
-          "open": 657.55,
-          "high": 659.1,
-          "low": 596.57,
-          "close": 605.37,
-          "volume": 40200000,
-          "volumeM": "40.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-26",
-          "dateShort": "🔮 11/26",
-          "open": 644.85,
-          "high": 643.76,
-          "low": 579.36,
-          "close": 585.49,
-          "volume": 41700000,
-          "volumeM": "41.7M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-27",
-          "dateShort": "🔮 11/27",
-          "open": 632.16,
-          "high": 628.43,
-          "low": 562.16,
-          "close": 565.6,
-          "volume": 43200000,
-          "volumeM": "43.2M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-30",
-          "dateShort": "🔮 11/30",
-          "open": 619.46,
-          "high": 613.1,
-          "low": 544.95,
-          "close": 545.72,
-          "volume": 44700000,
-          "volumeM": "44.7M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-12-01",
-          "dateShort": "🔮 12/01",
-          "open": 606.76,
-          "high": 597.76,
-          "low": 527.75,
-          "close": 525.83,
-          "volume": 46200000,
-          "volumeM": "46.2M",
-          "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "NVDA": {
       "name": "NVIDIA Corporation",
@@ -2768,65 +2713,10 @@
           "volume": 383594200,
           "volumeM": "383.59M",
           "is_predicted": false
-        },
-        {
-          "date": "2026-11-25",
-          "dateShort": "🔮 11/25",
-          "open": 158.14,
-          "high": 158.27,
-          "low": 148.54,
-          "close": 152.99,
-          "volume": 395060000,
-          "volumeM": "395.1M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-26",
-          "dateShort": "🔮 11/26",
-          "open": 157.17,
-          "high": 156.61,
-          "low": 146.59,
-          "close": 150.6,
-          "volume": 406520000,
-          "volumeM": "406.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-27",
-          "dateShort": "🔮 11/27",
-          "open": 156.21,
-          "high": 154.96,
-          "low": 144.63,
-          "close": 148.21,
-          "volume": 417990000,
-          "volumeM": "418.0M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-11-30",
-          "dateShort": "🔮 11/30",
-          "open": 155.25,
-          "high": 153.3,
-          "low": 142.68,
-          "close": 145.82,
-          "volume": 429460000,
-          "volumeM": "429.5M",
-          "is_predicted": true
-        },
-        {
-          "date": "2026-12-01",
-          "dateShort": "🔮 12/01",
-          "open": 154.28,
-          "high": 151.65,
-          "low": 140.72,
-          "close": 143.43,
-          "volume": 440920000,
-          "volumeM": "440.9M",
-          "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "SNDK": {
       "name": "Sandisk Corporation",
@@ -2941,10 +2831,65 @@
           "volume": 119852712,
           "volumeM": "119.85M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-20",
+          "dateShort": "🔮 11/20",
+          "open": 100.6,
+          "high": 102.68,
+          "low": 94.27,
+          "close": 96.65,
+          "volume": 105580000,
+          "volumeM": "105.6M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-23",
+          "dateShort": "🔮 11/23",
+          "open": 99.33,
+          "high": 100.99,
+          "low": 92.85,
+          "close": 94.86,
+          "volume": 103880000,
+          "volumeM": "103.9M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-24",
+          "dateShort": "🔮 11/24",
+          "open": 98.07,
+          "high": 99.31,
+          "low": 91.43,
+          "close": 93.07,
+          "volume": 102170000,
+          "volumeM": "102.2M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 96.81,
+          "high": 97.63,
+          "low": 90.01,
+          "close": 91.28,
+          "volume": 100470000,
+          "volumeM": "100.5M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 95.54,
+          "high": 95.94,
+          "low": 88.59,
+          "close": 89.49,
+          "volume": 98760000,
+          "volumeM": "98.8M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "SPCX": {
       "name": "Space Exploration Technologies Corp.",
@@ -3059,10 +3004,65 @@
           "volume": 103453000,
           "volumeM": "103.45M",
           "is_predicted": false
+        },
+        {
+          "date": "2026-11-25",
+          "dateShort": "🔮 11/25",
+          "open": 135.54,
+          "high": 136.23,
+          "low": 127.34,
+          "close": 129.23,
+          "volume": 107190000,
+          "volumeM": "107.2M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-26",
+          "dateShort": "🔮 11/26",
+          "open": 134.9,
+          "high": 135.2,
+          "low": 126.03,
+          "close": 127.88,
+          "volume": 108320000,
+          "volumeM": "108.3M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-27",
+          "dateShort": "🔮 11/27",
+          "open": 134.26,
+          "high": 134.17,
+          "low": 124.73,
+          "close": 126.53,
+          "volume": 109440000,
+          "volumeM": "109.4M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-11-30",
+          "dateShort": "🔮 11/30",
+          "open": 133.62,
+          "high": 133.14,
+          "low": 123.43,
+          "close": 125.17,
+          "volume": 110570000,
+          "volumeM": "110.6M",
+          "is_predicted": true
+        },
+        {
+          "date": "2026-12-01",
+          "dateShort": "🔮 12/01",
+          "open": 132.99,
+          "high": 132.11,
+          "low": 122.12,
+          "close": 123.82,
+          "volume": 111700000,
+          "volumeM": "111.7M",
+          "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "TSLA": {
       "name": "Tesla, Inc.",
@@ -3235,7 +3235,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "持有"
     },
     "TXN": {
       "name": "Texas Instruments Incorporated",
