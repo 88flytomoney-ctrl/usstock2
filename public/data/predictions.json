@@ -110,8 +110,8 @@
           "open": 617.1,
           "high": 634.89,
           "low": 607.74,
-          "volume": 81600300,
-          "volumeM": "81.6M",
+          "volume": 81996700,
+          "volumeM": "82.0M",
           "is_predicted": false
         },
         {
@@ -170,8 +170,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "VOO": {
       "name": "Vanguard S&P 500 ETF",
@@ -283,8 +283,8 @@
           "open": 646.35,
           "high": 660.37,
           "low": 639.26,
-          "volume": 14565800,
-          "volumeM": "14.57M",
+          "volume": 14595800,
+          "volumeM": "14.6M",
           "is_predicted": false
         },
         {
@@ -456,8 +456,8 @@
           "open": 353.48,
           "high": 356.75,
           "low": 345.13,
-          "volume": 54240100,
-          "volumeM": "54.24M",
+          "volume": 54285300,
+          "volumeM": "54.29M",
           "is_predicted": false
         },
         {
@@ -629,8 +629,8 @@
           "open": 382.89,
           "high": 407.77,
           "low": 370.4,
-          "volume": 51340800,
-          "volumeM": "51.34M",
+          "volume": 51632000,
+          "volumeM": "51.63M",
           "is_predicted": false
         },
         {
@@ -689,8 +689,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -802,8 +802,8 @@
           "open": 243.13,
           "high": 246.56,
           "low": 235.96,
-          "volume": 62276400,
-          "volumeM": "62.28M",
+          "volume": 62479500,
+          "volumeM": "62.48M",
           "is_predicted": false
         },
         {
@@ -866,7 +866,7 @@
       "recommendation": "賣出"
     },
     "ANT": {
-      "name": "Anthropic, PBC",
+      "name": "Anthropic, PBC Class A Common Stock",
       "symbol": "ANT",
       "combined_data": [
         {
@@ -920,8 +920,8 @@
           "open": 77.93,
           "high": 85.92,
           "low": 73.85,
-          "volume": 292752600,
-          "volumeM": "292.75M",
+          "volume": 293740400,
+          "volumeM": "293.74M",
           "is_predicted": false
         },
         {
@@ -980,8 +980,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
@@ -1093,8 +1093,8 @@
           "open": 286.98,
           "high": 301.27,
           "low": 278.0,
-          "volume": 34256900,
-          "volumeM": "34.26M",
+          "volume": 34349500,
+          "volumeM": "34.35M",
           "is_predicted": false
         },
         {
@@ -1266,8 +1266,8 @@
           "open": 267.57,
           "high": 297.89,
           "low": 265.0,
-          "volume": 26489800,
-          "volumeM": "26.49M",
+          "volume": 26690500,
+          "volumeM": "26.69M",
           "is_predicted": false
         },
         {
@@ -1326,8 +1326,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "GOOG": {
       "name": "Alphabet Inc.",
@@ -1439,8 +1439,8 @@
           "open": 263.32,
           "high": 271.6,
           "low": 260.69,
-          "volume": 27832500,
-          "volumeM": "27.83M",
+          "volume": 27916900,
+          "volumeM": "27.92M",
           "is_predicted": false
         },
         {
@@ -1499,8 +1499,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -1612,8 +1612,8 @@
           "open": 265.1,
           "high": 273.62,
           "low": 262.73,
-          "volume": 41164500,
-          "volumeM": "41.16M",
+          "volume": 41283700,
+          "volumeM": "41.28M",
           "is_predicted": false
         },
         {
@@ -1845,8 +1845,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "買入"
     },
     "INTC": {
       "name": "Intel Corporation",
@@ -1958,8 +1958,8 @@
           "open": 52.01,
           "high": 55.0,
           "low": 49.16,
-          "volume": 128605100,
-          "volumeM": "128.61M",
+          "volume": 129277900,
+          "volumeM": "129.28M",
           "is_predicted": false
         },
         {
@@ -2018,8 +2018,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "LRCX": {
       "name": "Lam Research Corporation",
@@ -2131,8 +2131,8 @@
           "open": 182.83,
           "high": 185.18,
           "low": 171.53,
-          "volume": 21472400,
-          "volumeM": "21.47M",
+          "volume": 21505500,
+          "volumeM": "21.51M",
           "is_predicted": false
         },
         {
@@ -2191,8 +2191,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
@@ -2304,8 +2304,8 @@
           "open": 575.34,
           "high": 611.06,
           "low": 567.75,
-          "volume": 18599400,
-          "volumeM": "18.6M",
+          "volume": 18668200,
+          "volumeM": "18.67M",
           "is_predicted": false
         },
         {
@@ -2364,8 +2364,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
@@ -2477,8 +2477,8 @@
           "open": 485.23,
           "high": 493.44,
           "low": 477.39,
-          "volume": 26733600,
-          "volumeM": "26.73M",
+          "volume": 26759500,
+          "volumeM": "26.76M",
           "is_predicted": false
         },
         {
@@ -2650,8 +2650,8 @@
           "open": 574.96,
           "high": 604.95,
           "low": 548.13,
-          "volume": 52470000,
-          "volumeM": "52.47M",
+          "volume": 52988400,
+          "volumeM": "52.99M",
           "is_predicted": false
         },
         {
@@ -2710,8 +2710,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "NVDA": {
       "name": "NVIDIA Corporation",
@@ -2823,8 +2823,8 @@
           "open": 144.06,
           "high": 150.37,
           "low": 141.17,
-          "volume": 363377300,
-          "volumeM": "363.38M",
+          "volume": 366571900,
+          "volumeM": "366.57M",
           "is_predicted": false
         },
         {
@@ -2884,7 +2884,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "賣出"
     },
     "PLTR": {
       "name": "Palantir Technologies Inc.",
@@ -2996,8 +2996,8 @@
           "open": 154.22,
           "high": 164.75,
           "low": 151.51,
-          "volume": 21407000,
-          "volumeM": "21.41M",
+          "volume": 21486000,
+          "volumeM": "21.49M",
           "is_predicted": false
         },
         {
@@ -3273,8 +3273,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "SPCX": {
       "name": "Space Exploration Technologies Corp.",
@@ -3386,8 +3386,8 @@
           "open": 118.47,
           "high": 128.45,
           "low": 112.93,
-          "volume": 147273500,
-          "volumeM": "147.27M",
+          "volume": 148279900,
+          "volumeM": "148.28M",
           "is_predicted": false
         },
         {
@@ -3559,8 +3559,8 @@
           "open": 370.52,
           "high": 383.73,
           "low": 357.64,
-          "volume": 34789900,
-          "volumeM": "34.79M",
+          "volume": 34915800,
+          "volumeM": "34.92M",
           "is_predicted": false
         },
         {
@@ -3619,8 +3619,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "TSM": {
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
@@ -3732,8 +3732,8 @@
           "open": 329.13,
           "high": 343.17,
           "low": 321.1,
-          "volume": 22717200,
-          "volumeM": "22.72M",
+          "volume": 22861100,
+          "volumeM": "22.86M",
           "is_predicted": false
         },
         {
