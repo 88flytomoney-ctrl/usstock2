@@ -517,7 +517,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "持有"
     },
     "AMD": {
       "name": "Advanced Micro Devices, Inc.",
@@ -689,8 +689,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -1153,8 +1153,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "DELL": {
       "name": "Dell Technologies Inc.",
@@ -2018,8 +2018,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "LRCX": {
       "name": "Lam Research Corporation",
@@ -2710,8 +2710,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "NVDA": {
       "name": "NVIDIA Corporation",
@@ -2884,7 +2884,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "持有"
+      "recommendation": "賣出"
     },
     "PLTR": {
       "name": "Palantir Technologies Inc.",
@@ -3056,8 +3056,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "SNDK": {
       "name": "Sandisk Corporation",
@@ -3273,8 +3273,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "SPCX": {
       "name": "Space Exploration Technologies Corp.",
@@ -3792,8 +3792,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     }
   },
   "indices": {
