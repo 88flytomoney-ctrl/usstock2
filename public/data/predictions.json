@@ -170,8 +170,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "VOO": {
       "name": "Vanguard S&P 500 ETF",
@@ -517,7 +517,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "買入"
+      "recommendation": "賣出"
     },
     "AMD": {
       "name": "Advanced Micro Devices, Inc.",
@@ -689,8 +689,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -866,7 +866,7 @@
       "recommendation": "賣出"
     },
     "ANT": {
-      "name": "Anthropic, PBC Class A Common Stock",
+      "name": "Anthropic, PBC",
       "symbol": "ANT",
       "combined_data": [
         {
@@ -980,8 +980,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
@@ -1499,8 +1499,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -2018,8 +2018,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "LRCX": {
       "name": "Lam Research Corporation",
@@ -2191,8 +2191,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
@@ -2884,7 +2884,7 @@
         }
       ],
       "has_ai": true,
-      "recommendation": "賣出"
+      "recommendation": "持有"
     },
     "PLTR": {
       "name": "Palantir Technologies Inc.",
@@ -3273,8 +3273,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "SPCX": {
       "name": "Space Exploration Technologies Corp.",
@@ -3619,8 +3619,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": false,
-      "recommendation": "持有"
+      "has_ai": true,
+      "recommendation": "賣出"
     },
     "TSM": {
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
@@ -3792,8 +3792,8 @@
           "is_predicted": true
         }
       ],
-      "has_ai": true,
-      "recommendation": "賣出"
+      "has_ai": false,
+      "recommendation": "持有"
     }
   },
   "indices": {
