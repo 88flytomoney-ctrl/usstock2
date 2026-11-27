@@ -1,9 +1,6 @@
 name: Daily Pipeline — Scrape + Prices + AI + Deploy
 
 on:
-  schedule:
-    # Run daily at 06:00 HKT (22:00 UTC) Tue–Sat
-    - cron: '0 22 * * 2-6'
   workflow_dispatch:  # Manual trigger
   push:
     branches: [main]
